@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
   body {
@@ -8,6 +8,10 @@ const GlobalStyles = createGlobalStyle`
     width: 100vw;
     background-color: #141414;
   }
+
+  .active {
+    color: #fff;
+  }
 `;
 
-export default GlobalStyles
+export default GlobalStyles;
