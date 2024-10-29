@@ -1,8 +1,8 @@
 // import styled from 'styled-components';
 // import { useState } from 'react';
-import LoginForm from '../components/LoginPage/Form';
-import { LogPage } from './LoginPageLayout';
-import PageHeader from '../components/PageHeader';
+import LoginForm from '../../components/Form/Form';
+import { LoginPageStyled } from './LoginPage.Styled';
+import Header from '../../components/Header/Header';
 
 function LoginPage() {
 	// const [showModal, setShowModal] = useState(true);
@@ -13,10 +13,10 @@ function LoginPage() {
 	// }
 
 	return (
-		<LogPage>
-			<PageHeader />
+		<LoginPageStyled>
+			<Header />
 			<LoginForm />
-		</LogPage>
+		</LoginPageStyled>
 	);
 }
 

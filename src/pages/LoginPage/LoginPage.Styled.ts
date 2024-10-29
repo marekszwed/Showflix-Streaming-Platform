@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const LogPage = styled.div`
+export const LoginPageStyled = styled.div`
 	position: relative;
 	display: flex;
 	justify-content: center;
