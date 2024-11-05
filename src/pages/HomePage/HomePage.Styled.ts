@@ -1,10 +1,12 @@
 import styled from "styled-components";
-import mainImage from "mainBackground.jpg";
+import homeImage from "/home-image.jpg";
 
 export const HomePageStyled = styled.div`
 	position: relative;
 	display: flex;
-	background-image: url(${mainImage});
-	width: 100%;
-	height: 100%;
+	background-image: url(${homeImage});
+	background-position: center;
+	background-size: cover;
+	height: 100svh;
+	width: 100vw;
 `;

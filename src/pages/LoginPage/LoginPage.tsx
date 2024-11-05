@@ -1,8 +1,6 @@
-// import styled from 'styled-components';
 // import { useState } from 'react';
 import LoginForm from '../../components/Form/Form';
 import { LoginPageStyled } from './LoginPage.Styled';
-import Header from '../../components/Header/Header';
 
 function LoginPage() {
 	// const [showModal, setShowModal] = useState(true);
@@ -14,7 +12,7 @@ function LoginPage() {
 
 	return (
 		<LoginPageStyled>
-			<Header />
+			
 			<LoginForm />
 		</LoginPageStyled>
 	);

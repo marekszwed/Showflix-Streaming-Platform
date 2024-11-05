@@ -2,17 +2,19 @@ import { Route, Routes } from "react-router-dom";
 import { theme } from "./helpers/theme";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import HomePage from "./pages/HomePage/HomePage";
-import FilmPage from "./pages/MainPage/FilmPage";
 import { ThemeProvider } from "styled-components";
+import Header from "./components/Header/Header";
+import FilmList from "./pages/FilmList/FilmList";
 
 function App() {
 	return (
 		<>
 			<ThemeProvider theme={theme}>
+				<Header />
 				<Routes>
-					<Route index path="/Home" element={<HomePage />} />
+					<Route index path="/" element={<HomePage />} />
 					<Route path="/login" element={<LoginPage />} />
-					<Route path="/main" element={<FilmPage />}></Route>
+					<Route path="/filmlist" element={<FilmList />} />
 				</Routes>
 			</ThemeProvider>
 		</>

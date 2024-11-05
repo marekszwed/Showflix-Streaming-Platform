@@ -7,6 +7,8 @@ export const HeaderStyled = styled.header`
 	top: 0;
 	width: 100%;
 	padding: 2em 0 3em 0;
+	background-color: transparent;
+	z-index: 100;
 `;
 
 export const LogoStyled = styled.div`
@@ -18,5 +20,5 @@ export const TitleStyled = styled.div`
 	font-size: ${(props) => props.theme.fontSize.header};
 	text-transform: uppercase;
 	font-weight: ${(props) => props.theme.fontWeight.bold};
-	color: ${(props) => props.theme.colors.PrimaryRedColor};
+	color: ${(props) => props.theme.colors.pureWhite};
 `;

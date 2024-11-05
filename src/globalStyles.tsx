@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
   /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -50,14 +50,47 @@ table {
 	border-spacing: 0;
 }
 
-html {
-  font-size: 62.5%;
+@font-face {
+    font-family: 'robotolight';
+    src: url('/assets/fonts/roboto-light-webfont.woff2') format('woff2'),
+         url('/assets/fonts/roboto-light-webfont.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+		font-display:swap;
+}
+
+@font-face {
+    font-family: 'robotoregular';
+    src: url('/assets/fonts/roboto-regular-webfont.woff2') format('woff2'),
+         url('/assets/fonts/roboto-regular-webfont.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+		font-display:swap;
+}
+
+@font-face {
+    font-family: 'robotobold';
+    src: url('/assets/fonts/roboto-bold-webfont.woff2') format('woff2'),
+         url('/assets/fonts/roboto-bold-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+		font-display: swap;
+}
+
+body {
+	font-family: 'robotoregular', sans-serif;
 }
 
 body::-webkit-scrollbar {
 	display: none;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 `;
 
 export default GlobalStyles;
+
+// znaleźc czcionkę bezszeryfową
