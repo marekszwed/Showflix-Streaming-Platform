@@ -3,18 +3,26 @@ import { Theme } from "./types";
 export const theme: Theme = {
 	colors: {
 		pureWhite: "#fff",
-		PrimaryRedColor: "#c11119",
-		btnHoverColor: "#b9111a",
-		formBackground: "rgba(0, 0, 0, 0.637)",
-		errorColor: "rgb(255, 0, 0)",
+		PrimaryRed: "#c11119",
+		btnHover: "#a51017",
+		formBackground: "#000000a2",
+		error: "#ff0000",
 	},
 	fontSize: {
-		small: "1.2rem",
+		small: "1.1rem",
 		normal: "1.6rem",
 		big: "3.2rem",
 		header: "4rem",
 	},
 	fontWeight: {
 		bold: "800",
+	},
+	index: {
+		negative: "-1",
+		neutral: "0",
+		positive: "1",
+		positivePlus: "2",
+		notification: "3",
+		costam: "4",
 	},
 };

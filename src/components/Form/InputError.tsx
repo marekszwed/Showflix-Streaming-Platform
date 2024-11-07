@@ -1,12 +1,12 @@
 import { StyledError } from "./Form.Styled";
 
 interface ErrorProps {
-	text: string;
+	text?: string;
 	error: boolean;
 }
 
 function InputError({ text, error }: ErrorProps): JSX.Element {
-	return <StyledError error={error}>{text}</StyledError>;
+	return <StyledError $error={error}>{text}</StyledError>;
 }
 
 export default InputError;

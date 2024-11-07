@@ -61,12 +61,10 @@ export const StyledInput = styled.input`
 	}
 `;
 
-export const StyledError = styled.p<{ text?: string; error?: boolean }>`
-	position: absolute;
+export const StyledError = styled.p<{ $error?: boolean }>`
 	display: ${(error) => (error ? "flex" : "none")};
-	left: 20px;
-	top: 90px;
+	padding: 0.5em 0 0 1.7em;
 	text-transform: uppercase;
-	color: ${(props) => props.theme.colors.errorColor};
+	color: ${(props) => props.theme.colors.error};
 	font-size: ${(props) => props.theme.fontSize.small};
 `;

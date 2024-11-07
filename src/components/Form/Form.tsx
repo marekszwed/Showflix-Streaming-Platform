@@ -1,15 +1,8 @@
-import {
-	Form,
-	StyledDiv,
-	StyledFieldset,
-	StyledInput,
-	StyledLabel,
-	StyledLegend,
-} from "./Form.Styled.ts";
 import { useState } from "react";
-import NavLinkButton from "../Button/NavLinkButton.tsx";
-import InputError from "./InputError.tsx";
 import { useNavigate } from "react-router-dom";
+import * as S from "./Form.Styled.ts";
+import Button from "../Button/Button.tsx";
+import InputError from "./InputError.tsx";
 
 function LoginForm() {
 	const [password, setPassword] = useState("");
@@ -29,7 +22,6 @@ function LoginForm() {
 	};
 
 	const handleSubmit = (e: React.FormEvent) => {
-		console.log(e.target);
 		e.preventDefault();
 		const newError: { email?: string; password?: string } = {};
 
@@ -41,22 +33,19 @@ function LoginForm() {
 		}
 
 		setError(newError);
-		console.log(typeof newError);
 
-		navigate("/filmlist");
-
-		// if (Object.keys(newError).length === 0) {
-		// 	navigate("/filmlist");
-		// }
+		if (Object.keys(newError).length === 0) {
+			navigate("/films");
+		}
 	};
 
 	return (
-		<Form id="form" onSubmit={handleSubmit}>
-			<StyledFieldset>
-				<StyledLegend>Zaloguj się</StyledLegend>
-				<StyledDiv>
-					<StyledLabel htmlFor="email">Email*</StyledLabel>
-					<StyledInput
+		<S.Form id="form" onSubmit={handleSubmit}>
+			<S.StyledFieldset>
+				<S.StyledLegend>Zaloguj się</S.StyledLegend>
+				<S.StyledDiv>
+					<S.StyledLabel htmlFor="email">Email*</S.StyledLabel>
+					<S.StyledInput
 						id="email"
 						type="text"
 						placeholder="Email"
@@ -64,11 +53,11 @@ function LoginForm() {
 						onChange={(e) => setEmail(e.target.value)}
 						required
 					/>
-					<InputError text={error.email || ""} error={!!error.email} />
-				</StyledDiv>
-				<StyledDiv>
-					<StyledLabel htmlFor="password">Password*</StyledLabel>
-					<StyledInput
+					<InputError text={error.email} error={!!error.email} />
+				</S.StyledDiv>
+				<S.StyledDiv>
+					<S.StyledLabel htmlFor="password">Password*</S.StyledLabel>
+					<S.StyledInput
 						id="password"
 						type="password"
 						placeholder="Password"
@@ -76,18 +65,17 @@ function LoginForm() {
 						onChange={(e) => setPassword(e.target.value)}
 						required
 					/>
-					<InputError text={error.password || ""} error={!!error.password} />
-				</StyledDiv>
-				<NavLinkButton
-					id="form"
+					<InputError text={error.password} error={!!error.password} />
+				</S.StyledDiv>
+				<Button
+					id={""}
 					type="submit"
-					to="#"
 					text="Zaloguj się"
 					width="100%"
 					margin="auto"
-				/>
-			</StyledFieldset>
-		</Form>
+				></Button>
+			</S.StyledFieldset>
+		</S.Form>
 	);
 }
 

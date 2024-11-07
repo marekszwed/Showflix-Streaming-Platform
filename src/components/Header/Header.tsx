@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { HeaderStyled, LogoStyled, TitleStyled } from "./Header.Styled";
-import NavLinkButton from "../Button/NavLinkButton";
+import Button from "../Button/Button";
 
 function Header() {
 	const location = useLocation();
@@ -12,14 +12,14 @@ function Header() {
 					<TitleStyled>showflix</TitleStyled>
 				</LogoStyled>
 				{location.pathname === "/" ? (
-					<NavLinkButton
+					<Button
 						id="#"
 						type="button"
-						to="/login"
+						href="/login"
 						text="Zaloguj się"
 						width="10em"
 						margin="0 10em 0 0"
-					/>
+					></Button>
 				) : null}
 			</HeaderStyled>
 		</>

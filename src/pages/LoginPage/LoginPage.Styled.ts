@@ -8,7 +8,7 @@ export const LoginPageStyled = styled.div`
 	align-items: center;
 	background-image: url(${loginImage});
 	background-position: center;
-	background-size: cover;	
+	background-size: cover;
 	height: 100svh;
 	width: 100vw;
 `;

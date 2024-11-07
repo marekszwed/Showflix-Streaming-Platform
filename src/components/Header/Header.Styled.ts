@@ -8,10 +8,10 @@ export const HeaderStyled = styled.header`
 	width: 100%;
 	padding: 2em 0 3em 0;
 	background-color: transparent;
-	z-index: 100;
+	z-index: ${(props) => props.theme.index.positivePlus};
 `;
 
-export const LogoStyled = styled.div`
+export const LogoStyled = styled.h1`
 	display: flex;
 	margin-left: 10em;
 `;

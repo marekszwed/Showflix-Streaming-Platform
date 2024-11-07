@@ -1,10 +1,10 @@
 export interface Theme {
 	colors: {
 		pureWhite: string;
-		PrimaryRedColor: string;
-		btnHoverColor: string;
+		PrimaryRed: string;
+		btnHover: string;
 		formBackground: string;
-		errorColor: string;
+		error: string;
 	};
 	fontSize: {
 		small: string;
@@ -14,5 +14,13 @@ export interface Theme {
 	};
 	fontWeight: {
 		bold: string;
+	};
+	index: {
+		negative: string;
+		neutral: string;
+		positive: string;
+		positivePlus: string;
+		notification: string;
+		costam: string;
 	};
 }

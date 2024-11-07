@@ -1,10 +1,10 @@
 import { Route, Routes } from "react-router-dom";
-import { theme } from "./helpers/theme";
-import LoginPage from "./pages/LoginPage/LoginPage";
-import HomePage from "./pages/HomePage/HomePage";
 import { ThemeProvider } from "styled-components";
+import { theme } from "./helpers/theme";
 import Header from "./components/Header/Header";
-import FilmList from "./pages/FilmList/FilmList";
+import HomePage from "./pages/HomePage/HomePage";
+import LoginPage from "./pages/LoginPage/LoginPage";
+import Films from "./pages/Films/Films";
 
 function App() {
 	return (
@@ -14,7 +14,7 @@ function App() {
 				<Routes>
 					<Route index path="/" element={<HomePage />} />
 					<Route path="/login" element={<LoginPage />} />
-					<Route path="/filmlist" element={<FilmList />} />
+					<Route path="/films" element={<Films />} />
 				</Routes>
 			</ThemeProvider>
 		</>
