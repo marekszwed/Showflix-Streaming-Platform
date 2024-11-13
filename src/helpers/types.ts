@@ -4,18 +4,21 @@ export interface Theme {
 		PrimaryRed: string;
 		btnHover: string;
 		formBackground: string;
+		shadowBackground: string;
+		cardTitle: string;
 		error: string;
 	};
 	fontSize: {
 		small: string;
 		normal: string;
+		bigger: string;
 		big: string;
 		header: string;
 	};
 	fontWeight: {
 		bold: string;
 	};
-	index: {
+	zindex: {
 		negative: string;
 		neutral: string;
 		positive: string;

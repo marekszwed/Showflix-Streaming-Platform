@@ -8,7 +8,7 @@ export const HeaderStyled = styled.header`
 	width: 100%;
 	padding: 2em 0 3em 0;
 	background-color: transparent;
-	z-index: ${(props) => props.theme.index.positivePlus};
+	z-index: ${(props) => props.theme.zindex.positivePlus};
 `;
 
 export const LogoStyled = styled.h1`
