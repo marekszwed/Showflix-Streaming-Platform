@@ -8,6 +8,7 @@ export const theme: Theme = {
 		formBackground: "#000000a2",
 		shadowBackground: "#000000d9",
 		cardTitle: "#f8d123",
+		filmSelect: "#302f2f",
 		error: "#ff0000",
 	},
 	fontSize: {

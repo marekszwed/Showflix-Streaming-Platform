@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const Card = styled.div<{ $filmImage?: string }>`
 	position: relative;
 	display: flex;
-	max-width: 240px;
-	height: 320px;
+	max-width: 220px;
+	height: 300px;
 	background-position: center;
 	background-size: cover;
 	background-image: url(${(props) => props.$filmImage});

@@ -7,7 +7,6 @@ interface CardProps {
 	text: string;
 	$filmImage: string;
 	description: string;
-	sign: string;
 	type: "button";
 }
 
@@ -15,7 +14,6 @@ function Card({
 	$filmImage,
 	text,
 	description,
-	// sign,
 	type,
 }: CardProps): JSX.Element {
 	const [isActive, setIsActive] = useState(false);

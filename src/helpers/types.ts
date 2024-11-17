@@ -6,6 +6,7 @@ export interface Theme {
 		formBackground: string;
 		shadowBackground: string;
 		cardTitle: string;
+		filmSelect: string;
 		error: string;
 	};
 	fontSize: {
@@ -27,3 +28,9 @@ export interface Theme {
 		costam: string;
 	};
 }
+
+export interface GenreProps {
+	selectedGenre: string[];
+	setSelectedGenre: (selected: string[]) => void;
+}
+

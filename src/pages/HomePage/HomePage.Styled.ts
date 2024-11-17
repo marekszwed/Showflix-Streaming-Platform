@@ -4,6 +4,8 @@ import { PageBackground } from "../../helpers/mixins";
 
 export const HomePageStyled = styled.div`
 	${PageBackground}
+	justify-content: center;
+	align-items: center;
 	background-image: url(${homeImage});
 `;
 

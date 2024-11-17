@@ -1,15 +1,16 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Pagination } from "swiper/modules";
+import { CarouselBox } from "./Carousel.Styled";
 import Card from "../Card/Card";
 import image from "/the-dark-knight.jpg";
 import "swiper/css";
 
 function Carousel() {
 	return (
-		<>
+		<CarouselBox>
 			<Swiper
-				slidesPerView={3}
-				spaceBetween={30}
+				slidesPerView={4}
+				spaceBetween={0}
 				pagination={{
 					clickable: true,
 				}}
@@ -21,7 +22,6 @@ function Carousel() {
 						$filmImage={image}
 						text="Batman"
 						description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure, libero."
-						sign="?"
 						type="button"
 					></Card>
 				</SwiperSlide>
@@ -30,7 +30,6 @@ function Carousel() {
 						$filmImage={image}
 						text="Batman"
 						description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure, libero."
-						sign="?"
 						type="button"
 					></Card>
 				</SwiperSlide>
@@ -39,7 +38,6 @@ function Carousel() {
 						$filmImage={image}
 						text="Batman"
 						description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure, libero."
-						sign="?"
 						type="button"
 					></Card>
 				</SwiperSlide>
@@ -48,7 +46,6 @@ function Carousel() {
 						$filmImage={image}
 						text="Batman"
 						description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure, libero."
-						sign="?"
 						type="button"
 					></Card>
 				</SwiperSlide>
@@ -57,7 +54,6 @@ function Carousel() {
 						$filmImage={image}
 						text="Batman"
 						description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure, libero."
-						sign="?"
 						type="button"
 					></Card>
 				</SwiperSlide>
@@ -66,7 +62,6 @@ function Carousel() {
 						$filmImage={image}
 						text="Batman"
 						description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure, libero."
-						sign="?"
 						type="button"
 					></Card>
 				</SwiperSlide>
@@ -75,13 +70,12 @@ function Carousel() {
 						$filmImage={image}
 						text="Batman"
 						description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure, libero."
-						sign="?"
 						type="button"
 					></Card>
 				</SwiperSlide>
 			</Swiper>
-		</>
+		</CarouselBox>
 	);
 }
 
-export default Carousel
+export default Carousel;
