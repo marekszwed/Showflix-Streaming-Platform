@@ -1,30 +1,35 @@
 import { useEffect, useState } from "react";
-// import axios from "axios";
+import * as S from "./Films.Styled";
 import Carousel from "../../components/Carousel/Carousel";
-// import { GenreHeader } from "../../components/FilmGenreHeader/GenreHeader.Styled";
-// import Select from "../../components/Input/Select";
-import { FilmsStyled } from "./Films.Styled";
-import { GenreProps } from "../../helpers/types";
-// import Card from "../../components/Card/Card";
-// import image from "/the-dark-knight.jpg"
+import FilmsHeroImage from "../../components/FilmsBackground/FilmsBackground";
+import FilmsSearch from "../../components/FilmsSearch/FilmsSearch";
 
-function Films({ selectedGenre }: GenreProps) {
-	const apiKey = import.meta.env.VITE_API_KEY;
-	const URL: string = `http://www.omdbapi.com/?apikey=${apiKey}&s=Batman`;
+function Films() {
+	const [selectedGenre, setSelectedGenre] = useState(["Sci-Fi"]);
+	const [fetchedFilms, setFetchedFilms] = useState([]);
+	const [heroImage, setHeroImage] = useState<string>("");
 
-	const [films, setFilms] = useState([]);
+	const urlLeftSide = import.meta.env.VITE_URL_LEFT_SIDE;
+	const urlRightSide = import.meta.env.VITE_URL_RIGHT_SIDE;
+	const API_KEY = import.meta.env.VITE_API_KEY;
+
+	const URL = `${urlLeftSide + API_KEY + urlRightSide}`;
 
 	async function fetchData() {
 		try {
 			const res = await fetch(URL);
-			if (!res) {
-				console.error("Api data failure");
+			const data = await res.json();
+			console.log(data.results);
+			if (!data.results) {
+				console.error("somethings wrong");
 			} else {
-				const data = await res.json;
-				setFilms(data.Search || []);
+				setFetchedFilms(data.results);
+				setHeroImage(
+					`https://image.tmdb.org/t/p/original${data.results[0]?.backdrop_path}`
+				);
 			}
 		} catch {
-			console.error("Api data failure");
+			console.error("Loading data failure");
 		}
 	}
 
@@ -33,20 +38,15 @@ function Films({ selectedGenre }: GenreProps) {
 	}, [selectedGenre]);
 
 	return (
-		<FilmsStyled>
-			<Carousel />
-		</FilmsStyled>
+		<S.Films>
+			<FilmsHeroImage src={heroImage} alt="hero image" />
+			<FilmsSearch
+				selectedGenre={selectedGenre}
+				setSelectedGenre={setSelectedGenre}
+			/>
+			<Carousel films={fetchedFilms} />
+		</S.Films>
 	);
 }
 
 export default Films;
-
-{
-	/* <Card
-				$filmImage={image}
-				text="Batman"
-				description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure, libero."
-				sign="?"
-				type={"button"}
-			></Card> */
-}

@@ -2,15 +2,18 @@ import * as S from "./Card.Styled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleQuestion } from "@fortawesome/free-regular-svg-icons";
 import { useState } from "react";
+import blank from "/card-grey-background.jpg";
 
 interface CardProps {
-	text: string;
+	id: string;
 	$filmImage: string;
+	text: string;
 	description: string;
 	type: "button";
 }
 
 function Card({
+	id,
 	$filmImage,
 	text,
 	description,
@@ -23,7 +26,7 @@ function Card({
 	};
 
 	return (
-		<S.Card $filmImage={$filmImage}>
+		<S.Card id={id} $filmImage={$filmImage || blank}>
 			<S.Button onClick={handleClick} type={type}>
 				<FontAwesomeIcon icon={faCircleQuestion} />
 			</S.Button>
@@ -36,13 +39,3 @@ function Card({
 }
 
 export default Card;
-
-{
-	/* <S.Image src={filmImage}></S.Image>; */
-}
-
-{
-	/* <S.CardContent>
-	<S.Description></S.Description>
-</S.CardContent>; */
-}

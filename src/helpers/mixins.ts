@@ -5,6 +5,5 @@ export const PageBackground = css`
 	display: flex;
 	background-position: center;
 	background-size: cover;
-	height: 100svh;
 	width: 100vw;
 `;

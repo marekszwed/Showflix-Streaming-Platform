@@ -4,6 +4,7 @@ export interface Theme {
 		PrimaryRed: string;
 		btnHover: string;
 		formBackground: string;
+		headerBackground: string;
 		shadowBackground: string;
 		cardTitle: string;
 		filmSelect: string;
@@ -24,6 +25,7 @@ export interface Theme {
 		neutral: string;
 		positive: string;
 		positivePlus: string;
+		positiveMax: string;
 		notification: string;
 		costam: string;
 	};
@@ -33,4 +35,3 @@ export interface GenreProps {
 	selectedGenre: string[];
 	setSelectedGenre: (selected: string[]) => void;
 }
-

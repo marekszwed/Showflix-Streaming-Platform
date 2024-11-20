@@ -6,6 +6,7 @@ export const theme: Theme = {
 		PrimaryRed: "#c11119",
 		btnHover: "#a51017",
 		formBackground: "#000000a2",
+		headerBackground: "#00000084",
 		shadowBackground: "#000000d9",
 		cardTitle: "#f8d123",
 		filmSelect: "#302f2f",
@@ -26,7 +27,8 @@ export const theme: Theme = {
 		neutral: "0",
 		positive: "1",
 		positivePlus: "2",
-		notification: "3",
-		costam: "4",
+		positiveMax: "3",
+		notification: "4",
+		costam: "5",
 	},
 };

@@ -42,7 +42,7 @@ export const Text = styled.div<{ isActive?: boolean }>`
 	transition: clip-path 0.6s;
 `;
 export const Title = styled.h3`
-	text-align: center;
+	/* text-align: center; */
 	font-size: ${(props) => props.theme.fontSize.bigger};
 	font-weight: bold;
 	color: ${(props) => props.theme.colors.cardTitle};

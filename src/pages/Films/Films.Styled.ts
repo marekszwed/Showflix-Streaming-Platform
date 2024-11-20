@@ -2,7 +2,7 @@ import styled from "styled-components";
 import filmsBackground from "/films-background.jpg";
 import { PageBackground } from "../../helpers/mixins";
 
-export const FilmsStyled = styled.div`
+export const Films = styled.div`
 	${PageBackground}
 	flex-direction: column;
 	justify-content: center;

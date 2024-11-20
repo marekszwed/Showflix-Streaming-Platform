@@ -1,10 +1,8 @@
 import { useLocation } from "react-router-dom";
 import { HeaderStyled, LogoStyled, TitleStyled } from "./Header.Styled";
 import Button from "../Button/Button";
-import Select from "../Select/Select";
-import { GenreProps } from "../../helpers/types";
 
-function Header({ selectedGenre, setSelectedGenre }: GenreProps) {
+function Header() {
 	const location = useLocation();
 
 	const showButton = () => {
@@ -37,17 +35,11 @@ function Header({ selectedGenre, setSelectedGenre }: GenreProps) {
 
 	return (
 		<>
-			<HeaderStyled>
+			<HeaderStyled isFilmPage={location.pathname === "/films"}>
 				<LogoStyled>
 					<TitleStyled>showflix</TitleStyled>
 				</LogoStyled>
 				{showButton()}
-				{location.pathname === "/films" ? (
-					<Select
-						selectedGenre={selectedGenre}
-						setSelectedGenre={setSelectedGenre}
-					/>
-				) : null}
 			</HeaderStyled>
 		</>
 	);

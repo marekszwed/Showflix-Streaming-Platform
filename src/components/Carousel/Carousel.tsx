@@ -2,10 +2,20 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Pagination } from "swiper/modules";
 import { CarouselBox } from "./Carousel.Styled";
 import Card from "../Card/Card";
-import image from "/the-dark-knight.jpg";
 import "swiper/css";
 
-function Carousel() {
+interface Film {
+	id: number;
+	title: string;
+	poster_path: string;
+	overview: string;
+}
+
+interface CarouselProps {
+	films: Film[];
+}
+
+function Carousel({ films }: CarouselProps) {
 	return (
 		<CarouselBox>
 			<Swiper
@@ -17,62 +27,17 @@ function Carousel() {
 				modules={[FreeMode, Pagination]}
 				className="mySwiper"
 			>
-				<SwiperSlide>
-					<Card
-						$filmImage={image}
-						text="Batman"
-						description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure, libero."
-						type="button"
-					></Card>
-				</SwiperSlide>
-				<SwiperSlide>
-					<Card
-						$filmImage={image}
-						text="Batman"
-						description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure, libero."
-						type="button"
-					></Card>
-				</SwiperSlide>
-				<SwiperSlide>
-					<Card
-						$filmImage={image}
-						text="Batman"
-						description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure, libero."
-						type="button"
-					></Card>
-				</SwiperSlide>
-				<SwiperSlide>
-					<Card
-						$filmImage={image}
-						text="Batman"
-						description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure, libero."
-						type="button"
-					></Card>
-				</SwiperSlide>
-				<SwiperSlide>
-					<Card
-						$filmImage={image}
-						text="Batman"
-						description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure, libero."
-						type="button"
-					></Card>
-				</SwiperSlide>
-				<SwiperSlide>
-					<Card
-						$filmImage={image}
-						text="Batman"
-						description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure, libero."
-						type="button"
-					></Card>
-				</SwiperSlide>
-				<SwiperSlide>
-					<Card
-						$filmImage={image}
-						text="Batman"
-						description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure, libero."
-						type="button"
-					></Card>
-				</SwiperSlide>
+				{films.map((film) => (
+					<SwiperSlide key={film.id}>
+						<Card
+							id={film.id.toString()}
+							$filmImage={`https://image.tmdb.org/t/p/w500${film.poster_path}`}
+							text={film.title}
+							description={film.overview}
+							type="button"
+						></Card>
+					</SwiperSlide>
+				))}
 			</Swiper>
 		</CarouselBox>
 	);
