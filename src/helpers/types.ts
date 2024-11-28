@@ -3,10 +3,10 @@ export interface Theme {
 		pureWhite: string;
 		PrimaryRed: string;
 		btnHover: string;
-		formBackground: string;
-		headerBackground: string;
-		shadowBackground: string;
-		cardTitle: string;
+		brighterDark: string;
+		mediumDark: string;
+		almostDark: string;
+		dirtyYellow: string;
 		filmSelect: string;
 		error: string;
 	};
@@ -18,6 +18,7 @@ export interface Theme {
 		header: string;
 	};
 	fontWeight: {
+		normal: string;
 		bold: string;
 	};
 	zindex: {
@@ -27,7 +28,7 @@ export interface Theme {
 		positivePlus: string;
 		positiveMax: string;
 		notification: string;
-		costam: string;
+		maxIndex: string;
 	};
 }
 

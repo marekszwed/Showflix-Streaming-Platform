@@ -15,11 +15,15 @@ interface CarouselProps {
 	films: Film[];
 }
 
+const constructFilmImage = (poster_path: string) => {
+	return `https://image.tmdb.org/t/p/w500${poster_path}`;
+};
+
 function Carousel({ films }: CarouselProps) {
 	return (
 		<CarouselBox>
 			<Swiper
-				slidesPerView={4}
+				slidesPerView={6}
 				spaceBetween={0}
 				pagination={{
 					clickable: true,
@@ -27,15 +31,15 @@ function Carousel({ films }: CarouselProps) {
 				modules={[FreeMode, Pagination]}
 				className="mySwiper"
 			>
-				{films.map((film) => (
-					<SwiperSlide key={film.id}>
+				{films.map(({ id, title, poster_path, overview }) => (
+					<SwiperSlide key={id}>
 						<Card
-							id={film.id.toString()}
-							$filmImage={`https://image.tmdb.org/t/p/w500${film.poster_path}`}
-							text={film.title}
-							description={film.overview}
+							id={id.toString()}
+							filmImage={constructFilmImage(poster_path)}
+							text={title}
+							description={overview}
 							type="button"
-						></Card>
+						/>
 					</SwiperSlide>
 				))}
 			</Swiper>

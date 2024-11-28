@@ -5,10 +5,13 @@ export const theme: Theme = {
 		pureWhite: "#ffffffe4",
 		PrimaryRed: "#c11119",
 		btnHover: "#a51017",
-		formBackground: "#000000a2",
-		headerBackground: "#00000084",
-		shadowBackground: "#000000d9",
-		cardTitle: "#f8d123",
+		brighterDark: "#000000a2",
+		// formBackground
+		mediumDark: "#00000084",
+		// headerBackground
+		almostDark: "#000000d9",
+		// shadowBackground
+		dirtyYellow: "#f8d123",
 		filmSelect: "#302f2f",
 		error: "#ff0000",
 	},
@@ -20,6 +23,7 @@ export const theme: Theme = {
 		header: "4rem",
 	},
 	fontWeight: {
+		normal: "400",
 		bold: "800",
 	},
 	zindex: {
@@ -29,6 +33,6 @@ export const theme: Theme = {
 		positivePlus: "2",
 		positiveMax: "3",
 		notification: "4",
-		costam: "5",
+		maxIndex: "5",
 	},
 };

@@ -9,7 +9,7 @@ export const Form = styled.form`
 	max-width: 450px;
 	height: auto;
 	border-radius: 10px;
-	background-color: ${(props) => props.theme.colors.formBackground};
+	background-color: ${(props) => props.theme.colors.brighterDark};
 	overflow: hidden;
 `;
 
@@ -21,7 +21,7 @@ export const StyledFieldset = styled.fieldset`
 export const StyledLegend = styled.legend`
 	font-size: ${(props) => props.theme.fontSize.big};
 	font-family: Helvetica, sans-serif;
-	font-weight: ${(props) => props.theme.fontWeight.bold};
+	font-weight: ${({ theme }) => theme.fontWeight.bold};
 	color: ${(props) => props.theme.colors.pureWhite};
 	padding-left: 0.5em;
 	margin-bottom: 1em;

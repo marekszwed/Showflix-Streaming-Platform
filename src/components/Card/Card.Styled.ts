@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-export const Card = styled.div<{ $filmImage?: string }>`
+export const Card = styled.div<{ filmImage?: string }>`
 	position: relative;
 	display: flex;
-	max-width: 220px;
-	height: 300px;
+	max-width: 280px;
+	height: 400px;
 	background-position: center;
 	background-size: cover;
-	background-image: url(${(props) => props.$filmImage});
+	background-image: url(${({ filmImage }) => filmImage});
 	border-radius: 10px;
 	overflow: hidden;
 `;
@@ -35,17 +35,17 @@ export const Text = styled.div<{ isActive?: boolean }>`
 	right: 0;
 	bottom: 0;
 	padding: 6.5em 2em;
-	background-color: ${(props) => props.theme.colors.shadowBackground};
+	background-color: ${(props) => props.theme.colors.almostDark};
 	color: ${(props) => props.theme.colors.pureWhite};
 	clip-path: ${({ isActive }) =>
 		isActive ? "circle(120% at 50% 90%)" : "circle(0 at 50% 90%);"};
 	transition: clip-path 0.6s;
 `;
+
 export const Title = styled.h3`
-	/* text-align: center; */
 	font-size: ${(props) => props.theme.fontSize.bigger};
-	font-weight: bold;
-	color: ${(props) => props.theme.colors.cardTitle};
+	font-weight: ${({ theme }) => theme.fontWeight.bold};
+	color: ${(props) => props.theme.colors.dirtyYellow};
 `;
 
 export const Description = styled.p`

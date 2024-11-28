@@ -12,7 +12,7 @@ export const SelectBox = styled.div`
 export const Label = styled.label`
 	font-size: ${(props) => props.theme.fontSize.bigger};
 	color: ${(props) => props.theme.colors.pureWhite};
-	font-weight: 700;
+	font-weight: ${({theme}) => theme.fontWeight.bold};
 	padding-left: 0.5em;
 `;
 
