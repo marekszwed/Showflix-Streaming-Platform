@@ -16,14 +16,6 @@ const genres: Genres[] = [
 	{ id: "10752", text: "Wojenny" },
 ];
 
-const checkGenre = (
-	e: React.ChangeEvent<HTMLSelectElement>,
-	setSelectedGenre: { (genres: string[]): void }
-) => {
-	const options = [e.target.value];
-	setSelectedGenre(options);
-};
-
 function FilmsSearch({ selectedGenre, setSelectedGenre }: GenreProps) {
 	return (
 		<S.SelectBox>
@@ -31,9 +23,7 @@ function FilmsSearch({ selectedGenre, setSelectedGenre }: GenreProps) {
 			<S.Select
 				id="species"
 				value={selectedGenre}
-				onChange={(e) => {
-					checkGenre(e, setSelectedGenre);
-				}}
+				onChange={(e) => setSelectedGenre([e.target.value])}
 			>
 				{genres.map(({ id, text }) => (
 					<S.Option value={id}>{text}</S.Option>
@@ -42,4 +32,5 @@ function FilmsSearch({ selectedGenre, setSelectedGenre }: GenreProps) {
 		</S.SelectBox>
 	);
 }
+
 export default FilmsSearch;

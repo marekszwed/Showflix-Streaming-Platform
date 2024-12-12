@@ -26,7 +26,7 @@ function Card({
 	};
 
 	return (
-		<S.Card id={id} filmImage={filmImage || imageFallback}>
+		<S.Card id={id} $filmImage={filmImage || imageFallback}>
 			<S.Button onClick={handleClick} type={type}>
 				<FontAwesomeIcon icon={faCircleQuestion} />
 			</S.Button>

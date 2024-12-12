@@ -5,7 +5,7 @@ import Card from "../Card/Card";
 import "swiper/css";
 
 interface Film {
-	id: number;
+	id: string;
 	title: string;
 	poster_path: string;
 	overview: string;
@@ -34,7 +34,7 @@ function Carousel({ films }: CarouselProps) {
 				{films.map(({ id, title, poster_path, overview }) => (
 					<SwiperSlide key={id}>
 						<Card
-							id={id.toString()}
+							id={id}
 							filmImage={constructFilmImage(poster_path)}
 							text={title}
 							description={overview}

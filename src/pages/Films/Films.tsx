@@ -4,13 +4,14 @@ import Carousel from "../../components/Carousel/Carousel";
 import FilmsSearch from "../../components/FilmsSearch/FilmsSearch";
 import Toast from "../../components/Toast/Toast";
 import FilmsHeroContainer from "../../components/FilmsHeroImage/FilmsHeroImage";
+import Button from "../../components/Button/Button";
 
 function FilmsPage() {
 	const [selectedGenre, setSelectedGenre] = useState(["Popular"]);
 	const [fetchedFilms, setFetchedFilms] = useState([]);
 	const [heroImage, setHeroImage] = useState<{
-		backdrop_path: string;
-		original_title: string;
+		backdropPath: string;
+		originalTitle: string;
 		overview: string;
 	} | null>(null);
 
@@ -32,22 +33,16 @@ function FilmsPage() {
 				Toast.error("A problem has been encountered");
 			} else {
 				setFetchedFilms(data.results.slice(1, 20));
-				setHeroImage(
-					{
-						backdrop_path: data.results[0]?.backdrop_path,
-						original_title: data.results[0]?.original_title,
-						overview: data.results[0]?.overview,
-					}
-					// `https://image.tmdb.org/t/p/original${data.results[0]?.backdrop_path}`
-					// data.results[0]
-				);
+				setHeroImage({
+					backdropPath: data.results[0]?.backdrop_path,
+					originalTitle: data.results[0]?.original_title,
+					overview: data.results[0]?.overview,
+				});
 			}
 		} catch {
 			Toast.warning("No connection to the server");
 		}
 	}
-
-	console.log();
 
 	useEffect(() => {
 		fetchData();
@@ -61,12 +56,18 @@ function FilmsPage() {
 					alt="Page background composed of a poster of the most recent movie"
 				/>
 			)}
-
 			<FilmsSearch
 				selectedGenre={selectedGenre}
 				setSelectedGenre={setSelectedGenre}
 			/>
 			<Carousel films={fetchedFilms} />
+			<Button
+				id={"#"}
+				href="/AddFilm"
+				text={"Dodaj film"}
+				width="10em"
+				margin="0 0 3em 0"
+			/>
 		</S.Films>
 	);
 }

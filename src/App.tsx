@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import FilmsPage from "./pages/Films/Films";
 import { Bounce, ToastContainer } from "react-toastify";
+import AddFilm from "./pages/CreateFilm/CreateFilm";
 
 function App() {
 	return (
@@ -16,6 +17,7 @@ function App() {
 					<Route index path="/" element={<HomePage />} />
 					<Route path="/login" element={<LoginPage />} />
 					<Route path="/films" element={<FilmsPage />} />
+					<Route path="/AddFilm" element={<AddFilm />} />
 				</Routes>
 				<ToastContainer
 					position="top-center"

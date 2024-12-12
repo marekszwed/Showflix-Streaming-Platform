@@ -12,7 +12,7 @@ export const HeaderStyled = styled.header<{
 	padding: 2em 5em 2em 0;
 	background-color: ${(props) =>
 		props.isFilmPage ? props.theme.colors.mediumDark : "transparent"};
-	z-index: ${(props) => props.theme.zindex.positivePlus};
+	z-index: ${({ theme }) => theme.zindex.positivePlus};
 `;
 
 export const LogoStyled = styled.h1`
@@ -21,8 +21,8 @@ export const LogoStyled = styled.h1`
 `;
 
 export const TitleStyled = styled.div`
-	font-size: ${(props) => props.theme.fontSize.header};
+	font-size: ${({ theme }) => theme.fontSize.header};
 	text-transform: uppercase;
 	font-weight: ${({ theme }) => theme.fontWeight.bold};
-	color: ${(props) => props.theme.colors.pureWhite};
+	color: ${({ theme }) => theme.colors.pureWhite};
 `;

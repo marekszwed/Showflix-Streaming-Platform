@@ -1,9 +1,11 @@
+import { constructURL } from "../../helpers/constructURL";
+import Toast from "../Toast/Toast";
 import * as S from "./FilmsHeroImage.Styled";
 
 interface BackgroundProps {
 	heroImage: {
-		backdrop_path: string;
-		original_title: string;
+		backdropPath: string;
+		originalTitle: string;
 		overview: string;
 	};
 	alt: string;
@@ -11,17 +13,18 @@ interface BackgroundProps {
 
 function FilmsHeroContainer({ heroImage, alt }: BackgroundProps) {
 	if (!heroImage) {
+		Toast.warning("Incorrect connection to the server");
 		return null;
 	}
-	const { backdrop_path, original_title, overview } = heroImage;
+	const { backdropPath, originalTitle, overview } = heroImage;
 	return (
 		<S.FilmsHeroContainer>
 			<S.FilmsHeroImage
-				src={`https://image.tmdb.org/t/p/original${backdrop_path}`}
+				src={constructURL(backdropPath)}
 				alt={alt}
 			/>
 			<S.HeroInfoContainer>
-				<S.Title>{original_title}</S.Title>
+				<S.Title>{originalTitle}</S.Title>
 				<S.Description>{overview}</S.Description>
 			</S.HeroInfoContainer>
 		</S.FilmsHeroContainer>

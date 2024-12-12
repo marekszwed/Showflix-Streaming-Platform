@@ -4,6 +4,7 @@ import { PageBackground } from "../../helpers/mixins";
 export const FilmsHeroContainer = styled.div`
 	${PageBackground}
 	flex-direction: column;
+	height: 100svh;
 `;
 
 export const FilmsHeroImage = styled.img<{ src: string }>`
@@ -30,7 +31,7 @@ export const HeroInfoContainer = styled.div`
 export const Title = styled.h1`
 	display: flex;
 	font-size: ${({ theme }) => theme.fontSize.big};
-	color: yellow;
+	color: ${({ theme }) => theme.colors.dirtyYellow};
 	text-transform: uppercase;
 	font-weight: ${({ theme }) => theme.fontWeight.bold};
 	z-index: ${({ theme }) => theme.zindex.positiveMax};

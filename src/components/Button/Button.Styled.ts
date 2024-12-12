@@ -13,12 +13,12 @@ export const StyledButton = styled.button<{
 	border: none;
 	border-radius: 10px;
 	padding: 0.7em;
-	color: ${(props) => props.theme.colors.pureWhite};
-	background-color: ${(props) => props.color || props.theme.colors.PrimaryRed};
+	color: ${({ theme }) => theme.colors.pureWhite};
+	background-color: ${({ theme }) => theme.color || theme.colors.PrimaryRed};
 	cursor: pointer;
 
 	&:hover,
 	&:focus {
-		background-color: ${(props) => props.theme.colors.btnHover};
+		background-color: ${({ theme }) => theme.colors.btnHover};
 	}
 `;
