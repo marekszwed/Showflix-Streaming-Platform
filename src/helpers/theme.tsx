@@ -2,17 +2,14 @@ import { Theme } from "./types";
 
 export const theme: Theme = {
 	colors: {
-		pureWhite: "#ffffffe4",
-		PrimaryRed: "#c11119",
-		btnHover: "#a51017",
-		brighterDark: "#000000a2",
-		// formBackground
-		mediumDark: "#00000084",
-		// headerBackground
-		almostDark: "#000000d9",
-		// shadowBackground
-		dirtyYellow: "#f8d123",
-		filmSelect: "#302f2f",
+		white100: "#ffffffe4",
+		red: "#c11119",
+		red100: "#a51017",
+		dark: "#000000d9",
+		dark200: "#000000a2",
+		dark400: "#00000084",
+		yellow: "#f8d123",
+		grey: "#302f2f",
 		error: "#ff0000",
 	},
 	fontSize: {

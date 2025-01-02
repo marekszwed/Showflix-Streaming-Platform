@@ -31,7 +31,7 @@ export const HeroInfoContainer = styled.div`
 export const Title = styled.h1`
 	display: flex;
 	font-size: ${({ theme }) => theme.fontSize.big};
-	color: ${({ theme }) => theme.colors.dirtyYellow};
+	color: ${({ theme }) => theme.colors.yellow};
 	text-transform: uppercase;
 	font-weight: ${({ theme }) => theme.fontWeight.bold};
 	z-index: ${({ theme }) => theme.zindex.positiveMax};
@@ -40,6 +40,6 @@ export const Title = styled.h1`
 export const Description = styled.p`
 	display: flex;
 	font-size: ${({ theme }) => theme.fontSize.normal};
-	color: ${({ theme }) => theme.colors.pureWhite};
+	color: ${({ theme }) => theme.colors.white100};
 	line-height: 1.6em;
 `;

@@ -1,8 +1,8 @@
-import { StyledError } from "./Form.Styled";
+import { StyledError } from "./InputError.Styled";
 
 interface ErrorProps {
 	text?: string;
-	error: boolean;
+	error?: boolean;
 }
 
 function InputError({ text, error }: ErrorProps): JSX.Element {

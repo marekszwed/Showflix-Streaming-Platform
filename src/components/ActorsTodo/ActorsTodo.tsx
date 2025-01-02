@@ -1,37 +1,16 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import * as S from "./ActorsTodo.Styled";
 import { useState } from "react";
-
-interface TypesForActors {
-	id: number;
-	name: string;
-}
+import useFormAndTodo from "../../store/useFormAndTodo";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 function ActorsTodo() {
-	const [actorsList, setActorsList] = useState<TypesForActors[]>([]);
+	const { actorsList, addActor, deleteActor, clearAll } = useFormAndTodo();
 	const [newActor, setNewActor] = useState("");
 
-	const addActor = () => {
-		if (newActor.trim() !== "") {
-			const actorsObject = {
-				id: Date.now(),
-				name: newActor,
-			};
-
-			setActorsList([...actorsList, actorsObject]);
-			setNewActor("");
-
-			console.log(actorsList);
-		}
-	};
-
-	const deleteActor = (id: number) => {
-		setActorsList(actorsList.filter((item) => item.id !== id));
-	};
-
-	const clearAll = () => {
-		setActorsList([]);
+	const handleAddActor = () => {
+		addActor(newActor);
+		setNewActor("");
 	};
 
 	return (
@@ -44,23 +23,27 @@ function ActorsTodo() {
 					placeholder="Dodaj aktora"
 				/>
 				<S.ButtonContainer>
-					<S.AddBtn onClick={addActor}>Dodaj</S.AddBtn>
-					<S.ClearBtn onClick={clearAll}>Usuń</S.ClearBtn>
+					<S.AddBtn onClick={handleAddActor} disabled={newActor.trim() === ""}>
+						Dodaj
+					</S.AddBtn>
+					<S.ClearBtn onClick={clearAll} disabled={actorsList.length === 0}>
+						Usuń
+					</S.ClearBtn>
 				</S.ButtonContainer>
 			</S.InputField>
 			<S.ActorsContainer>
-				<S.Ul>
+				<S.List>
 					{actorsList.map((item) => (
-						<S.Li key={item.id}>
+						<S.ListItem key={item.id}>
 							{item.name}
 							<S.ButtonsPanel>
 								<S.Button onClick={() => deleteActor(item.id)}>
 									<FontAwesomeIcon icon={faTrash} />
 								</S.Button>
 							</S.ButtonsPanel>
-						</S.Li>
+						</S.ListItem>
 					))}
-				</S.Ul>
+				</S.List>
 			</S.ActorsContainer>
 		</S.Todo>
 	);

@@ -8,6 +8,7 @@ interface Props {
 	width?: string;
 	margin?: string;
 	href?: string;
+	onClick?: () => void;
 }
 
 function Button({ id, href, type, text, width, margin }: Props) {

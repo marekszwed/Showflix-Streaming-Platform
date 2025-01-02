@@ -19,10 +19,7 @@ function FilmsHeroContainer({ heroImage, alt }: BackgroundProps) {
 	const { backdropPath, originalTitle, overview } = heroImage;
 	return (
 		<S.FilmsHeroContainer>
-			<S.FilmsHeroImage
-				src={constructURL(backdropPath)}
-				alt={alt}
-			/>
+			<S.FilmsHeroImage src={constructURL(backdropPath)} alt={alt} />
 			<S.HeroInfoContainer>
 				<S.Title>{originalTitle}</S.Title>
 				<S.Description>{overview}</S.Description>

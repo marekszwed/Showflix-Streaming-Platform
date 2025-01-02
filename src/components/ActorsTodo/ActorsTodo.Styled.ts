@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { BlankButton, Pointer } from "../../helpers/mixins";
 
 export const Todo = styled.div`
 	position: relative;
@@ -40,10 +41,10 @@ export const AddBtn = styled.button`
 	font-weight: ${({ theme }) => theme.fontWeight.bold};
 	border-radius: 10px;
 	border: none;
-	cursor: pointer;
+	${Pointer}
 `;
 export const ClearBtn = styled(AddBtn)`
-	color: ${({ theme }) => theme.colors.PrimaryRed};
+	color: ${({ theme }) => theme.colors.red};
 `;
 export const ActorsContainer = styled.div`
 	display: flex;
@@ -52,29 +53,28 @@ export const ActorsContainer = styled.div`
 	width: 100%;
 `;
 
-export const Ul = styled.ul`
+export const List = styled.ul`
 	list-style: none;
 	width: 100%;
 `;
 export const ButtonsPanel = styled.div``;
 
-export const Li = styled.li`
+export const ListItem = styled.li`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 1em;
 	padding-left: 0.5em;
 	font-size: ${({ theme }) => theme.fontSize.normal};
-	background-color: ${({ theme }) => theme.colors.PureWhite};
+	background-color: ${({ theme }) => theme.colors.white100};
 	border-radius: 10px;
 `;
 
 export const Button = styled.button`
+	${Pointer}
+	${BlankButton}
 	padding: 0.4em;
 	margin-inline: 0.3em;
-	border: none;
 	border-radius: 10px;
-	background-color: transparent;
-	cursor: pointer;
 	transition: scale 0.3s;
 `;

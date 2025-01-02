@@ -1,9 +1,10 @@
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import Button from "../Button/Button";
 import * as S from "./HookForm.Styled";
 import { FormTypes } from "../../helpers/types";
+import useFormAndTodo from "../../store/useFormAndTodo";
+import Button from "../Button/Button";
 
 const userSchema = yup.object({
 	title: yup.string().required("Write a title").min(1),
@@ -19,7 +20,9 @@ const userSchema = yup.object({
 		.required("Upload an image"),
 });
 
-function HookForm() {
+function HookFormProvider() {
+	const { setFormData } = useFormAndTodo();
+
 	const {
 		register,
 		handleSubmit,
@@ -27,6 +30,7 @@ function HookForm() {
 	} = useForm<FormTypes>({ resolver: yupResolver(userSchema) });
 
 	const onSubmit = (data: FormTypes) => {
+		setFormData(data);
 		console.log(data);
 	};
 
@@ -62,10 +66,55 @@ function HookForm() {
 					<S.Error>{errors.image?.message}</S.Error>
 				</S.InputContainer>
 
-				<Button id="#" type="submit" text="Dodaj do listy"></Button>
+				<Button id="#" type="submit" text="Zapisz dane"></Button>
 			</S.Fieldset>
 		</S.Form>
 	);
+	// return (
+	// 	<FormProvider {...methods}>
+	// 		<S.Form onSubmit={methods.handleSubmit(onSubmit)}>
+	// 			<S.Fieldset>
+	// 				<S.InputContainer>
+	// 					<S.Label htmlFor="title">Tytuł filmu</S.Label>
+	// 					<S.Input
+	// 						{...methods.register("title")}
+	// 						placeholder="Tytuł"
+	// 					></S.Input>
+	// 					<S.Error>{methods.formState.errors.title?.message}</S.Error>
+	// 				</S.InputContainer>
+	// 				<S.InputContainer>
+	// 					<S.Label htmlFor="description">Opis</S.Label>
+	// 					<S.Input
+	// 						{...methods.register("description")}
+	// 						placeholder="Opis"
+	// 					></S.Input>
+	// 					<S.Error>{methods.formState.errors.description?.message}</S.Error>
+	// 				</S.InputContainer>
+	// 				<S.InputContainer>
+	// 					<S.Label htmlFor="year">Rok</S.Label>
+	// 					<S.Input
+	// 						type="number"
+	// 						{...methods.register("year")}
+	// 						placeholder="Rok"
+	// 					></S.Input>
+	// 					<S.Error>{methods.formState.errors.year?.message}</S.Error>
+	// 				</S.InputContainer>
+	// 				<S.InputContainer>
+	// 					<S.Label htmlFor="image">Zdjęcie</S.Label>
+	// 					<S.Input
+	// 						type="file"
+	// 						{...methods.register("image")}
+	// 						accept="image/jpeg, image.png, image/jpg"
+	// 					></S.Input>
+	// 					<S.Error>{methods.formState.errors.image?.message}</S.Error>
+	// 				</S.InputContainer>
+
+	// 				<Button id="#" type="submit" text="Zapisz dane"></Button>
+	// 			</S.Fieldset>
+	// 		</S.Form>
+	// 		{children}
+	// 	</FormProvider>
+	// );
 }
 
-export default HookForm;
+export default HookFormProvider;

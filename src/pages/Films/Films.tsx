@@ -5,8 +5,11 @@ import FilmsSearch from "../../components/FilmsSearch/FilmsSearch";
 import Toast from "../../components/Toast/Toast";
 import FilmsHeroContainer from "../../components/FilmsHeroImage/FilmsHeroImage";
 import Button from "../../components/Button/Button";
+import useFormAndTodo from "../../store/useFormAndTodo";
+import MyFilm from "../../components/MyFilm/MyFilm";
 
 function FilmsPage() {
+	const { formData, actorsList } = useFormAndTodo();
 	const [selectedGenre, setSelectedGenre] = useState(["Popular"]);
 	const [fetchedFilms, setFetchedFilms] = useState([]);
 	const [heroImage, setHeroImage] = useState<{
@@ -45,6 +48,11 @@ function FilmsPage() {
 	}
 
 	useEffect(() => {
+		console.log("Dane formularza:", formData);
+		console.log("Lista aktorów:", actorsList);
+	}, [actorsList, formData]);
+
+	useEffect(() => {
 		fetchData();
 	}, [selectedGenre]);
 
@@ -56,18 +64,33 @@ function FilmsPage() {
 					alt="Page background composed of a poster of the most recent movie"
 				/>
 			)}
+
 			<FilmsSearch
 				selectedGenre={selectedGenre}
 				setSelectedGenre={setSelectedGenre}
 			/>
 			<Carousel films={fetchedFilms} />
 			<Button
-				id={"#"}
+				id="#"
 				href="/AddFilm"
 				text={"Dodaj film"}
 				width="10em"
 				margin="0 0 3em 0"
 			/>
+			{formData
+				? (() => {
+						const { image, title, description, year } = formData;
+						const filmImage = typeof image === "string" ? image : "";
+						return (
+							<MyFilm
+								filmImage={filmImage}
+								text={title}
+								description={description}
+								year={year}
+							></MyFilm>
+						);
+				  })()
+				: null}
 		</S.Films>
 	);
 }

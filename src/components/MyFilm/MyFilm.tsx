@@ -1,17 +1,10 @@
-import * as S from "./Card.Styled";
+import { useState } from "react";
+import * as S from "./MyFilm.Styled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleQuestion } from "@fortawesome/free-regular-svg-icons";
-import { useState } from "react";
-import imageFallback from "/card-grey-background.jpg";
 import { CardProps } from "../../helpers/types";
 
-function Card({
-	id,
-	filmImage,
-	text,
-	description,
-	type,
-}: CardProps): JSX.Element {
+function MyFilm({ filmImage, type, text, description, year }: CardProps) {
 	const [isActive, setIsActive] = useState(false);
 
 	const handleClick = () => {
@@ -19,16 +12,17 @@ function Card({
 	};
 
 	return (
-		<S.Card id={id} $filmImage={filmImage || imageFallback}>
+		<S.MyFilmContainer $MyFilmImage={filmImage}>
 			<S.Button onClick={handleClick} type={type}>
 				<FontAwesomeIcon icon={faCircleQuestion} />
 			</S.Button>
-			<S.Text $isActive={isActive}>
+			<S.MyFilmTextContainer $isActive={isActive}>
 				<S.Title>{text}</S.Title>
+				<S.Year>{year}</S.Year>
 				<S.Description>{description}</S.Description>
-			</S.Text>
-		</S.Card>
+			</S.MyFilmTextContainer>
+		</S.MyFilmContainer>
 	);
 }
 
-export default Card;
+export default MyFilm;

@@ -11,7 +11,7 @@ export const HeaderStyled = styled.header<{
 	width: 100%;
 	padding: 2em 5em 2em 0;
 	background-color: ${(props) =>
-		props.isFilmPage ? props.theme.colors.mediumDark : "transparent"};
+		props.isFilmPage ? props.theme.colors.dark400 : "transparent"};
 	z-index: ${({ theme }) => theme.zindex.positivePlus};
 `;
 
@@ -24,5 +24,5 @@ export const TitleStyled = styled.div`
 	font-size: ${({ theme }) => theme.fontSize.header};
 	text-transform: uppercase;
 	font-weight: ${({ theme }) => theme.fontWeight.bold};
-	color: ${({ theme }) => theme.colors.pureWhite};
+	color: ${({ theme }) => theme.colors.white100};
 `;

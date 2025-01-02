@@ -1,13 +1,13 @@
 export interface Theme {
 	colors: {
-		pureWhite: string;
-		PrimaryRed: string;
-		btnHover: string;
-		brighterDark: string;
-		mediumDark: string;
-		almostDark: string;
-		dirtyYellow: string;
-		filmSelect: string;
+		white100: string;
+		red: string;
+		red100: string;
+		dark: string;
+		dark200: string;
+		dark400: string;
+		yellow: string;
+		grey: string;
 		error: string;
 	};
 	fontSize: {
@@ -41,5 +41,16 @@ export interface FormTypes {
 	title: string;
 	year?: number;
 	description: string;
-	image: FileList;
+	image: FileList | string | null;
 }
+
+export interface CardProps {
+	id?: string;
+	filmImage: string;
+	text: string;
+	year?: number;
+	description: string;
+	type?: "button";
+}
+
+

@@ -1,10 +1,5 @@
 import { styled } from "styled-components";
-import {
-	Container,
-	ErrorMixin,
-	InputMixin,
-	LabelMixin,
-} from "../../helpers/mixins";
+import { Container, InputMixin, LabelMixin } from "../../helpers/mixins";
 
 export const Form = styled.form`
 	position: relative;
@@ -15,7 +10,7 @@ export const Form = styled.form`
 	max-width: 450px;
 	height: auto;
 	border-radius: 10px;
-	background-color: ${({ theme }) => theme.colors.brighterDark};
+	background-color: ${({ theme }) => theme.colors.dark200};
 	overflow: hidden;
 `;
 
@@ -28,7 +23,7 @@ export const StyledLegend = styled.legend`
 	font-size: ${({ theme }) => theme.fontSize.big};
 	font-family: Helvetica, sans-serif;
 	font-weight: ${({ theme }) => theme.fontWeight.bold};
-	color: ${({ theme }) => theme.colors.pureWhite};
+	color: ${({ theme }) => theme.colors.white100};
 	padding-left: 0.5em;
 	margin-bottom: 1em;
 `;
@@ -44,9 +39,4 @@ export const StyledLabel = styled.label`
 export const StyledInput = styled.input`
 	${InputMixin}
 	padding: 0.5em 1em;
-`;
-
-export const StyledError = styled.p<{ $error?: boolean }>`
-	${ErrorMixin}
-	padding: 0.5em 0 0 1.7em;
 `;
