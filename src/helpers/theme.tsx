@@ -1,6 +1,4 @@
-import { Theme } from "./types";
-
-export const theme: Theme = {
+export const theme = {
 	colors: {
 		white100: "#ffffffe4",
 		red: "#c11119",
@@ -32,4 +30,4 @@ export const theme: Theme = {
 		notification: "4",
 		maxIndex: "5",
 	},
-};
+} as const;

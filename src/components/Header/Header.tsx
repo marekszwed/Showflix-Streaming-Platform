@@ -19,7 +19,7 @@ function Header() {
 			);
 		} else if (
 			location.pathname === "/films" ||
-			location.pathname === "/AddFilm"
+			location.pathname === "/films/new"
 		) {
 			return (
 				<Button

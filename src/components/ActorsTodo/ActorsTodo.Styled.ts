@@ -1,12 +1,20 @@
 import styled from "styled-components";
 import { BlankButton, Pointer } from "../../helpers/mixins";
 
+export const TodoContainer = styled.div`
+	position: relative;
+	display: flex;
+	align-items: flex-start;
+	height: 100svh;
+`;
+
 export const Todo = styled.div`
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	align-self: center;
+	padding-top: 18em;
 	max-width: 300px;
+	max-height: 600px;
 `;
 
 export const InputForActor = styled.input`
