@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { StyledButton } from "./Button.Styled";
 
 interface Props {
-	id: string;
+	id?: string;
 	type?: "submit" | "button" | "reset";
 	text: string;
 	width?: string;

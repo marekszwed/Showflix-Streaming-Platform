@@ -33,13 +33,6 @@ export const InputMixin = css`
 	}
 `;
 
-export const ErrorMixin = css`
-	display: ${(error) => (error ? "flex" : "none")};
-	text-transform: uppercase;
-	color: ${({ theme }) => theme.colors.error};
-	font-size: ${({ theme }) => theme.fontSize.small};
-`;
-
 export const Container = css`
 	position: relative;
 	display: flex;
@@ -96,4 +89,4 @@ export const CardDescription = css`
 export const BlankButton = css`
 	background-color: transparent;
 	border: none;
-`
+`;

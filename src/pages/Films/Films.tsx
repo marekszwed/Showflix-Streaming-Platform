@@ -71,26 +71,19 @@ function FilmsPage() {
 			/>
 			<Carousel films={fetchedFilms} />
 			<Button
-				id="#"
-				href="/AddFilm"
+				href="/films/new"
 				text={"Dodaj film"}
 				width="10em"
 				margin="0 0 3em 0"
 			/>
-			{formData
-				? (() => {
-						const { image, title, description, year } = formData;
-						const filmImage = typeof image === "string" ? image : "";
-						return (
-							<MyFilm
-								filmImage={filmImage}
-								text={title}
-								description={description}
-								year={year}
-							></MyFilm>
-						);
-				  })()
-				: null}
+			{formData && (
+				<MyFilm
+					filmImage={typeof formData.image === "string" ? formData.image : ""}
+					text={formData.title}
+					description={formData.description}
+					year={formData.year}
+				></MyFilm>
+			)}
 		</S.Films>
 	);
 }

@@ -1,7 +1,6 @@
-// import { useNavigate } from "react-router-dom";
 import ActorsTodo from "../../components/ActorsTodo/ActorsTodo";
 import Button from "../../components/Button/Button";
-import HookForm from "../../components/HookForm/HookForm";
+import CreateFilmForm from "../../components/CreateFilmForm/CreateFilmForm";
 import * as S from "./AddFilm.Styled";
 import useFormAndTodo from "../../store/useFormAndTodo";
 
@@ -23,17 +22,11 @@ function AddFilm() {
 	};
 	return (
 		<S.AddFilm>
-			<HookForm />
+			<CreateFilmForm />
 			<ActorsTodo />
-			<Button
-				id={"#"}
-				type="submit"
-				href="/films"
-				onClick={handleAddToList}
-				text={"Dodaj do listy"}
-				width="10em"
-				margin="0 10em 0 0"
-			></Button>
+			<S.ButtonContainer>
+				<Button href="/films" onClick={handleAddToList} text="Dodaj do listy" />
+			</S.ButtonContainer>
 		</S.AddFilm>
 	);
 }
