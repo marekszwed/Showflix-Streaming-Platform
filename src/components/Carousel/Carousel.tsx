@@ -38,7 +38,7 @@ function Carousel({ films }: CarouselProps) {
 							filmImage={constructFilmImage(poster_path)}
 							text={title}
 							description={overview}
-							type="button"
+							
 						/>
 					</SwiperSlide>
 				))}
