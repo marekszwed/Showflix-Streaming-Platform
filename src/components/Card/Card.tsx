@@ -5,13 +5,7 @@ import { useState } from "react";
 import imageFallback from "/card-grey-background.jpg";
 import { CardProps } from "../../helpers/types";
 
-function Card({
-	id,
-	filmImage,
-	text,
-	description,
-	type,
-}: CardProps): JSX.Element {
+function Card({ id, filmImage, text, description }: CardProps): JSX.Element {
 	const [isActive, setIsActive] = useState(false);
 
 	const handleClick = () => {
@@ -20,7 +14,7 @@ function Card({
 
 	return (
 		<S.Card id={id} $filmImage={filmImage || imageFallback}>
-			<S.Button onClick={handleClick} type={type}>
+			<S.Button onClick={handleClick}>
 				<FontAwesomeIcon icon={faCircleQuestion} />
 			</S.Button>
 			<S.Text $isActive={isActive}>

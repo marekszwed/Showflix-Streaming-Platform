@@ -19,7 +19,7 @@ function App() {
 						<Route index path="/" element={<HomePage />} />
 						<Route path="/login" element={<LoginPage />} />
 						<Route path="/films" element={<FilmsPage />} />
-						<Route path="/addfilm" element={<AddFilm />} />
+						<Route path="/films/new" element={<AddFilm />} />
 					</Routes>
 					<ToastContainer
 						position="top-center"

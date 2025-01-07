@@ -33,11 +33,7 @@ export const FormAndTodoProvider = ({ children }: { children: ReactNode }) => {
 	};
 
 	const addActor = (name: string) => {
-		if (name.trim() !== "") {
-			setActorsList([...actorsList, { id: Date.now(), name }]);
-		} else {
-			console.warn("Actor name cannot be empty");
-		}
+		setActorsList([...actorsList, { id: Date.now(), name }]);
 	};
 
 	const deleteActor = (id: number) => {

@@ -4,10 +4,9 @@ import {
 	CardDescription,
 	CardTextAnimation,
 	CardTitle,
-	Pointer,
 } from "../../helpers/mixins";
 
-export const MyFilmContainer = styled.div<{ $MyFilmImage?: string }>`
+export const MyFilmContainer = styled.div<{ $myFilmImage?: string }>`
 	position: relative;
 	display: flex;
 	align-self: start;
@@ -16,20 +15,19 @@ export const MyFilmContainer = styled.div<{ $MyFilmImage?: string }>`
 	margin: 0 0 3em 3em;
 	background-position: center;
 	background-size: cover;
-	background-image: url(${({ $MyFilmImage }) => $MyFilmImage});
+	background-image: url(${({ $myFilmImage }) => $myFilmImage});
 	border-radius: 10px;
 	overflow: hidden;
 `;
 
 export const Button = styled.button`
 	${CardButton}
-	${Pointer}
 `;
 
-export const MyFilmTextContainer = styled.div<{ $isActive?: boolean }>`
+export const MyFilmTextContainer = styled.div<{ $isAnimate?: boolean }>`
 	${CardTextAnimation}
-	clip-path: ${({ $isActive }) =>
-		$isActive ? "circle(120% at 50% 90%)" : "circle(0 at 50% 90%);"};
+	clip-path: ${({ $isAnimate }) =>
+		$isAnimate ? "circle(120% at 50% 90%)" : "circle(0 at 50% 90%);"};
 `;
 
 export const Title = styled.h3`
