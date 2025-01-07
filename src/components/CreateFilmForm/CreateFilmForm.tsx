@@ -5,6 +5,7 @@ import * as S from "./CreateFilmForm.Styled";
 import { FormTypes } from "../../helpers/types";
 import useFormAndTodo from "../../store/useFormAndTodo";
 import Button from "../Button/Button";
+import InputError from "../InputError/InputError";
 
 const userSchema = yup.object({
 	title: yup.string().required("Write a title").min(1),
@@ -40,12 +41,12 @@ function CreateFilmForm() {
 				<S.InputContainer>
 					<S.Label htmlFor="title">Tytuł filmu</S.Label>
 					<S.Input {...register("title")} placeholder="Tytuł"></S.Input>
-					<S.Error>{errors.title?.message}</S.Error>
+					<InputError text={errors.title?.message} />
 				</S.InputContainer>
 				<S.InputContainer>
 					<S.Label htmlFor="description">Opis</S.Label>
 					<S.Input {...register("description")} placeholder="Opis"></S.Input>
-					<S.Error>{errors.description?.message}</S.Error>
+					<InputError text={errors.description?.message} />
 				</S.InputContainer>
 				<S.InputContainer>
 					<S.Label htmlFor="year">Rok</S.Label>
@@ -54,7 +55,7 @@ function CreateFilmForm() {
 						{...register("year")}
 						placeholder="Rok"
 					></S.Input>
-					<S.Error>{errors.year?.message}</S.Error>
+					<InputError text={errors.year?.message} />
 				</S.InputContainer>
 				<S.InputContainer>
 					<S.Label htmlFor="image">Zdjęcie</S.Label>
@@ -63,7 +64,7 @@ function CreateFilmForm() {
 						{...register("image")}
 						accept="image/jpeg, image.png, image/jpg"
 					></S.Input>
-					<S.Error>{errors.image?.message}</S.Error>
+					<InputError text={errors.image?.message} />
 				</S.InputContainer>
 				<Button type="submit" text="Zapisz dane" />
 			</S.Fieldset>

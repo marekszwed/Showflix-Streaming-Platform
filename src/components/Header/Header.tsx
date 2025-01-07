@@ -4,6 +4,7 @@ import Button from "../Button/Button";
 
 function Header() {
 	const location = useLocation();
+	const ALLOWED_PATHS = ["/films", "/films/new"];
 
 	const showButton = () => {
 		if (location.pathname === "/") {
@@ -17,10 +18,7 @@ function Header() {
 					margin="0 10em 0 0"
 				></Button>
 			);
-		} else if (
-			location.pathname === "/films" ||
-			location.pathname === "/films/new"
-		) {
+		} else if (ALLOWED_PATHS.includes(location.pathname)) {
 			return (
 				<Button
 					id="#"
