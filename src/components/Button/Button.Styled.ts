@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Pointer } from "../../helpers/mixins";
 
 export const StyledButton = styled.button<{
 	$width?: string;
@@ -13,12 +14,12 @@ export const StyledButton = styled.button<{
 	border: none;
 	border-radius: 10px;
 	padding: 0.7em;
-	color: ${(props) => props.theme.colors.pureWhite};
-	background-color: ${(props) => props.color || props.theme.colors.PrimaryRed};
-	cursor: pointer;
+	color: ${({ theme }) => theme.colors.white100};
+	background-color: ${({ theme }) => theme.color || theme.colors.red};
+	${Pointer}
 
 	&:hover,
 	&:focus {
-		background-color: ${(props) => props.theme.colors.btnHover};
+		background-color: ${({ theme }) => theme.colors.red100};
 	}
 `;

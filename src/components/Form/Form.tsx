@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as S from "./Form.Styled.ts";
 import Button from "../Button/Button.tsx";
-import InputError from "./InputError.tsx";
+import InputError from "../InputError/InputError.tsx";
 
 function LoginForm() {
 	const [password, setPassword] = useState("");

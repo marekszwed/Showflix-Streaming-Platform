@@ -1,14 +1,11 @@
 import styled from "styled-components";
 import loginImage from "/login-background.jpg";
+import { PageBackground } from "../../helpers/mixins";
 
 export const LoginPageStyled = styled.div`
-	position: relative;
-	display: flex;
+	${PageBackground}
+	height: 100svh;
 	justify-content: center;
 	align-items: center;
 	background-image: url(${loginImage});
-	background-position: center;
-	background-size: cover;
-	height: 100svh;
-	width: 100vw;
 `;

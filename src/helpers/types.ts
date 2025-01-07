@@ -1,26 +1,19 @@
-export interface Theme {
-	colors: {
-		pureWhite: string;
-		PrimaryRed: string;
-		btnHover: string;
-		formBackground: string;
-		error: string;
-	};
-	fontSize: {
-		small: string;
-		normal: string;
-		big: string;
-		header: string;
-	};
-	fontWeight: {
-		bold: string;
-	};
-	index: {
-		negative: string;
-		neutral: string;
-		positive: string;
-		positivePlus: string;
-		notification: string;
-		costam: string;
-	};
+export interface GenreProps {
+	selectedGenre: string[];
+	setSelectedGenre: (selected: string[]) => void;
+}
+
+export interface FormTypes {
+	title: string;
+	year?: number;
+	description: string;
+	image: FileList | string;
+}
+
+export interface CardProps {
+	id?: string;
+	filmImage: string;
+	text: string;
+	year?: number;
+	description: string;
 }

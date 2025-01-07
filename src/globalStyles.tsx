@@ -89,8 +89,12 @@ html {
   font-size: 62.5%;
 }
 
+button {
+  cursor: pointer;
+}
+
 `;
 
 export default GlobalStyles;
 
-// znaleźc czcionkę bezszeryfową
+
