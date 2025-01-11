@@ -1,6 +1,5 @@
 import { constructURL } from "../../helpers/constructURL";
-import Toast from "../Toast/Toast";
-import * as S from "./FilmsHeroImage.Styled";
+import * as S from "./FilmsHeroImage.styled";
 
 interface BackgroundProps {
 	heroImage: {
@@ -11,11 +10,7 @@ interface BackgroundProps {
 	alt: string;
 }
 
-function FilmsHeroContainer({ heroImage, alt }: BackgroundProps) {
-	if (!heroImage) {
-		Toast.warning("Incorrect connection to the server");
-		return null;
-	}
+function FilmsHeroImage({ heroImage, alt }: BackgroundProps) {
 	const { backdropPath, originalTitle, overview } = heroImage;
 	return (
 		<S.FilmsHeroContainer>
@@ -28,4 +23,4 @@ function FilmsHeroContainer({ heroImage, alt }: BackgroundProps) {
 	);
 }
 
-export default FilmsHeroContainer;
+export default FilmsHeroImage;

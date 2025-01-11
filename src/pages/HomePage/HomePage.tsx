@@ -1,4 +1,4 @@
-import { HomePageStyled } from "./HomePage.Styled";
+import { HomePageStyled } from "./HomePage.styled";
 
 function HomePage() {
 	return <HomePageStyled></HomePageStyled>;

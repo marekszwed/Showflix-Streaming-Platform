@@ -1,26 +1,19 @@
-import { Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
-import { theme } from "./helpers/theme";
-import Header from "./components/Header/Header";
-import HomePage from "./pages/HomePage/HomePage";
-import LoginPage from "./pages/LoginPage/LoginPage";
-import FilmsPage from "./pages/Films/Films";
+import { theme } from "./styles/theme";
+import { Header } from "./components";
 import { Bounce, ToastContainer } from "react-toastify";
-import AddFilm from "./pages/AddFilm/AddFilm";
-import { FormAndTodoProvider } from "./store/FormAndTodoContext";
+// import { FormAndTodoProvider } from "./store/FormAndTodoContext";
+import Paths from "./routes/routes";
+import { FormProvider } from "./context/FormContext/FormContext";
+import { ActorProvider } from "./context/ActorContext/ActorContext";
 
 function App() {
 	return (
-		<>
-			<FormAndTodoProvider>
+		<FormProvider>
+			<ActorProvider>
 				<ThemeProvider theme={theme}>
 					<Header />
-					<Routes>
-						<Route index path="/" element={<HomePage />} />
-						<Route path="/login" element={<LoginPage />} />
-						<Route path="/films" element={<FilmsPage />} />
-						<Route path="/films/new" element={<AddFilm />} />
-					</Routes>
+					<Paths />
 					<ToastContainer
 						position="top-center"
 						autoClose={5000}
@@ -35,8 +28,8 @@ function App() {
 						transition={Bounce}
 					/>
 				</ThemeProvider>
-			</FormAndTodoProvider>
-		</>
+			</ActorProvider>
+		</FormProvider>
 	);
 }
 

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import * as S from "./MyFilm.Styled";
+import * as S from "./MyFilm.styled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleQuestion } from "@fortawesome/free-regular-svg-icons";
 import { CardProps } from "../../helpers/types";

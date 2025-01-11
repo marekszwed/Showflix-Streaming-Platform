@@ -1,4 +1,4 @@
-import { StyledError } from "./InputError.Styled";
+import { StyledError } from "./InputError.styled";
 
 interface ErrorProps {
 	text?: string;

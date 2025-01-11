@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Pointer } from "../../helpers/mixins";
+import { Pointer } from "../../styles/mixins";
 
 export const SelectBox = styled.div`
 	position: fixed;

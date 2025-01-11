@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Pagination } from "swiper/modules";
-import { CarouselBox } from "./Carousel.Styled";
-import Card from "../Card/Card";
+import { CarouselBox } from "./Carousel.styled";
+import { Card } from "../../components";
 import "swiper/css";
 
 interface Film {
@@ -29,7 +29,6 @@ function Carousel({ films }: CarouselProps) {
 					clickable: true,
 				}}
 				modules={[FreeMode, Pagination]}
-				className="mySwiper"
 			>
 				{films.map(({ id, title, poster_path, overview }) => (
 					<SwiperSlide key={id}>
@@ -38,7 +37,6 @@ function Carousel({ films }: CarouselProps) {
 							filmImage={constructFilmImage(poster_path)}
 							text={title}
 							description={overview}
-							
 						/>
 					</SwiperSlide>
 				))}

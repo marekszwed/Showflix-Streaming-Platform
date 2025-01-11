@@ -5,7 +5,7 @@ import {
 	CardTextAnimation,
 	CardTitle,
 	Pointer,
-} from "../../helpers/mixins";
+} from "../../styles/mixins";
 
 export const Card = styled.div<{ $filmImage?: string }>`
 	position: relative;

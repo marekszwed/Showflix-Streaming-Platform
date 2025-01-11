@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import * as S from "./Form.Styled.ts";
-import Button from "../Button/Button.tsx";
-import InputError from "../InputError/InputError.tsx";
+import * as S from "./Form.styled.ts";
+import { Button, InputError } from "../../components";
 
 function LoginForm() {
 	const [password, setPassword] = useState("");
@@ -68,7 +67,6 @@ function LoginForm() {
 					<InputError text={error.password} error={!!error.password} />
 				</S.StyledDiv>
 				<Button
-					id={""}
 					type="submit"
 					text="Zaloguj się"
 					width="100%"

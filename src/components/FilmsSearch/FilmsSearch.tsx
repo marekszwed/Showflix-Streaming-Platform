@@ -1,4 +1,4 @@
-import * as S from "./FIlmsSearch.Styled";
+import * as S from "./FIlmsSearch.styled";
 import { GenreProps } from "../../helpers/types";
 
 interface Genres {

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import loginImage from "/login-background.jpg";
-import { PageBackground } from "../../helpers/mixins";
+import { PageBackground } from "../../styles/mixins";
 
 export const LoginPageStyled = styled.div`
 	${PageBackground}

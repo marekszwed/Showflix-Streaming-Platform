@@ -1,22 +1,30 @@
 import { useEffect, useState } from "react";
-import * as S from "./Films.Styled";
-import Carousel from "../../components/Carousel/Carousel";
-import FilmsSearch from "../../components/FilmsSearch/FilmsSearch";
-import Toast from "../../components/Toast/Toast";
-import FilmsHeroContainer from "../../components/FilmsHeroImage/FilmsHeroImage";
-import Button from "../../components/Button/Button";
-import useFormAndTodo from "../../store/useFormAndTodo";
-import MyFilm from "../../components/MyFilm/MyFilm";
+import * as S from "./Films.styled";
+
+import {
+	Carousel,
+	FilmsSearch,
+	Toast,
+	FilmsHeroImage,
+	Button,
+	MyFilm,
+} from "../../components";
+
+import useFormContext from "../../hooks/useFormContext";
+import useActorContext from "../../hooks/useActorContext";
+
+interface HeroImageType {
+	backdropPath: string;
+	originalTitle: string;
+	overview: string;
+}
 
 function FilmsPage() {
-	const { formData, actorsList } = useFormAndTodo();
+	const { formData } = useFormContext();
+	const { actorsList } = useActorContext();
 	const [selectedGenre, setSelectedGenre] = useState(["Popular"]);
 	const [fetchedFilms, setFetchedFilms] = useState([]);
-	const [heroImage, setHeroImage] = useState<{
-		backdropPath: string;
-		originalTitle: string;
-		overview: string;
-	} | null>(null);
+	const [heroImage, setHeroImage] = useState<HeroImageType | null>(null);
 
 	const URL_ROOT = import.meta.env.VITE_URL_ROOT;
 	const URL_QUERY = import.meta.env.VITE_URL_QUERY;
@@ -31,7 +39,6 @@ function FilmsPage() {
 		try {
 			const res = await fetch(URL);
 			const data = await res.json();
-			console.log(data.results);
 			if (!data.results) {
 				Toast.error("A problem has been encountered");
 			} else {
@@ -47,22 +54,21 @@ function FilmsPage() {
 		}
 	}
 
-	useEffect(() => {
-		console.log("Dane formularza:", formData);
-		console.log("Lista aktorów:", actorsList);
-	}, [actorsList, formData]);
+	useEffect(() => {}, [formData, actorsList]);
 
 	useEffect(() => {
 		fetchData();
-	}, [selectedGenre]);
+	}, selectedGenre);
 
 	return (
 		<S.Films>
-			{heroImage && (
-				<FilmsHeroContainer
+			{heroImage ? (
+				<FilmsHeroImage
 					heroImage={heroImage}
 					alt="Page background composed of a poster of the most recent movie"
 				/>
+			) : (
+				Toast.warning("Incorrect connection to the server")
 			)}
 
 			<FilmsSearch

@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { StyledButton } from "./Button.Styled";
+import { StyledButton } from "./Button.styled";
 
 interface Props {
 	id?: string;

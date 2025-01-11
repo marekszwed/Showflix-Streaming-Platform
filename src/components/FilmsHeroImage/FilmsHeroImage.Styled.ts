@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { PageBackground } from "../../helpers/mixins";
+import { PageBackground } from "../../styles/mixins";
 
 export const FilmsHeroContainer = styled.div`
 	${PageBackground}
