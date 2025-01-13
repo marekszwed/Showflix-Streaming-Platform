@@ -58,7 +58,7 @@ function FilmsPage() {
 
 	useEffect(() => {
 		fetchData();
-	}, selectedGenre);
+	}, [selectedGenre]);
 
 	return (
 		<S.Films>

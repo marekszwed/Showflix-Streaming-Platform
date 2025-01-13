@@ -38,8 +38,7 @@ export const Container = css`
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-
-	margin-bottom: 4em;
+	margin-bottom: 2em;
 `;
 
 export const Pointer = css`

@@ -6,7 +6,7 @@ export const SelectBox = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	top: 10em;
+	top: 16.5em;
 	left: 9em;
 `;
 

@@ -62,8 +62,10 @@ export const ActorsContainer = styled.div`
 `;
 
 export const List = styled.ul`
+	position: relative;
 	list-style: none;
 	width: 100%;
+	padding: 0;
 `;
 export const ButtonsPanel = styled.div``;
 

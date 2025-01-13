@@ -13,7 +13,6 @@ interface FormContextProps {
 const FormContext = createContext<FormContextProps | undefined>(undefined);
 
 export const FormProvider = ({ children }: ProviderProps) => {
-	// const [formData, setFormDataState] = useState<FormTypes | null>(null);
 	const [formData, setFormDataState] =
 		useState<FormContextProps["formData"]>(null);
 

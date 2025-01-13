@@ -14,9 +14,6 @@ interface ActorContextProps {
 const ActorContext = createContext<ActorContextProps | undefined>(undefined);
 
 export const ActorProvider = ({ children }: ProviderProps) => {
-	// const [actorsList, setActorsList] = useState<{ name: string; id: number }[]>(
-	// 	[]
-	// );
 	const [actorsList, setActorsList] = useState<ActorContextProps["actorsList"]>(
 		[]
 	);

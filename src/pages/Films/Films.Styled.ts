@@ -8,5 +8,5 @@ export const Films = styled.div`
 	justify-content: center;
 	align-items: center;
 	background-image: url(${filmsBackground});
-	gap: 3em;
+	gap: 6.5em;
 `;

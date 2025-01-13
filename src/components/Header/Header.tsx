@@ -5,12 +5,10 @@ import { Button } from "../../components";
 function Header() {
 	const location = useLocation();
 	const ALLOWED_PATHS = ["/films", "/films/new"];
+	const isHomePage = location.pathname === "/";
 
 	const showButton = () => {
-		if (
-			location.pathname !== "/" &&
-			!ALLOWED_PATHS.includes(location.pathname)
-		) {
+		if (!isHomePage && !ALLOWED_PATHS.includes(location.pathname)) {
 			return null;
 		} else {
 			return (
@@ -19,8 +17,8 @@ function Header() {
 					href={location.pathname === "/" ? "/login" : "/"}
 					text={location.pathname === "/" ? "Zaloguj się" : "Wyloguj się"}
 					width="10em"
-					margin="0 10em 0 0"
-				></Button>
+					margin="1em 6.5em 0 0"
+				/>
 			);
 		}
 	};

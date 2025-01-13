@@ -4,7 +4,7 @@ import ActorContext from "../context/ActorContext/ActorContext";
 const useActorContext = () => {
 	const context = useContext(ActorContext);
 	if (!context) {
-		throw new Error("useFormAndTodo must be used within a FormAndTodoProvider");
+		throw new Error("useActorContext must be used within a ActorProvider");
 	}
 	return context;
 };

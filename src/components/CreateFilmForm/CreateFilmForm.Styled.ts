@@ -8,6 +8,7 @@ export const Form = styled.form`
 `;
 export const Fieldset = styled.fieldset`
 	position: relative;
+	border: transparent;
 `;
 export const BasicInformation = styled.div`
 	height: auto;

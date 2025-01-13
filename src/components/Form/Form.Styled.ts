@@ -17,6 +17,7 @@ export const Form = styled.form`
 export const StyledFieldset = styled.fieldset`
 	position: relative;
 	margin: 48px 68px;
+	border: transparent;
 `;
 
 export const StyledLegend = styled.legend`
