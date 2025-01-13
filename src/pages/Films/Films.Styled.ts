@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import filmsBackground from "/films-background.jpg";
-import { PageBackground } from "../../helpers/mixins";
+import { PageBackground } from "../../styles/mixins";
 
 export const Films = styled.div`
 	${PageBackground}
@@ -8,5 +8,5 @@ export const Films = styled.div`
 	justify-content: center;
 	align-items: center;
 	background-image: url(${filmsBackground});
-	gap: 3em;
+	gap: 6.5em;
 `;

@@ -9,7 +9,7 @@ export const HeaderStyled = styled.header<{
 	justify-content: space-between;
 	top: 0;
 	width: 100%;
-	padding: 2em 5em 2em 0;
+	padding: 2em 5em 2.5em 0;
 	background-color: ${(props) =>
 		props.isFilmPage ? props.theme.colors.dark400 : "transparent"};
 	z-index: ${({ theme }) => theme.zindex.positivePlus};
@@ -17,7 +17,7 @@ export const HeaderStyled = styled.header<{
 
 export const LogoStyled = styled.h1`
 	display: flex;
-	margin-left: 10em;
+	margin-left: 5em;
 `;
 
 export const TitleStyled = styled.div`

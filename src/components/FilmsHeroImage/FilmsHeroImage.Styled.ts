@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { PageBackground } from "../../helpers/mixins";
+import { PageBackground } from "../../styles/mixins";
 
 export const FilmsHeroContainer = styled.div`
 	${PageBackground}
@@ -23,9 +23,8 @@ export const HeroInfoContainer = styled.div`
 	flex-direction: column;
 	align-self: flex-start;
 	max-width: 55em;
-	bottom: 40em;
+	bottom: 45em;
 	left: 10em;
-	gap: 4em;
 `;
 
 export const Title = styled.h1`

@@ -1,11 +1,11 @@
-import * as S from "./ActorsTodo.Styled";
+import * as S from "./ActorsTodo.styled";
 import { useState } from "react";
-import useFormAndTodo from "../../store/useFormAndTodo";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import useActorContext from "../../hooks/useActorContext";
 
 function ActorsTodo() {
-	const { actorsList, addActor, deleteActor, clearAll } = useFormAndTodo();
+	const { actorsList, addActor, deleteActor, clearAll } = useActorContext();
 	const [newActor, setNewActor] = useState("");
 
 	const handleAddActor = () => {

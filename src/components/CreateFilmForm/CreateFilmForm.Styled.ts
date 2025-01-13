@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Container, InputMixin, LabelMixin } from "../../helpers/mixins";
+import { Container, InputMixin, LabelMixin } from "../../styles/mixins";
 
 export const Form = styled.form`
 	display: flex;
@@ -8,6 +8,7 @@ export const Form = styled.form`
 `;
 export const Fieldset = styled.fieldset`
 	position: relative;
+	border: transparent;
 `;
 export const BasicInformation = styled.div`
 	height: auto;

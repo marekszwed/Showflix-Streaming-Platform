@@ -1,4 +1,4 @@
-import * as S from "./Card.Styled";
+import * as S from "./Card.styled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleQuestion } from "@fortawesome/free-regular-svg-icons";
 import { useState } from "react";

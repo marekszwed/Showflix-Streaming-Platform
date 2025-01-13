@@ -6,6 +6,5 @@ export const CarouselBox = styled.div`
 
 	.swiper-slide {
 		margin-left: 3em;
-		margin-bottom: 3em;
 	}
 `;

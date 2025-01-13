@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import homeImage from "/home-image.jpg";
-import { PageBackground } from "../../helpers/mixins";
+import { PageBackground } from "../../styles/mixins";
 
 export const HomePageStyled = styled.div`
 	${PageBackground}
