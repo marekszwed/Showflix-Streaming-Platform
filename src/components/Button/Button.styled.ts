@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Pointer } from "../../styles/mixins";
-
+ 
 export const StyledButton = styled.button<{
 	$width?: string;
 	$margin?: string;

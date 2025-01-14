@@ -14,7 +14,7 @@ export const HeaderStyled = styled.header<{
 		props.isFilmPage ? props.theme.colors.dark400 : "transparent"};
 	z-index: ${({ theme }) => theme.zindex.positivePlus};
 `;
-
+ 
 export const LogoStyled = styled.h1`
 	display: flex;
 	margin-left: 5em;

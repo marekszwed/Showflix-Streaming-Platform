@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+ 
 export const StyledError = styled.p<{ $error?: boolean }>`
 	display: ${(error) => (error ? "flex" : "none")};
 	text-transform: uppercase;

@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import { Container, InputMixin, LabelMixin } from "../../styles/mixins";
-
+ 
 export const Form = styled.form`
 	position: relative;
 	display: flex;

@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { StyledButton } from "./Button.styled";
-
+ 
 interface Props {
 	id?: string;
 	type?: "submit" | "button" | "reset";

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import * as S from "./Films.styled";
-
+ 
 import {
 	Carousel,
 	FilmsSearch,

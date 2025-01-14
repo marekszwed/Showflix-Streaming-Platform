@@ -6,7 +6,7 @@ import {
 	CardTitle,
 	Pointer,
 } from "../../styles/mixins";
-
+ 
 export const Card = styled.div<{ $filmImage?: string }>`
 	position: relative;
 	display: flex;

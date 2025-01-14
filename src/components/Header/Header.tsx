@@ -6,7 +6,7 @@ function Header() {
 	const location = useLocation();
 	const ALLOWED_PATHS = ["/films", "/films/new"];
 	const isHomePage = location.pathname === "/";
-
+ 
 	const showButton = () => {
 		if (!isHomePage && !ALLOWED_PATHS.includes(location.pathname)) {
 			return null;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { PageBackground } from "../../styles/mixins";
-
+ 
 export const AddFilm = styled.div`
 	${PageBackground}
 	justify-content: space-around;

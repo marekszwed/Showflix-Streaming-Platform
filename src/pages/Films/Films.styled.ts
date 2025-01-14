@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import homeImage from "/home-image.jpg";
 import { PageBackground } from "../../styles/mixins";
-
-export const HomePageStyled = styled.div`
+ 
+export const Films = styled.div`
 	${PageBackground}
-	height: 100svh;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-image: url(${homeImage});
+	background-image: linear-gradient(135deg, #700b10 0%, #0d0603 34%);
+	gap: 6.5em;
 `;
