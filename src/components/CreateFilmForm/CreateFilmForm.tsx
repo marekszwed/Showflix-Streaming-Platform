@@ -2,7 +2,6 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as S from "./CreateFilmForm.styled";
 import { FormTypes } from "../../helpers/types";
-// import useFormAndTodo from "../../store/useFormAndTodo";
 import { Button, InputError } from "../../components";
 import { userSchema } from "./schema";
 import useFormContext from "../../hooks/useFormContext";
