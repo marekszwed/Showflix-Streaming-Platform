@@ -9,7 +9,7 @@ export const SelectBox = styled.div`
 	top: 16.5em;
 	left: 9em;
 `;
-
+ 
 export const Label = styled.label`
 	font-size: ${({ theme }) => theme.fontSize.bigger};
 	color: ${({ theme }) => theme.colors.white100};

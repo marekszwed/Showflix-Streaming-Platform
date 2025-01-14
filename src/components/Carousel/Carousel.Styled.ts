@@ -8,3 +8,4 @@ export const CarouselBox = styled.div`
 		margin-left: 3em;
 	}
 `;
+ 

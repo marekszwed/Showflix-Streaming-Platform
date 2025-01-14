@@ -6,7 +6,7 @@ export const FilmsHeroContainer = styled.div`
 	flex-direction: column;
 	height: 100svh;
 `;
-
+ 
 export const FilmsHeroImage = styled.img<{ src: string }>`
 	background-position: center;
 	background-size: cover;

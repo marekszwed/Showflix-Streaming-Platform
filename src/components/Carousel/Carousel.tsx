@@ -10,7 +10,7 @@ interface Film {
 	poster_path: string;
 	overview: string;
 }
-
+ 
 interface CarouselProps {
 	films: Film[];
 }

@@ -9,7 +9,7 @@ interface BackgroundProps {
 	};
 	alt: string;
 }
-
+ 
 function FilmsHeroImage({ heroImage, alt }: BackgroundProps) {
 	const { backdropPath, originalTitle, overview } = heroImage;
 	return (

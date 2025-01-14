@@ -3,7 +3,7 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import useActorContext from "../../hooks/useActorContext";
-
+ 
 function ActorsTodo() {
 	const { actorsList, addActor, deleteActor, clearAll } = useActorContext();
 	const [newActor, setNewActor] = useState("");
