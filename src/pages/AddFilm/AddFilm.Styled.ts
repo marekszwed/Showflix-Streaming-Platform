@@ -1,12 +1,11 @@
 import styled from "styled-components";
 import { PageBackground } from "../../styles/mixins";
-import filmsBackground from "/films-background.jpg";
 
 export const AddFilm = styled.div`
 	${PageBackground}
 	justify-content: space-around;
 	align-items: center;
-	background-image: url(${filmsBackground});
+	background-image: linear-gradient(135deg, #700b10 0%, #0d0603 34%);
 	height: 100svh;
 	flex-wrap: wrap;
 `;

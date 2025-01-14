@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import filmsBackground from "/films-background.jpg";
 import { PageBackground } from "../../styles/mixins";
 
 export const Films = styled.div`
@@ -7,6 +6,6 @@ export const Films = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-image: url(${filmsBackground});
+	background-image: linear-gradient(135deg, #700b10 0%, #0d0603 34%);
 	gap: 6.5em;
 `;

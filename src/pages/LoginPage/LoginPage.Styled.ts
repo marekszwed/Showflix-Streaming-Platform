@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import loginImage from "/login-background.jpg";
 import { PageBackground } from "../../styles/mixins";
 
 export const LoginPageStyled = styled.div`
@@ -7,5 +6,5 @@ export const LoginPageStyled = styled.div`
 	height: 100svh;
 	justify-content: center;
 	align-items: center;
-	background-image: url(${loginImage});
+	background-image: linear-gradient(135deg, #700b10 0%, #0d0603 34%);
 `;

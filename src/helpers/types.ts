@@ -7,7 +7,7 @@ export interface FormTypes {
 	title: string;
 	year?: number;
 	description: string;
-	image: FileList | string;
+	image: FileList;
 }
 
 export interface CardProps {
