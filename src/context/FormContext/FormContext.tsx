@@ -24,7 +24,7 @@ export const FormProvider = ({ children }: ProviderProps) => {
 
 		setFormDataState({
 			...data,
-			image: imageUrl,
+			imageUrl,
 		});
 	};
 

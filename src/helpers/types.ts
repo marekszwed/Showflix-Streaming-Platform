@@ -8,6 +8,7 @@ export interface FormTypes {
 	year?: number;
 	description: string;
 	image: FileList;
+	imageUrl?: string;
 }
 
 export interface CardProps {
