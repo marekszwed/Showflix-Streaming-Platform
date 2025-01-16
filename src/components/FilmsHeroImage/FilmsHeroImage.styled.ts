@@ -12,8 +12,8 @@ export const FilmsHeroImage = styled.img<{ src: string }>`
 	background-size: cover;
 	background-image: url(${({ src }) => src});
 	object-fit: cover;
-	width: 100vw;
-	height: 100svh;
+	width: 100%;
+	height: 100%;
 	z-index: ${({ theme }) => theme.zindex.neutral};
 `;
 
