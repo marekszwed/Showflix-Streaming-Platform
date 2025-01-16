@@ -83,7 +83,7 @@ function FilmsPage() {
 			/>
 			{formData && (
 				<MyFilm
-					filmImage={typeof formData.image === "string" ? formData.image : ""}
+					filmImage={formData.imageUrl}
 					text={formData.title}
 					description={formData.description}
 					year={formData.year}
