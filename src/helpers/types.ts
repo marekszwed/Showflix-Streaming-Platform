@@ -13,7 +13,7 @@ export interface FormTypes {
 
 export interface CardProps {
 	id?: string;
-	filmImage: string;
+	filmImage?: string;
 	text: string;
 	year?: number;
 	description: string;
