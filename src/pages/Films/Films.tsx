@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import * as S from "./Films.styled";
- 
+
 import {
 	Carousel,
 	FilmsSearch,
@@ -27,12 +27,11 @@ function FilmsPage() {
 	const [heroImage, setHeroImage] = useState<HeroImageType | null>(null);
 
 	const URL_ROOT = import.meta.env.VITE_URL_ROOT;
-	const URL_QUERY = import.meta.env.VITE_URL_QUERY;
 	const API_KEY = import.meta.env.VITE_API_KEY;
 
 	async function fetchData() {
 		const genreId = selectedGenre[0] === "Popular" ? "" : selectedGenre[0];
-		const URL = `${URL_ROOT + API_KEY + URL_QUERY}${
+		const URL = `${URL_ROOT}${API_KEY}&language=pl-PL${
 			genreId ? `&with_genres=${genreId}` : ""
 		}`;
 
