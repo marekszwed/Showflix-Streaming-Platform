@@ -5,8 +5,22 @@ export const FilmsHeroContainer = styled.div`
 	${PageBackground}
 	flex-direction: column;
 	height: 100svh;
+
+	&::after {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		/* background-color: ${({ theme }) => theme.colors.dark100}; */
+		background-image: linear-gradient(
+			0deg,
+			rgba(0, 0, 0, 0.78) 20%,
+			rgba(255, 255, 255, 0) 93%
+		);
+		z-index: ${({ theme }) => theme.zindex.positive};
+	}
 `;
- 
+
 export const FilmsHeroImage = styled.img<{ src: string }>`
 	background-position: center;
 	background-size: cover;
@@ -23,8 +37,9 @@ export const HeroInfoContainer = styled.div`
 	flex-direction: column;
 	align-self: flex-start;
 	max-width: 55em;
-	bottom: 45em;
+	bottom: 35em;
 	left: 10em;
+	z-index: ${({ theme }) => theme.zindex.positivePlus};
 `;
 
 export const Title = styled.h1`

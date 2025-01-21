@@ -10,9 +10,7 @@ export const PageBackground = css`
 
 export const LabelMixin = css`
 	display: flex;
-	padding: 1em 1em;
-	font-size: ${({ theme }) => theme.fontSize.normal};
-	text-transform: uppercase;
+	font-size: ${({ theme }) => theme.fontSize.small};
 	color: ${({ theme }) => theme.colors.white100};
 	overflow: hidden;
 `;
@@ -21,10 +19,9 @@ export const InputMixin = css`
 	display: flex;
 	width: 100%;
 	font-size: ${({ theme }) => theme.fontSize.normal};
-
-	background-color: transparent;
+	background-color: ${({ theme }) => theme.colors.grey};
 	color: ${({ theme }) => theme.colors.white100};
-	border-radius: 5px;
+	border-radius: 10px;
 	border: 2px solid transparent;
 	overflow: hidden;
 
@@ -38,7 +35,8 @@ export const Container = css`
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	margin-bottom: 2em;
+	margin-bottom: 0em;
+	width: 100%;
 `;
 
 export const Pointer = css`
@@ -54,8 +52,8 @@ export const CardTextAnimation = css`
 	left: 0;
 	right: 0;
 	bottom: 0;
-	padding: 6.5em 2em;
-	background-color: ${({ theme }) => theme.colors.dark400};
+	padding: 2.5em 2em;
+	background-color: ${({ theme }) => theme.colors.dark200};
 	color: ${({ theme }) => theme.colors.white100};
 	transition: clip-path 0.6s;
 `;
@@ -79,10 +77,12 @@ export const CardTitle = css`
 `;
 
 export const CardDescription = css`
-	margin-top: 1.3em;
+	display: -webkit-box;
 	font-size: ${({ theme }) => theme.fontSize.normal};
 	color: ${({ theme }) => theme.colors.white100};
 	line-height: 1.7;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
 `;
 
 export const BlankButton = css`

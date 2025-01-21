@@ -15,7 +15,7 @@ function LoginForm() {
 		);
 		return validEmail.test(email);
 	};
- 
+
 	const validatePassword = (password: string) => {
 		return password.length >= 6;
 	};
@@ -70,7 +70,7 @@ function LoginForm() {
 					type="submit"
 					text="Zaloguj się"
 					width="100%"
-					margin="auto"
+					margin="1.7em auto"
 				></Button>
 			</S.StyledFieldset>
 		</S.Form>

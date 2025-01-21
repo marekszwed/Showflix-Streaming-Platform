@@ -6,7 +6,7 @@ import {
 	CardTitle,
 	Pointer,
 } from "../../styles/mixins";
- 
+
 export const Card = styled.div<{ $filmImage?: string }>`
 	position: relative;
 	display: flex;
@@ -16,7 +16,14 @@ export const Card = styled.div<{ $filmImage?: string }>`
 	background-size: cover;
 	background-image: url(${({ $filmImage }) => $filmImage});
 	border-radius: 10px;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
 	overflow: hidden;
+	${Pointer}
+
+	&:hover {
+		transform: scale(1.05);
+		box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+	}
 `;
 
 export const Button = styled.button`

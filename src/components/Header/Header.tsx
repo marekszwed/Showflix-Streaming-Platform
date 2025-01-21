@@ -1,12 +1,12 @@
 import { useLocation } from "react-router-dom";
-import { HeaderStyled, LogoStyled, TitleStyled } from "./Header.styled";
-import { Button } from "../../components";
+import { HeaderStyled } from "./Header.styled";
+import { Button, Logo } from "../../components";
 
 function Header() {
 	const location = useLocation();
 	const ALLOWED_PATHS = ["/films", "/films/new"];
 	const isHomePage = location.pathname === "/";
- 
+
 	const showButton = () => {
 		if (!isHomePage && !ALLOWED_PATHS.includes(location.pathname)) {
 			return null;
@@ -17,7 +17,7 @@ function Header() {
 					href={location.pathname === "/" ? "/login" : "/"}
 					text={location.pathname === "/" ? "Zaloguj się" : "Wyloguj się"}
 					width="10em"
-					margin="1em 6.5em 0 0"
+					margin="1.6em 6.5em 1.6em 0"
 				/>
 			);
 		}
@@ -26,9 +26,7 @@ function Header() {
 	return (
 		<>
 			<HeaderStyled isFilmPage={location.pathname === "/films"}>
-				<LogoStyled>
-					<TitleStyled>showflix</TitleStyled>
-				</LogoStyled>
+				<Logo />
 				{showButton()}
 			</HeaderStyled>
 		</>

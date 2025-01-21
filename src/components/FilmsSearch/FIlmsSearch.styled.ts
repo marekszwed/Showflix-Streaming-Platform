@@ -8,8 +8,9 @@ export const SelectBox = styled.div`
 	align-items: center;
 	top: 16.5em;
 	left: 9em;
+	z-index: ${({ theme }) => theme.zindex.positivePlus};
 `;
- 
+
 export const Label = styled.label`
 	font-size: ${({ theme }) => theme.fontSize.bigger};
 	color: ${({ theme }) => theme.colors.white100};

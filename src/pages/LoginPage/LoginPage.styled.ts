@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { PageBackground } from "../../styles/mixins";
- 
+
 export const LoginPageStyled = styled.div`
 	${PageBackground}
 	height: 100svh;

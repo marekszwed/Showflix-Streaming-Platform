@@ -1,19 +1,21 @@
 import styled from "styled-components";
 import { BlankButton, Pointer } from "../../styles/mixins";
- 
+
 export const TodoContainer = styled.div`
 	position: relative;
 	display: flex;
 	align-items: flex-start;
-	height: 100svh;
+	padding-top: 3.8em;
+	/* height: 100svh; */
 `;
 
 export const Todo = styled.div`
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	padding-top: 18em;
-	max-width: 300px;
+	align-items: center;
+	/* padding-top: 18em; */
+	/* max-width: 300px; */
 	max-height: 600px;
 `;
 
@@ -37,7 +39,8 @@ export const InputField = styled.div`
 export const ButtonContainer = styled.div`
 	position: relative;
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
+	gap: 1em;
 	width: 100%;
 	flex-wrap: wrap;
 `;
@@ -57,7 +60,7 @@ export const ClearBtn = styled(AddBtn)`
 export const ActorsContainer = styled.div`
 	display: flex;
 	justify-content: center;
-	margin: 1.5em 1em 1em 1em;
+	margin: 1.5em 0em 1em 0em;
 	width: 100%;
 `;
 

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Container, InputMixin, LabelMixin } from "../../styles/mixins";
- 
+
 export const Form = styled.form`
 	display: flex;
 	flex-direction: column;
@@ -21,6 +21,7 @@ export const InputContainer = styled.div`
 export const Label = styled.label`
 	${LabelMixin}
 	font-weight: ${({ theme }) => theme.fontWeight.bold};
+	padding: 1em 1em;
 `;
 
 export const Input = styled.input`

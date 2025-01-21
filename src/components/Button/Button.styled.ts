@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Pointer } from "../../styles/mixins";
- 
+
 export const StyledButton = styled.button<{
 	$width?: string;
 	$margin?: string;
@@ -16,6 +16,7 @@ export const StyledButton = styled.button<{
 	padding: 0.7em;
 	color: ${({ theme }) => theme.colors.white100};
 	background-color: ${({ theme }) => theme.color || theme.colors.red};
+	transition: 0.3s;
 	${Pointer}
 
 	&:hover,
