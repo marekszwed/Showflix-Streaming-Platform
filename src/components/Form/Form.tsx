@@ -71,7 +71,7 @@ function LoginForm() {
 					text="Zaloguj się"
 					width="100%"
 					margin="1.7em auto"
-				></Button>
+				/>
 			</S.StyledFieldset>
 		</S.Form>
 	);

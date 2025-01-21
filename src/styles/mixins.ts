@@ -35,7 +35,7 @@ export const Container = css`
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	margin-bottom: 0em;
+	margin-bottom: 0;
 	width: 100%;
 `;
 

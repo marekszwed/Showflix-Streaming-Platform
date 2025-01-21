@@ -60,7 +60,7 @@ export const ClearBtn = styled(AddBtn)`
 export const ActorsContainer = styled.div`
 	display: flex;
 	justify-content: center;
-	margin: 1.5em 0em 1em 0em;
+	margin: 1.5em 0 1em;
 	width: 100%;
 `;
 

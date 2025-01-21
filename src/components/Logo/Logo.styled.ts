@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const LogoStyled = styled.h1`
@@ -7,4 +8,8 @@ export const LogoStyled = styled.h1`
 	text-transform: uppercase;
 	font-weight: ${({ theme }) => theme.fontWeight.bold};
 	color: ${({ theme }) => theme.colors.white100};
+`;
+
+export const StyledNavlink = styled(NavLink)`
+	text-decoration: none;
 `;
