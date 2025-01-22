@@ -1,21 +1,19 @@
-import { NavLink, useLocation } from "react-router-dom";
-import { LogoStyled } from "./Logo.styled";
+import { useLocation } from "react-router-dom";
+import { LogoStyled, StyledNavlink } from "./Logo.styled";
 
 function Logo() {
 	const location = useLocation();
 	const homePage = location.pathname === "/";
 	const loginPage = location.pathname === "/login";
-	const filmPage = "/films";
 
 	if (!homePage && !loginPage) {
 		return (
-			<NavLink to={filmPage} style={{ textDecoration: "none" }}>
+			<StyledNavlink to="/films">
 				<LogoStyled>Showflix</LogoStyled>
-			</NavLink>
+			</StyledNavlink>
 		);
-	} else {
-		return <LogoStyled>Showflix</LogoStyled>;
 	}
+	return <LogoStyled>Showflix</LogoStyled>;
 }
 
 export default Logo;

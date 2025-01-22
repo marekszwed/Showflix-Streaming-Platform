@@ -1,5 +1,4 @@
-import { NavLink } from "react-router-dom";
-import { StyledButton } from "./Button.styled";
+import { StyledButton, StyledNavlink } from "./Button.styled";
 
 interface Props {
 	id?: string;
@@ -14,11 +13,11 @@ interface Props {
 function Button({ id, href, type, text, width, margin }: Props) {
 	if (href) {
 		return (
-			<NavLink id={id} to={href} style={{ textDecoration: "none" }}>
+			<StyledNavlink id={id} to={href}>
 				<StyledButton $width={width} $margin={margin}>
 					{text}
 				</StyledButton>
-			</NavLink>
+			</StyledNavlink>
 		);
 	} else {
 		return (

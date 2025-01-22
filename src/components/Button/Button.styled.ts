@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Pointer } from "../../styles/mixins";
+import { NavLink } from "react-router-dom";
 
 export const StyledButton = styled.button<{
 	$width?: string;
@@ -16,7 +17,7 @@ export const StyledButton = styled.button<{
 	padding: 0.7em;
 	color: ${({ theme }) => theme.colors.white100};
 	background-color: ${({ theme }) => theme.color || theme.colors.red};
-	transition: 0.3s;
+	transition: all 0.3s ease-out;
 	${Pointer}
 
 	&:hover,
@@ -24,3 +25,7 @@ export const StyledButton = styled.button<{
 		background-color: ${({ theme }) => theme.colors.red100};
 	}
 `;
+
+export const StyledNavlink = styled(NavLink)`
+	text-decoration: none;
+`

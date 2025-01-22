@@ -27,9 +27,9 @@ function Carousel({ films }: CarouselProps) {
 			<Swiper
 				slidesPerView={6}
 				spaceBetween={0}
-				navigation={true}
-				mousewheel={true}
-				keyboard={true}
+				navigation
+				mousewheel
+				keyboard
 				pagination={{
 					clickable: true,
 				}}

@@ -21,7 +21,7 @@ export const InputContainer = styled.div`
 export const Label = styled.label`
 	${LabelMixin}
 	font-weight: ${({ theme }) => theme.fontWeight.bold};
-	padding: 1em 1em;
+	padding: 1em;
 `;
 
 export const Input = styled.input`
