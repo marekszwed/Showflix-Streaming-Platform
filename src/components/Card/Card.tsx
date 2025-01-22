@@ -1,10 +1,8 @@
 import * as S from "./Card.styled";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleQuestion } from "@fortawesome/free-regular-svg-icons";
 import { useState } from "react";
 import imageFallback from "/card-grey-background.jpg";
 import { CardProps } from "../../helpers/types";
- 
+
 function Card({ id, filmImage, text, description }: CardProps): JSX.Element {
 	const [isActive, setIsActive] = useState(false);
 
@@ -13,10 +11,11 @@ function Card({ id, filmImage, text, description }: CardProps): JSX.Element {
 	};
 
 	return (
-		<S.Card id={id} $filmImage={filmImage || imageFallback}>
-			<S.Button onClick={handleClick}>
-				<FontAwesomeIcon icon={faCircleQuestion} />
-			</S.Button>
+		<S.Card
+			id={id}
+			onClick={handleClick}
+			$filmImage={filmImage || imageFallback}
+		>
 			<S.Text $isActive={isActive}>
 				<S.Title>{text}</S.Title>
 				<S.Description>{description}</S.Description>

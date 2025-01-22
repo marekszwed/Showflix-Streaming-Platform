@@ -1,8 +1,10 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { FreeMode, Pagination } from "swiper/modules";
+import { FreeMode, Mousewheel, Pagination, Navigation } from "swiper/modules";
 import { CarouselBox } from "./Carousel.styled";
 import { Card } from "../../components";
 import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 interface Film {
 	id: string;
@@ -10,7 +12,7 @@ interface Film {
 	poster_path: string;
 	overview: string;
 }
- 
+
 interface CarouselProps {
 	films: Film[];
 }
@@ -25,10 +27,27 @@ function Carousel({ films }: CarouselProps) {
 			<Swiper
 				slidesPerView={6}
 				spaceBetween={0}
+				navigation
+				mousewheel
+				keyboard
 				pagination={{
 					clickable: true,
 				}}
-				modules={[FreeMode, Pagination]}
+				breakpoints={{
+					640: {
+						slidesPerView: 2,
+						spaceBetween: 10,
+					},
+					768: {
+						slidesPerView: 4,
+						spaceBetween: 30,
+					},
+					1024: {
+						slidesPerView: 5,
+						spaceBetween: 40,
+					},
+				}}
+				modules={[FreeMode, Pagination, Mousewheel, Navigation]}
 			>
 				{films.map(({ id, title, poster_path, overview }) => (
 					<SwiperSlide key={id}>

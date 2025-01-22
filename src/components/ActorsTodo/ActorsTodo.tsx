@@ -3,7 +3,7 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import useActorContext from "../../hooks/useActorContext";
- 
+
 function ActorsTodo() {
 	const { actorsList, addActor, deleteActor, clearAll } = useActorContext();
 	const [newActor, setNewActor] = useState("");
@@ -31,7 +31,7 @@ function ActorsTodo() {
 							Dodaj
 						</S.AddBtn>
 						<S.ClearBtn onClick={clearAll} disabled={actorsList.length === 0}>
-							Usuń
+							Wyczyść
 						</S.ClearBtn>
 					</S.ButtonContainer>
 				</S.InputField>

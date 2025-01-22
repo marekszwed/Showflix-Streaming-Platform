@@ -5,7 +5,6 @@ export const CarouselBox = styled.div`
 	align-self: flex-end;
 
 	.swiper-slide {
-		margin-left: 3em;
+		padding: 1em 0;
 	}
 `;
- 

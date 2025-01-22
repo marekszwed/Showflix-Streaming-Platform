@@ -5,7 +5,7 @@ import {
 	CardTextAnimation,
 	CardTitle,
 } from "../../styles/mixins";
- 
+
 export const MyFilmContainer = styled.div<{ $myFilmImage?: string }>`
 	position: relative;
 	display: flex;

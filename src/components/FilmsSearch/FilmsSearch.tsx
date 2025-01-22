@@ -5,7 +5,7 @@ interface Genres {
 	id: string;
 	text: string;
 }
- 
+
 const genres: Genres[] = [
 	{ id: "Popular", text: "Popularne" },
 	{ id: "878", text: "Sci-Fi" },

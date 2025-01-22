@@ -3,11 +3,11 @@ import { PageBackground } from "../../styles/mixins";
  
 export const AddFilm = styled.div`
 	${PageBackground}
-	justify-content: space-around;
+	justify-content: center;
 	align-items: center;
 	background-image: linear-gradient(135deg, #700b10 0%, #0d0603 34%);
 	height: 100svh;
-	flex-wrap: wrap;
+
 `;
 
 export const ButtonContainer = styled.div`
@@ -20,4 +20,14 @@ export const ButtonContainer = styled.div`
 	& button {
 		width: 10em;
 	}
+`;
+
+export const FilmInformationContainer = styled.div`
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	border: 1px solid ${({ theme }) => theme.colors.grey};
+	background-color: ${({ theme }) => theme.colors.dark100};
+	gap: 10em;
 `;

@@ -5,7 +5,7 @@ import { FormTypes } from "../../helpers/types";
 import { Button, InputError } from "../../components";
 import { userSchema } from "./schema";
 import useFormContext from "../../hooks/useFormContext";
- 
+
 function CreateFilmForm() {
 	const { setFormData } = useFormContext();
 

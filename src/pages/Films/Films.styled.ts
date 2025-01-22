@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { PageBackground } from "../../styles/mixins";
- 
+
 export const Films = styled.div`
 	${PageBackground}
 	flex-direction: column;
