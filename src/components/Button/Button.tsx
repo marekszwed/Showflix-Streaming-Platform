@@ -10,18 +10,24 @@ interface Props {
 	onClick?: () => void;
 }
 
-function Button({ id, href, type, text, width, margin }: Props) {
+function Button({ id, href, type, text, width, margin, onClick }: Props) {
 	if (href) {
 		return (
 			<StyledNavlink id={id} to={href}>
-				<StyledButton $width={width} $margin={margin}>
+				<StyledButton $width={width} $margin={margin} onClick={onClick}>
 					{text}
 				</StyledButton>
 			</StyledNavlink>
 		);
 	} else {
 		return (
-			<StyledButton id="" type={type} $width={width} $margin={margin}>
+			<StyledButton
+				id=""
+				type={type}
+				$width={width}
+				$margin={margin}
+				onClick={onClick}
+			>
 				{text}
 			</StyledButton>
 		);

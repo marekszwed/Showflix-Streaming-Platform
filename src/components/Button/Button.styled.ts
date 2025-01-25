@@ -28,4 +28,4 @@ export const StyledButton = styled.button<{
 
 export const StyledNavlink = styled(NavLink)`
 	text-decoration: none;
-`
+`;

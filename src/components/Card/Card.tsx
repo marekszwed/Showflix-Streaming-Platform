@@ -3,25 +3,47 @@ import { useState } from "react";
 import imageFallback from "/card-grey-background.jpg";
 import { CardProps } from "../../helpers/types";
 
-function Card({ id, filmImage, text, description }: CardProps): JSX.Element {
+function Card({
+	id,
+	filmImage,
+	text,
+	description,
+	year,
+}: CardProps): JSX.Element {
 	const [isActive, setIsActive] = useState(false);
 
 	const handleClick = () => {
 		setIsActive(!isActive);
 	};
 
-	return (
-		<S.Card
-			id={id}
-			onClick={handleClick}
-			$filmImage={filmImage || imageFallback}
-		>
-			<S.Text $isActive={isActive}>
-				<S.Title>{text}</S.Title>
-				<S.Description>{description}</S.Description>
-			</S.Text>
-		</S.Card>
-	);
+	if (year) {
+		return (
+			<S.Card
+				id={id}
+				onClick={handleClick}
+				$filmImage={filmImage || imageFallback}
+			>
+				<S.Text $isActive={isActive}>
+					<S.Title>{text}</S.Title>
+					<S.Year>{year}</S.Year>
+					<S.Description>{description}</S.Description>
+				</S.Text>
+			</S.Card>
+		);
+	} else {
+		return (
+			<S.Card
+				id={id}
+				onClick={handleClick}
+				$filmImage={filmImage || imageFallback}
+			>
+				<S.Text $isActive={isActive}>
+					<S.Title>{text}</S.Title>
+					<S.Description>{description}</S.Description>
+				</S.Text>
+			</S.Card>
+		);
+	}
 }
 
 export default Card;

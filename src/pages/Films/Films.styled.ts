@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { PageBackground } from "../../styles/mixins";
+import { Card } from "../../components";
 
 export const Films = styled.div`
 	${PageBackground}
@@ -7,5 +8,11 @@ export const Films = styled.div`
 	justify-content: center;
 	align-items: center;
 	background-image: linear-gradient(135deg, #700b10 0%, #0d0603 34%);
-	gap: 6.5em;
+	padding-bottom: 5em;
+`;
+
+export const MyNewFilmCard = styled(Card)`
+	position: relative;
+	display: flex;
+	align-self: start;
 `;

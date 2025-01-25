@@ -1,12 +1,16 @@
 import styled from "styled-components";
-import { BlankButton, Pointer } from "../../styles/mixins";
+import {
+	BlankButton,
+	InputMixin,
+	LabelMixin,
+	Pointer,
+} from "../../styles/mixins";
 
 export const TodoContainer = styled.div`
 	position: relative;
 	display: flex;
 	align-items: flex-start;
-	padding-top: 3.8em;
-	/* height: 100svh; */
+	margin: 1.2em 2em 2em 0;
 `;
 
 export const Todo = styled.div`
@@ -14,18 +18,20 @@ export const Todo = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	/* padding-top: 18em; */
-	/* max-width: 300px; */
 	max-height: 600px;
 `;
 
+export const Label = styled.label`
+	${LabelMixin}
+	font-weight: ${({ theme }) => theme.fontWeight.bold};
+	padding-bottom: 0.5em;
+`;
+
 export const InputForActor = styled.input`
-	display: flex;
-	padding: 0.2em 1em;
-	margin-bottom: 1em;
-	font-size: ${({ theme }) => theme.fontSize.bigger};
-	border-radius: 10px;
-	max-width: 100%;
+	${InputMixin}
+	box-sizing: border-box;
+	margin: 1.2em 0 1em 0;
+	padding: 0.5em 0 0.5em 0.5em;
 `;
 
 export const InputField = styled.div`
@@ -55,6 +61,7 @@ export const AddBtn = styled.button`
 	${Pointer}
 `;
 export const ClearBtn = styled(AddBtn)`
+	font-weight: ${({ theme }) => theme.fontWeight.semiBold};
 	color: ${({ theme }) => theme.colors.red};
 `;
 export const ActorsContainer = styled.div`

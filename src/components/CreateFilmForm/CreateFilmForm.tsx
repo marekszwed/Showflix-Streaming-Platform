@@ -6,18 +6,27 @@ import { Button, InputError } from "../../components";
 import { userSchema } from "./schema";
 import useFormContext from "../../hooks/useFormContext";
 
-function CreateFilmForm() {
+interface resetProp {
+	setResetFunc: (resetFunc: () => void) => void;
+}
+
+function CreateFilmForm({ setResetFunc }: resetProp) {
 	const { setFormData } = useFormContext();
 
 	const {
 		register,
 		handleSubmit,
+		reset,
 		formState: { errors },
-	} = useForm<FormTypes>({ resolver: yupResolver(userSchema) });
+	} = useForm<FormTypes>({
+		resolver: yupResolver(userSchema),
+	});
 
 	const onSubmit = (data: FormTypes) => {
 		setFormData(data);
 	};
+
+	setResetFunc(() => reset);
 
 	return (
 		<S.Form onSubmit={handleSubmit(onSubmit)}>
@@ -46,7 +55,7 @@ function CreateFilmForm() {
 					/>
 					<InputError text={errors.image?.message} />
 				</S.InputContainer>
-				<Button type="submit" text="Zapisz dane" />
+				<Button type="submit" width="100%" text="Zapisz" />
 			</S.Fieldset>
 		</S.Form>
 	);
