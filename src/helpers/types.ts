@@ -12,9 +12,8 @@ export interface FormTypes {
 }
 
 export interface CardProps {
-	id?: string;
 	filmImage?: string;
-	text: string;
+	text?: string;
 	year?: number;
-	description: string;
+	description?: string;
 }

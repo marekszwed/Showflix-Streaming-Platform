@@ -7,6 +7,8 @@ function AddFilm() {
 	const { formData, clearData } = useFormContext();
 	const [resetForm, setResetForm] = useState<() => void | undefined>();
 
+	const { title, description, imageUrl, year } = formData || {};
+
 	const handleRemovePrototype = () => {
 		if (resetForm) {
 			resetForm();
@@ -20,10 +22,10 @@ function AddFilm() {
 				<S.PrototypeImageContainer>
 					{formData && (
 						<Card
-							text={formData.title}
-							description={formData.description}
-							filmImage={formData.imageUrl}
-							year={formData.year}
+							text={title}
+							description={description}
+							filmImage={imageUrl}
+							year={year}
 						/>
 					)}
 				</S.PrototypeImageContainer>

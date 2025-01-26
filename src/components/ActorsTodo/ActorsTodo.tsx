@@ -17,8 +17,10 @@ function ActorsTodo() {
 		<S.TodoContainer>
 			<S.Todo>
 				<S.InputField>
-					<S.Label>Obsada</S.Label>
+					<S.Label htmlFor="actor-input">Obsada</S.Label>
 					<S.InputForActor
+						id="actor-input"
+						name="actor"
 						type="text"
 						value={newActor}
 						onChange={(e) => setNewActor(e.target.value)}
