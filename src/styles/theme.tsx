@@ -10,6 +10,7 @@ export const theme = {
 		dark400: "#00000084",
 		yellow: "#f8d123",
 		grey: "#302f2f",
+		opacity: "#4b4b4b4e",
 		error: "#ff0000",
 	},
 	fontSize: {
@@ -23,6 +24,7 @@ export const theme = {
 	},
 	fontWeight: {
 		normal: "400",
+		semiBold: "600",
 		bold: "800",
 	},
 	zindex: {

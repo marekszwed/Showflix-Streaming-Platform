@@ -13,6 +13,7 @@ export const LabelMixin = css`
 	font-size: ${({ theme }) => theme.fontSize.small};
 	color: ${({ theme }) => theme.colors.white100};
 	overflow: hidden;
+	width: 100%;
 `;
 
 export const InputMixin = css`
@@ -35,7 +36,6 @@ export const Container = css`
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	margin-bottom: 0;
 	width: 100%;
 `;
 

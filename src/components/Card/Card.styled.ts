@@ -10,7 +10,7 @@ import {
 export const Card = styled.div<{ $filmImage?: string }>`
 	position: relative;
 	display: flex;
-	max-width: 280px;
+	width: 280px;
 	height: 400px;
 	background-position: center;
 	background-size: cover;
@@ -39,6 +39,13 @@ export const Text = styled.div<{ $isActive?: boolean }>`
 
 export const Title = styled.h3`
 	${CardTitle}
+`;
+
+export const Year = styled.p`
+	margin-top: 1em;
+	font-size: ${({ theme }) => theme.fontSize.normal};
+	font-weight: ${({ theme }) => theme.fontWeight.bold};
+	color: ${({ theme }) => theme.colors.yellow};
 `;
 
 export const Description = styled.p`

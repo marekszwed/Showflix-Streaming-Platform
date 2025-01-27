@@ -4,29 +4,31 @@ import { Container, InputMixin, LabelMixin } from "../../styles/mixins";
 export const Form = styled.form`
 	display: flex;
 	flex-direction: column;
-	margin-left: 9em;
+	margin: 2em 0 2em 2em;
 `;
 export const Fieldset = styled.fieldset`
 	position: relative;
-	border: transparent;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	border: none;
 `;
-export const BasicInformation = styled.div`
-	height: auto;
-`;
+
 export const InputContainer = styled.div`
 	${Container}
-
-	width: 28em;
 `;
 export const Label = styled.label`
 	${LabelMixin}
 	font-weight: ${({ theme }) => theme.fontWeight.bold};
-	padding: 1em;
+	padding-bottom: 0.5em;
 `;
 
 export const Input = styled.input`
 	${InputMixin}
-	padding: 0.5em 0 0.5em 1em;
+	box-sizing: border-box;
+	margin-top: 1.2em;
+	padding: 0.5em 0 0.5em 0.5em;
 
 	&[type="file"] {
 		color: transparent;

@@ -8,6 +8,5 @@ export { default as FilmsSearch } from "./FilmsSearch";
 export { default as Form } from "./Form";
 export { default as Header } from "./Header";
 export { default as InputError } from "./InputError";
-export { default as MyFilm } from "./MyFilm";
 export { default as Toast } from "./Toast";
 export { default as Logo } from "./Logo";

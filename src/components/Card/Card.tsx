@@ -3,7 +3,7 @@ import { useState } from "react";
 import imageFallback from "/card-grey-background.jpg";
 import { CardProps } from "../../helpers/types";
 
-function Card({ id, filmImage, text, description }: CardProps): JSX.Element {
+function Card({ filmImage, text, description, year }: CardProps) {
 	const [isActive, setIsActive] = useState(false);
 
 	const handleClick = () => {
@@ -11,13 +11,10 @@ function Card({ id, filmImage, text, description }: CardProps): JSX.Element {
 	};
 
 	return (
-		<S.Card
-			id={id}
-			onClick={handleClick}
-			$filmImage={filmImage || imageFallback}
-		>
+		<S.Card onClick={handleClick} $filmImage={filmImage || imageFallback}>
 			<S.Text $isActive={isActive}>
 				<S.Title>{text}</S.Title>
+				{year && <S.Year>{year}</S.Year>}
 				<S.Description>{description}</S.Description>
 			</S.Text>
 		</S.Card>

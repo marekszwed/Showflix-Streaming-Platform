@@ -1,14 +1,41 @@
 import * as S from "./AddFilm.styled";
-import { Button, CreateFilmForm, ActorsTodo } from "../../components";
- 
+import { Button, CreateFilmForm, ActorsTodo, Card } from "../../components";
+import useFormContext from "../../hooks/useFormContext";
+import { useState } from "react";
+
 function AddFilm() {
+	const { formData, clearData } = useFormContext();
+	const [resetForm, setResetForm] = useState<() => void | undefined>();
+
+	const { title, description, imageUrl, year } = formData || {};
+
+	const handleRemovePrototype = () => {
+		if (resetForm) {
+			resetForm();
+		}
+		clearData();
+	};
+
 	return (
 		<S.AddFilm>
-			<S.ButtonContainer>
-				<Button href="/films" text="Dodaj do listy" />
-			</S.ButtonContainer>
+			<S.PrototypeContainer>
+				<S.PrototypeImageContainer>
+					{formData && (
+						<Card
+							text={title}
+							description={description}
+							filmImage={imageUrl}
+							year={year}
+						/>
+					)}
+				</S.PrototypeImageContainer>
+				<S.ButtonContainer>
+					<Button href="/films" width="100%" text="Dodaj do listy" />
+					<S.EraseButton onClick={handleRemovePrototype}>Wyczyść</S.EraseButton>
+				</S.ButtonContainer>
+			</S.PrototypeContainer>
 			<S.FilmInformationContainer>
-				<CreateFilmForm />
+				<CreateFilmForm setResetFunc={setResetForm} />
 				<ActorsTodo />
 			</S.FilmInformationContainer>
 		</S.AddFilm>

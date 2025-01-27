@@ -17,11 +17,14 @@ function ActorsTodo() {
 		<S.TodoContainer>
 			<S.Todo>
 				<S.InputField>
+					<S.Label htmlFor="actor-input">Obsada</S.Label>
 					<S.InputForActor
+						id="actor-input"
+						name="actor"
 						type="text"
 						value={newActor}
 						onChange={(e) => setNewActor(e.target.value)}
-						placeholder="Dodaj aktora"
+						placeholder="Imię i nazwisko"
 					/>
 					<S.ButtonContainer>
 						<S.AddBtn

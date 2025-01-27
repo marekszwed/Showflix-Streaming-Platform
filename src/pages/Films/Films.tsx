@@ -7,7 +7,6 @@ import {
 	Toast,
 	FilmsHeroImage,
 	Button,
-	MyFilm,
 } from "../../components";
 
 import useFormContext from "../../hooks/useFormContext";
@@ -82,12 +81,12 @@ function FilmsPage() {
 				margin="0 0 3em 0"
 			/>
 			{formData && (
-				<MyFilm
+				<S.MyNewFilmCard
 					filmImage={formData.imageUrl}
 					text={formData.title}
 					description={formData.description}
 					year={formData.year}
-				></MyFilm>
+				/>
 			)}
 		</S.Films>
 	);

@@ -52,7 +52,6 @@ function Carousel({ films }: CarouselProps) {
 				{films.map(({ id, title, poster_path, overview }) => (
 					<SwiperSlide key={id}>
 						<Card
-							id={id}
 							filmImage={constructFilmImage(poster_path)}
 							text={title}
 							description={overview}

@@ -8,6 +8,7 @@ interface ProviderProps {
 interface FormContextProps {
 	formData: FormTypes | null;
 	setFormData: (data: FormTypes) => void;
+	clearData: () => void;
 }
 
 const FormContext = createContext<FormContextProps | undefined>(undefined);
@@ -28,8 +29,12 @@ export const FormProvider = ({ children }: ProviderProps) => {
 		});
 	};
 
+	const clearData = () => {
+		setFormDataState(null);
+	};
+
 	return (
-		<FormContext.Provider value={{ formData, setFormData }}>
+		<FormContext.Provider value={{ formData, setFormData, clearData }}>
 			{children}
 		</FormContext.Provider>
 	);
