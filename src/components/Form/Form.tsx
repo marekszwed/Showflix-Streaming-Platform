@@ -2,12 +2,14 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as S from "./Form.styled.ts";
 import { Button, InputError } from "../../components";
+import { useTranslation } from "react-i18next";
 
 function LoginForm() {
 	const [password, setPassword] = useState("");
 	const [email, setEmail] = useState("");
 	const [error, setError] = useState<{ email?: string; password?: string }>({});
 	const navigate = useNavigate();
+	const { t } = useTranslation();
 
 	const validateEmail = (email: string) => {
 		const validEmail = new RegExp(
@@ -41,7 +43,7 @@ function LoginForm() {
 	return (
 		<S.Form id="form" onSubmit={handleSubmit}>
 			<S.StyledFieldset>
-				<S.StyledLegend>Zaloguj się</S.StyledLegend>
+				<S.StyledLegend>{t("login")}</S.StyledLegend>
 				<S.StyledDiv>
 					<S.StyledLabel htmlFor="email">Email*</S.StyledLabel>
 					<S.StyledInput
@@ -68,7 +70,7 @@ function LoginForm() {
 				</S.StyledDiv>
 				<Button
 					type="submit"
-					text="Zaloguj się"
+					text={t("login")}
 					width="100%"
 					margin="1.7em auto"
 				/>

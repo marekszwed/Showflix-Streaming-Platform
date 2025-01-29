@@ -1,32 +1,33 @@
 import * as S from "./FIlmsSearch.styled";
 import { GenreProps } from "../../helpers/types";
+import { useTranslation } from "react-i18next";
 
 interface Genres {
 	id: string;
-	text: string;
 }
 
 const genres: Genres[] = [
-	{ id: "Popular", text: "Popularne" },
-	{ id: "878", text: "Sci-Fi" },
-	{ id: "53", text: "Thriller" },
-	{ id: "27", text: "Horror" },
-	{ id: "35", text: "Komedia" },
-	{ id: "28", text: "Akcja" },
-	{ id: "10752", text: "Wojenny" },
+	{ id: "Popular" },
+	{ id: "878" },
+	{ id: "53" },
+	{ id: "27" },
+	{ id: "35" },
+	{ id: "28" },
+	{ id: "10752" },
 ];
 
 function FilmsSearch({ selectedGenre, setSelectedGenre }: GenreProps) {
+	const { t } = useTranslation();
 	return (
 		<S.SelectBox>
-			<S.Label htmlFor="species">Filmy</S.Label>
+			<S.Label htmlFor="species">{t("films")}</S.Label>
 			<S.Select
 				id="species"
 				value={selectedGenre}
 				onChange={(e) => setSelectedGenre([e.target.value])}
 			>
-				{genres.map(({ id, text }) => (
-					<S.Option value={id}>{text}</S.Option>
+				{genres.map(({ id }) => (
+					<S.Option value={id}>{t(`genres.${id}`)}</S.Option>
 				))}
 			</S.Select>
 		</S.SelectBox>

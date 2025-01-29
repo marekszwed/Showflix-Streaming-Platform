@@ -2,10 +2,12 @@ import * as S from "./AddFilm.styled";
 import { Button, CreateFilmForm, ActorsTodo, Card } from "../../components";
 import useFormContext from "../../hooks/useFormContext";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 function AddFilm() {
 	const { formData, clearData } = useFormContext();
 	const [resetForm, setResetForm] = useState<() => void | undefined>();
+	const { t } = useTranslation();
 
 	const { title, description, imageUrl, year } = formData || {};
 
@@ -30,8 +32,10 @@ function AddFilm() {
 					)}
 				</S.PrototypeImageContainer>
 				<S.ButtonContainer>
-					<Button href="/films" width="100%" text="Dodaj do listy" />
-					<S.EraseButton onClick={handleRemovePrototype}>Wyczyść</S.EraseButton>
+					<Button href="/films" width="100%" text={t("addToList")} />
+					<S.EraseButton onClick={handleRemovePrototype}>
+						{t("clear")}
+					</S.EraseButton>
 				</S.ButtonContainer>
 			</S.PrototypeContainer>
 			<S.FilmInformationContainer>
