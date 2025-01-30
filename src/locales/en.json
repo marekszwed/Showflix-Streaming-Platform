@@ -1,8 +1,13 @@
 {
-	"login": "Log in",
-	"logout": "Log out",
-	"films": "Films",
-	"genres": {
+	"Global": {
+		"login": "Log in",
+		"logout": "Log out",
+		"films": "Films",
+		"addFilm": "Add film",
+		"addToList": "Add to list",
+		"clear": "Clear"
+	},
+	"Genres": {
 		"Popular": "Popular",
 		"878": "Sci-Fi",
 		"53": "Thriller",
@@ -11,16 +16,17 @@
 		"28": "Action",
 		"10752": "War"
 	},
-	"addFilm": "Add film",
-	"filmTitle": "Film title",
-	"description": "Description",
-	"year": "Year",
-	"picture": "Picture",
-	"chooseFile": "Choose file",
-	"save": "Save",
-	"cast": "Cast",
-	"nameAndSurname": "Name and surname",
-	"add": "Add",
-	"clear": "Clear",
-	"addToList": "Add to list"
+	"Todo": {
+		"cast": "Cast",
+		"nameAndSurname": "Name and surname",
+		"add": "Add"
+	},
+	"CreateFilmForm": {
+		"filmTitle": "Film title",
+		"description": "Description",
+		"year": "Year",
+		"picture": "Picture",
+		"chooseFile": "Choose file",
+		"save": "Save"
+	}
 }

@@ -43,7 +43,7 @@ function LoginForm() {
 	return (
 		<S.Form id="form" onSubmit={handleSubmit}>
 			<S.StyledFieldset>
-				<S.StyledLegend>{t("login")}</S.StyledLegend>
+				<S.StyledLegend>{t("Global.login")}</S.StyledLegend>
 				<S.StyledDiv>
 					<S.StyledLabel htmlFor="email">Email*</S.StyledLabel>
 					<S.StyledInput
@@ -70,7 +70,7 @@ function LoginForm() {
 				</S.StyledDiv>
 				<Button
 					type="submit"
-					text={t("login")}
+					text={t("Global.login")}
 					width="100%"
 					margin="1.7em auto"
 				/>

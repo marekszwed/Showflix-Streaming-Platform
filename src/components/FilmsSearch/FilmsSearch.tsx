@@ -20,14 +20,14 @@ function FilmsSearch({ selectedGenre, setSelectedGenre }: GenreProps) {
 	const { t } = useTranslation();
 	return (
 		<S.SelectBox>
-			<S.Label htmlFor="species">{t("films")}</S.Label>
+			<S.Label htmlFor="species">{t("Global.films")}</S.Label>
 			<S.Select
 				id="species"
 				value={selectedGenre}
 				onChange={(e) => setSelectedGenre([e.target.value])}
 			>
 				{genres.map(({ id }) => (
-					<S.Option value={id}>{t(`genres.${id}`)}</S.Option>
+					<S.Option value={id}>{t(`Genres.${id}`)}</S.Option>
 				))}
 			</S.Select>
 		</S.SelectBox>

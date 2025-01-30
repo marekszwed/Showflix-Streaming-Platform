@@ -79,7 +79,7 @@ function FilmsPage() {
 			<Carousel films={fetchedFilms} />
 			<Button
 				href="/films/new"
-				text={t("addFilm")}
+				text={t("Global.addFilm")}
 				width="10em"
 				margin="0 0 3em 0"
 			/>
