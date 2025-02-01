@@ -11,6 +11,7 @@ import {
 
 import useFormContext from "../../hooks/useFormContext";
 import useActorContext from "../../hooks/useActorContext";
+import { useTranslation } from "react-i18next";
 
 interface HeroImageType {
 	backdropPath: string;
@@ -19,6 +20,7 @@ interface HeroImageType {
 }
 
 function FilmsPage() {
+	const { t, i18n } = useTranslation();
 	const { formData } = useFormContext();
 	const { actorsList } = useActorContext();
 	const [selectedGenre, setSelectedGenre] = useState(["Popular"]);
@@ -30,7 +32,8 @@ function FilmsPage() {
 
 	async function fetchData() {
 		const genreId = selectedGenre[0] === "Popular" ? "" : selectedGenre[0];
-		const URL = `${URL_ROOT}${API_KEY}&language=pl-PL${
+		const language = i18n.language === "pl" ? "pl-PL" : "en-EN";
+		const URL = `${URL_ROOT}${API_KEY}&language=${language}${
 			genreId ? `&with_genres=${genreId}` : ""
 		}`;
 
@@ -56,7 +59,7 @@ function FilmsPage() {
 
 	useEffect(() => {
 		fetchData();
-	}, [selectedGenre]);
+	}, [selectedGenre, i18n.language]);
 
 	return (
 		<S.Films>
@@ -76,7 +79,7 @@ function FilmsPage() {
 			<Carousel films={fetchedFilms} />
 			<Button
 				href="/films/new"
-				text={"Dodaj film"}
+				text={t("Global.addFilm")}
 				width="10em"
 				margin="0 0 3em 0"
 			/>

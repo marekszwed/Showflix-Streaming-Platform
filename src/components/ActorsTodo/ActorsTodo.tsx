@@ -3,10 +3,12 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import useActorContext from "../../hooks/useActorContext";
+import { useTranslation } from "react-i18next";
 
 function ActorsTodo() {
 	const { actorsList, addActor, deleteActor, clearAll } = useActorContext();
 	const [newActor, setNewActor] = useState("");
+	const { t } = useTranslation();
 
 	const handleAddActor = () => {
 		addActor(newActor);
@@ -17,24 +19,24 @@ function ActorsTodo() {
 		<S.TodoContainer>
 			<S.Todo>
 				<S.InputField>
-					<S.Label htmlFor="actor-input">Obsada</S.Label>
+					<S.Label htmlFor="actor-input">{t("Todo.cast")}</S.Label>
 					<S.InputForActor
 						id="actor-input"
 						name="actor"
 						type="text"
 						value={newActor}
 						onChange={(e) => setNewActor(e.target.value)}
-						placeholder="Imię i nazwisko"
+						placeholder={t("Todo.nameAndSurname")}
 					/>
 					<S.ButtonContainer>
 						<S.AddBtn
 							onClick={handleAddActor}
 							disabled={newActor.trim() === ""}
 						>
-							Dodaj
+							{t("Todo.add")}
 						</S.AddBtn>
 						<S.ClearBtn onClick={clearAll} disabled={actorsList.length === 0}>
-							Wyczyść
+							{t("Global.clear")}
 						</S.ClearBtn>
 					</S.ButtonContainer>
 				</S.InputField>

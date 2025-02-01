@@ -5,6 +5,7 @@ import { FormTypes } from "../../helpers/types";
 import { Button, InputError } from "../../components";
 import { userSchema } from "./schema";
 import useFormContext from "../../hooks/useFormContext";
+import { useTranslation } from "react-i18next";
 
 interface resetProp {
 	setResetFunc: (resetFunc: () => void) => void;
@@ -12,6 +13,7 @@ interface resetProp {
 
 function CreateFilmForm({ setResetFunc }: resetProp) {
 	const { setFormData } = useFormContext();
+	const { t } = useTranslation();
 
 	const {
 		register,
@@ -32,22 +34,34 @@ function CreateFilmForm({ setResetFunc }: resetProp) {
 		<S.Form onSubmit={handleSubmit(onSubmit)}>
 			<S.Fieldset>
 				<S.InputContainer>
-					<S.Label htmlFor="title">Tytuł filmu</S.Label>
-					<S.Input {...register("title")} placeholder="Tytuł" />
+					<S.Label htmlFor="title">{t("CreateFilmForm.filmTitle")}</S.Label>
+					<S.Input
+						{...register("title")}
+						placeholder={t("CreateFilmForm.filmTitle")}
+					/>
 					<InputError text={errors.title?.message} />
 				</S.InputContainer>
 				<S.InputContainer>
-					<S.Label htmlFor="description">Opis</S.Label>
-					<S.Input {...register("description")} placeholder="Opis" />
+					<S.Label htmlFor="description">
+						{t("CreateFilmForm.description")}
+					</S.Label>
+					<S.Input
+						{...register("description")}
+						placeholder={t("CreateFilmForm.description")}
+					/>
 					<InputError text={errors.description?.message} />
 				</S.InputContainer>
 				<S.InputContainer>
-					<S.Label htmlFor="year">Rok</S.Label>
-					<S.Input type="number" {...register("year")} placeholder="Rok" />
+					<S.Label htmlFor="year">{t("CreateFilmForm.year")}</S.Label>
+					<S.Input
+						type="number"
+						{...register("year")}
+						placeholder={t("CreateFilmForm.year")}
+					/>
 					<InputError text={errors.year?.message} />
 				</S.InputContainer>
 				<S.InputContainer>
-					<S.Label htmlFor="image">Zdjęcie</S.Label>
+					<S.Label htmlFor="image">{t("CreateFilmForm.picture")}</S.Label>
 					<S.Input
 						type="file"
 						{...register("image")}
@@ -55,7 +69,7 @@ function CreateFilmForm({ setResetFunc }: resetProp) {
 					/>
 					<InputError text={errors.image?.message} />
 				</S.InputContainer>
-				<Button type="submit" width="100%" text="Zapisz" />
+				<Button type="submit" width="100%" text={t("CreateFilmForm.save")} />
 			</S.Fieldset>
 		</S.Form>
 	);

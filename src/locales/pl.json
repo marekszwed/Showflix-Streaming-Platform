@@ -1,0 +1,32 @@
+{
+	"Global": {
+		"login": "Zaloguj",
+		"logout": "Wyloguj",
+		"films": "Filmy",
+		"addFilm": "Dodaj film",
+		"addToList": "Dodaj do lisy",
+		"clear": "Wyczyść"
+	},
+	"Genres": {
+		"Popular": "Popularne",
+		"878": "Sci-Fi",
+		"53": "Thriller",
+		"27": "Horror",
+		"35": "Komedia",
+		"28": "Akcja",
+		"10752": "Wojenny"
+	},
+	"Todo": {
+		"cast": "Obsada",
+		"nameAndSurname": "Imię i nazwisko",
+		"add": "Dodaj"
+	},
+	"CreateFilmForm": {
+		"filmTitle": "Tytuł filmu",
+		"description": "Opis",
+		"year": "Rok",
+		"picture": "Zdjęcie",
+		"chooseFile": "Wybierz plik",
+		"save": "Zapisz"
+	}
+}
