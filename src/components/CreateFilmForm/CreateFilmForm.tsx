@@ -34,29 +34,34 @@ function CreateFilmForm({ setResetFunc }: resetProp) {
 		<S.Form onSubmit={handleSubmit(onSubmit)}>
 			<S.Fieldset>
 				<S.InputContainer>
-					<S.Label htmlFor="title">{t("filmTitle")}</S.Label>
-					<S.Input {...register("title")} placeholder={t("filmTitle")} />
+					<S.Label htmlFor="title">{t("CreateFilmForm.filmTitle")}</S.Label>
+					<S.Input
+						{...register("title")}
+						placeholder={t("CreateFilmForm.filmTitle")}
+					/>
 					<InputError text={errors.title?.message} />
 				</S.InputContainer>
 				<S.InputContainer>
-					<S.Label htmlFor="description">{t("description")}</S.Label>
+					<S.Label htmlFor="description">
+						{t("CreateFilmForm.description")}
+					</S.Label>
 					<S.Input
 						{...register("description")}
-						placeholder={t("description")}
+						placeholder={t("CreateFilmForm.description")}
 					/>
 					<InputError text={errors.description?.message} />
 				</S.InputContainer>
 				<S.InputContainer>
-					<S.Label htmlFor="year">{t("year")}</S.Label>
+					<S.Label htmlFor="year">{t("CreateFilmForm.year")}</S.Label>
 					<S.Input
 						type="number"
 						{...register("year")}
-						placeholder={t("year")}
+						placeholder={t("CreateFilmForm.year")}
 					/>
 					<InputError text={errors.year?.message} />
 				</S.InputContainer>
 				<S.InputContainer>
-					<S.Label htmlFor="image">{t("picture")}</S.Label>
+					<S.Label htmlFor="image">{t("CreateFilmForm.picture")}</S.Label>
 					<S.Input
 						type="file"
 						{...register("image")}
@@ -64,7 +69,7 @@ function CreateFilmForm({ setResetFunc }: resetProp) {
 					/>
 					<InputError text={errors.image?.message} />
 				</S.InputContainer>
-				<Button type="submit" width="100%" text={t("save")} />
+				<Button type="submit" width="100%" text={t("CreateFilmForm.save")} />
 			</S.Fieldset>
 		</S.Form>
 	);

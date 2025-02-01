@@ -19,24 +19,24 @@ function ActorsTodo() {
 		<S.TodoContainer>
 			<S.Todo>
 				<S.InputField>
-					<S.Label htmlFor="actor-input">{t("cast")}</S.Label>
+					<S.Label htmlFor="actor-input">{t("Todo.cast")}</S.Label>
 					<S.InputForActor
 						id="actor-input"
 						name="actor"
 						type="text"
 						value={newActor}
 						onChange={(e) => setNewActor(e.target.value)}
-						placeholder={t("nameAndSurname")}
+						placeholder={t("Todo.nameAndSurname")}
 					/>
 					<S.ButtonContainer>
 						<S.AddBtn
 							onClick={handleAddActor}
 							disabled={newActor.trim() === ""}
 						>
-							{t("add")}
+							{t("Todo.add")}
 						</S.AddBtn>
 						<S.ClearBtn onClick={clearAll} disabled={actorsList.length === 0}>
-							{t("clear")}
+							{t("Global.clear")}
 						</S.ClearBtn>
 					</S.ButtonContainer>
 				</S.InputField>

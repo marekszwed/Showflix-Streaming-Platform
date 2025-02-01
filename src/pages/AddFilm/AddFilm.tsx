@@ -32,9 +32,9 @@ function AddFilm() {
 					)}
 				</S.PrototypeImageContainer>
 				<S.ButtonContainer>
-					<Button href="/films" width="100%" text={t("addToList")} />
+					<Button href="/films" width="100%" text={t("Global.addToList")} />
 					<S.EraseButton onClick={handleRemovePrototype}>
-						{t("clear")}
+						{t("Global.clear")}
 					</S.EraseButton>
 				</S.ButtonContainer>
 			</S.PrototypeContainer>

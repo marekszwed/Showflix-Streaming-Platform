@@ -16,8 +16,8 @@ function Header() {
 			return (
 				<Button
 					type="button"
-					href={location.pathname === "/" ? "/login" : "/"}
-					text={location.pathname === "/" ? t("login") : t("logout")}
+					href={isHomePage ? "/login" : "/"}
+					text={isHomePage ? t("Global.login") : t("Global.logout")}
 					width="10em"
 					margin="1.6em 6.5em 1.6em 0"
 				/>
@@ -29,7 +29,7 @@ function Header() {
 		<>
 			<HeaderStyled isFilmPage={location.pathname === "/films"}>
 				<Logo />
-				<LanguageSelector/>
+				<LanguageSelector />
 				{showButton()}
 			</HeaderStyled>
 		</>
