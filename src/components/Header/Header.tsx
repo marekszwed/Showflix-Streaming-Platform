@@ -2,11 +2,13 @@ import { useLocation } from "react-router-dom";
 import { HeaderStyled } from "./Header.styled";
 import { Button, LanguageSelector, Logo } from "../../components";
 import { useTranslation } from "react-i18next";
+import MyListLink from "../MyListLink/MyListLink";
 
 function Header() {
 	const { t } = useTranslation();
 	const location = useLocation();
-	const ALLOWED_PATHS = ["/films", "/films/new"];
+	const ALLOWED_PATHS = ["/films", "/films/new", "/films/mylist"];
+	const locationWithHeaderBackground = ["/films", "/films/mylist"];
 	const isHomePage = location.pathname === "/";
 
 	const showButton = () => {
@@ -27,8 +29,11 @@ function Header() {
 
 	return (
 		<>
-			<HeaderStyled isFilmPage={location.pathname === "/films"}>
+			<HeaderStyled
+				isFilmPage={locationWithHeaderBackground.includes(location.pathname)}
+			>
 				<Logo />
+				<MyListLink />
 				<LanguageSelector />
 				{showButton()}
 			</HeaderStyled>
