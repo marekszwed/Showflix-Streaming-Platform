@@ -3,11 +3,11 @@ import FavoriteCard from "../FavoriteCard";
 import * as S from "./MyListGrid.styled";
 
 function MyListGrid() {
-	const { selectedMovie } = useMovieContext();
+	const { selectedMovies } = useMovieContext();
 
 	return (
 		<S.MyListGrid>
-			{selectedMovie.map(({ image, title }) => (
+			{selectedMovies.map(({ image, title }) => (
 				<FavoriteCard key={title} poster={image} />
 			))}
 		</S.MyListGrid>

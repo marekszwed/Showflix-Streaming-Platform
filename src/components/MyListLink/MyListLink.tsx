@@ -6,10 +6,11 @@ function MyListLink() {
 	const location = useLocation();
 	const NOT_ALLOWED_PATHS = ["/", "/login"];
 
-	if (!NOT_ALLOWED_PATHS.includes(location.pathname)) {
+	if (NOT_ALLOWED_PATHS.includes(location.pathname)) {
+		return null;
+	} else {
 		return <S.Navlink to="/films/mylist">{t("Global.myList")}</S.Navlink>;
 	}
-	return;
 }
 
 export default MyListLink;

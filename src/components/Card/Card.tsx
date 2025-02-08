@@ -7,11 +7,9 @@ import useMovieContext from "../../hooks/useFavoriteMoviesContext";
 
 function Card({ filmImage, text, description, year }: CardProps) {
 	const [isActive, setIsActive] = useState(false);
-	const { selectedMovie, toggleFavoriteMovies } = useMovieContext();
+	const { selectedMovies, toggleFavoriteMovies } = useMovieContext();
 
-	const isFavoriteToChangeColor = selectedMovie.some(
-		(fav) => fav.title === text
-	);
+	const isFavorite = selectedMovies.some(({ title }) => title === text);
 
 	const toggleFavorite = (e: React.MouseEvent) => {
 		e.stopPropagation();
@@ -19,7 +17,6 @@ function Card({ filmImage, text, description, year }: CardProps) {
 			title: text || "",
 			image: filmImage || imageFallback,
 		});
-		console.log(selectedMovie);
 	};
 
 	const handleClick = () => {
@@ -32,8 +29,8 @@ function Card({ filmImage, text, description, year }: CardProps) {
 				<S.Button>
 					<S.Icon
 						icon={faHeart}
-						$changeColor={isFavoriteToChangeColor}
-						onClick={(e) => toggleFavorite(e)}
+						$changeColor={isFavorite}
+						onClick={toggleFavorite}
 					/>
 				</S.Button>
 				<S.Title>{text}</S.Title>

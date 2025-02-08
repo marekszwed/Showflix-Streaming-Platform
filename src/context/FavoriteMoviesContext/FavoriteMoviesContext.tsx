@@ -10,7 +10,7 @@ interface FavoriteMoviesType {
 }
 
 interface FavoriteMovie {
-	selectedMovie: FavoriteMoviesType[];
+	selectedMovies: FavoriteMoviesType[];
 	toggleFavoriteMovies: (movie: FavoriteMoviesType) => void;
 }
 
@@ -19,25 +19,31 @@ const FavoriteMovieContext = createContext<FavoriteMovie | undefined>(
 );
 
 export const FavoriteProvider = ({ children }: ProviderProps) => {
-	const [selectedMovie, setSelectedMovie] = useState<FavoriteMoviesType[]>(() =>
-		JSON.parse(localStorage.getItem("selectedMovie") || "[]")
+	const [selectedMovies, setSelectedMovie] = useState<FavoriteMoviesType[]>(
+		() => JSON.parse(localStorage.getItem("selectedMovie") || "[]")
 	);
 
 	useEffect(() => {
-		localStorage.setItem("selectedMovie", JSON.stringify(selectedMovie));
-	}, [selectedMovie]);
+		localStorage.setItem("selectedMovie", JSON.stringify(selectedMovies));
+	}, [selectedMovies]);
 
 	const toggleFavoriteMovies = (movie: FavoriteMoviesType) => {
+		const { title: movieTitle } = movie;
+
 		setSelectedMovie((prevMovies) =>
-			prevMovies.some((film) => film.title === movie.title)
-				? prevMovies.filter((film) => film.title !== movie.title)
+			prevMovies.some(
+				({ title: storedMovieTitle }) => storedMovieTitle === movieTitle
+			)
+				? prevMovies.filter(
+						({ title: storedMovieTitle }) => storedMovieTitle !== movieTitle
+				  )
 				: [...prevMovies, movie]
 		);
 	};
 
 	return (
 		<FavoriteMovieContext.Provider
-			value={{ selectedMovie, toggleFavoriteMovies }}
+			value={{ selectedMovies, toggleFavoriteMovies }}
 		>
 			{children}
 		</FavoriteMovieContext.Provider>
