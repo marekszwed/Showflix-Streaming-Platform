@@ -60,10 +60,10 @@ export const CardTextAnimation = css`
 
 export const CardButton = css`
 	position: absolute;
-	top: 10px;
-	right: 20px;
-	padding: 0.3em 0.3em;
-	font-size: ${({ theme }) => theme.fontSize.big};
+	top: 2rem;
+	right: 2rem;
+	padding: 0.5rem 0.5rem;
+	font-size: ${({ theme }) => theme.fontSize.bigger};
 	background-color: transparent;
 	color: ${({ theme }) => theme.colors.white100};
 	border: none;

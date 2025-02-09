@@ -5,7 +5,8 @@
 		"films": "Films",
 		"addFilm": "Add film",
 		"addToList": "Add to list",
-		"clear": "Clear"
+		"clear": "Clear",
+		"myList": "My list"
 	},
 	"Genres": {
 		"Popular": "Popular",

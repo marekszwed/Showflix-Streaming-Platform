@@ -6,12 +6,21 @@ import {
 	CardTitle,
 	Pointer,
 } from "../../styles/mixins";
+import {
+	FontAwesomeIcon,
+	FontAwesomeIconProps,
+} from "@fortawesome/react-fontawesome";
+
+interface IconProps extends FontAwesomeIconProps {
+	$changeColor?: boolean;
+}
 
 export const Card = styled.div<{ $filmImage?: string }>`
 	position: relative;
 	display: flex;
-	width: 280px;
-	height: 400px;
+	max-width: 28rem;
+	width: 100%;
+	height: 40rem;
 	background-position: center;
 	background-size: cover;
 	background-image: url(${({ $filmImage }) => $filmImage});
@@ -28,6 +37,18 @@ export const Card = styled.div<{ $filmImage?: string }>`
 
 export const Button = styled.button`
 	${CardButton}
+	${Pointer}
+	transition: all 0.3s ease, box-shadow 0.3s ease;
+	z-index: ${({ theme }) => theme.zindex.positivePlus};
+
+	&:hover {
+		transform: scale(1.2);
+	}
+`;
+
+export const Icon = styled(FontAwesomeIcon)<IconProps>`
+	color: ${({ $changeColor }) => ($changeColor ? "red" : "inherit")};
+	transition: color 0.3s ease;
 	${Pointer}
 `;
 
