@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { HeaderStyled } from "./Header.styled";
-import { Button, LanguageSelector, Logo } from "../../components";
+import { AddFilmLink, Button, LanguageSelector, Logo } from "../../components";
 import { useTranslation } from "react-i18next";
 import MyListLink from "../MyListLink/MyListLink";
 
@@ -34,6 +34,7 @@ function Header() {
 			>
 				<Logo />
 				<MyListLink />
+				<AddFilmLink />
 				<LanguageSelector />
 				{showButton()}
 			</HeaderStyled>

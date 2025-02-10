@@ -13,3 +13,4 @@ export { default as Logo } from "./Logo";
 export { default as LanguageSelector } from "./LanguageSelector";
 export { default as MyListGrid } from "./MyListGrid";
 export { default as FavoriteCard } from "./FavoriteCard";
+export { default as AddFilmLink } from "./AddFilmLink";

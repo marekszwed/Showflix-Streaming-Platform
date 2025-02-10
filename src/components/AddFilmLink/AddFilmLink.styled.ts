@@ -1,12 +1,12 @@
-import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 export const Navlink = styled(NavLink)`
 	position: fixed;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	right: 30.5em;
+	right: 24em;
 	top: 2.7em;
 	font-size: ${({ theme }) => theme.fontSize.normal};
 	font-weight: ${({ theme }) => theme.fontWeight.normal};
