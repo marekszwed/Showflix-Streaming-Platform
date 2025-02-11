@@ -5,17 +5,17 @@ interface ProviderProps {
 }
 
 interface SearchContextProps {
-	isSearch: string;
-	setIsSearch: (data: string) => void;
+	searchKeyword: string;
+	setSearchKeyword: (data: string) => void;
 }
 
 const SearchContext = createContext<SearchContextProps | undefined>(undefined);
 
 export const SearchProvider = ({ children }: ProviderProps) => {
-	const [isSearch, setIsSearch] = useState("");
+	const [searchKeyword, setSearchKeyword] = useState("");
 
 	return (
-		<SearchContext.Provider value={{ isSearch, setIsSearch }}>
+		<SearchContext.Provider value={{ searchKeyword, setSearchKeyword }}>
 			{children}
 		</SearchContext.Provider>
 	);
