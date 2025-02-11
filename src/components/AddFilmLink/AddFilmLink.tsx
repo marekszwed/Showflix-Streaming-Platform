@@ -9,9 +9,9 @@ function AddFilmLink() {
 
 	if (NOT_ALLOWED_PATHS.includes(location.pathname)) {
 		return null;
-	} else {
-		return <S.Navlink to="/films/new">{t("Global.addFilm")}</S.Navlink>;
 	}
+
+	return <S.Navlink to="/films/new">{t("Global.addFilm")}</S.Navlink>;
 }
 
 export default AddFilmLink;

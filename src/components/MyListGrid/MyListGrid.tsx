@@ -5,10 +5,10 @@ import * as S from "./MyListGrid.styled";
 
 function MyListGrid() {
 	const { selectedMovies } = useMovieContext();
-	const { isSearch } = useSearchContext();
+	const { searchKeyword } = useSearchContext();
 
 	const filteredMovies = selectedMovies.filter(({ title }) =>
-		title.toLowerCase().includes(isSearch.toLowerCase())
+		title.toLowerCase().includes(searchKeyword.toLowerCase())
 	);
 
 	return (
