@@ -1,13 +1,7 @@
 import { useEffect, useState } from "react";
 import * as S from "./Films.styled";
 
-import {
-	Carousel,
-	FilmsSearch,
-	Toast,
-	FilmsHeroImage,
-	Button,
-} from "../../components";
+import { Carousel, FilmsSearch, Toast, FilmsHeroImage } from "../../components";
 
 import useFormContext from "../../hooks/useFormContext";
 import useActorContext from "../../hooks/useActorContext";
@@ -20,7 +14,7 @@ interface HeroImageType {
 }
 
 function FilmsPage() {
-	const { t, i18n } = useTranslation();
+	const { i18n } = useTranslation();
 	const { formData } = useFormContext();
 	const { actorsList } = useActorContext();
 	const [selectedGenre, setSelectedGenre] = useState(["Popular"]);
@@ -77,12 +71,6 @@ function FilmsPage() {
 				setSelectedGenre={setSelectedGenre}
 			/>
 			<Carousel films={fetchedFilms} />
-			<Button
-				href="/films/new"
-				text={t("Global.addFilm")}
-				width="10em"
-				margin="0 0 3em 0"
-			/>
 			{formData && (
 				<S.MyNewFilmCard
 					filmImage={formData.imageUrl}

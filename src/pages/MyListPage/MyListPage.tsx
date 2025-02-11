@@ -1,11 +1,16 @@
 import { MyListGrid } from "../../components";
+import SearchBar from "../../components/SearchBar";
+import { SearchProvider } from "../../context/SearchBarContext/SearchBarContext";
 import { MyFilmList } from "./MyListPage.styled";
 
 function MyListPage() {
 	return (
-		<MyFilmList>
-			<MyListGrid />
-		</MyFilmList>
+		<SearchProvider>
+			<MyFilmList>
+				<SearchBar />
+				<MyListGrid />
+			</MyFilmList>
+		</SearchProvider>
 	);
 }
 

@@ -1,6 +1,7 @@
 import { useLocation } from "react-router-dom";
-import { HeaderStyled } from "./Header.styled";
-import { Button, LanguageSelector, Logo } from "../../components";
+// import { HeaderStyled } from "./Header.styled";
+import * as S from "./Header.styled";
+import { AddFilmLink, Button, LanguageSelector, Logo } from "../../components";
 import { useTranslation } from "react-i18next";
 import MyListLink from "../MyListLink/MyListLink";
 
@@ -29,14 +30,17 @@ function Header() {
 
 	return (
 		<>
-			<HeaderStyled
+			<S.HeaderStyled
 				isFilmPage={locationWithHeaderBackground.includes(location.pathname)}
 			>
 				<Logo />
-				<MyListLink />
-				<LanguageSelector />
-				{showButton()}
-			</HeaderStyled>
+				<S.HeaderNavItems>
+					<MyListLink />
+					<AddFilmLink />
+					<LanguageSelector />
+					{showButton()}
+				</S.HeaderNavItems>
+			</S.HeaderStyled>
 		</>
 	);
 }

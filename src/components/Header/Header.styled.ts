@@ -14,3 +14,9 @@ export const HeaderStyled = styled.header<{
 		isFilmPage ? theme.colors.black : "transparent"};
 	z-index: ${({ theme }) => theme.zindex.positiveMax};
 `;
+
+export const HeaderNavItems = styled.div`
+	position: relative;
+	display: flex;
+	justify-content: center;
+`;
