@@ -35,6 +35,6 @@ export const theme = {
 		positivePlus: "2",
 		positiveMax: "3",
 		notification: "4",
-		maxIndex: "5",
+		overlay: "5",
 	},
 } as const;

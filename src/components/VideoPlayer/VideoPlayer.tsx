@@ -10,9 +10,9 @@ function VideoPlayer() {
 	if (!trailerURL) return null;
 
 	return ReactDOM.createPortal(
-		<S.PlayerOverlay onClick={() => closeTrailer()}>
+		<S.PlayerOverlay onClick={closeTrailer}>
 			<S.PlayerContent>
-				<S.Button onClick={() => closeTrailer()}>
+				<S.Button onClick={closeTrailer}>
 					<FontAwesomeIcon icon={faClose} />
 				</S.Button>
 				<S.Player
@@ -23,7 +23,7 @@ function VideoPlayer() {
 				/>
 			</S.PlayerContent>
 		</S.PlayerOverlay>,
-		document.body
+		document.getElementById("player") as HTMLElement
 	);
 }
 

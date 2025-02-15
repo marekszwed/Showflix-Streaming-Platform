@@ -6,7 +6,7 @@ interface ProviderProps {
 
 interface PlayerContextProps {
 	trailerURL: string | null;
-	fetchedTrailer: (movieId: string) => Promise<void>;
+	setTrailerToPlay: (movieId: string) => Promise<void>;
 	closeTrailer: () => void;
 }
 
@@ -18,22 +18,33 @@ interface VideoType {
 	type: string;
 }
 
+interface ConstructURLTypes {
+	movieId: string;
+	apiKey: string;
+}
+
 const PlayerContext = createContext<PlayerContextProps | undefined>(undefined);
+
+const API_KEY = import.meta.env.VITE_API_KEY;
+
+const VIDEO_TYPE_TRAILER = "Trailer";
+const VIDEO_TYPE_YOUTUBE = "YouTube";
+
+function contructURL({ movieId, apiKey }: ConstructURLTypes) {
+	return `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${apiKey}`;
+}
 
 export const PlayerProvider = ({ children }: ProviderProps) => {
 	const [trailerURL, setTrailerURL] = useState<string | null>(null);
 
-	const API_KEY = import.meta.env.VITE_API_KEY;
-
-	async function fetchedTrailer(movieId: string) {
-		const URL = `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${API_KEY}`;
+	async function setTrailerToPlay(movieId: string) {
+		const URL = contructURL({ movieId, apiKey: API_KEY });
 		try {
 			const res = await fetch(URL);
 			const data = await res.json();
-			console.log(data.results);
 			const trailer = data.results.find(
 				(video: VideoType) =>
-					video.type === "Trailer" && video.site === "YouTube"
+					video.type === VIDEO_TYPE_TRAILER && video.site === VIDEO_TYPE_YOUTUBE
 			);
 
 			if (trailer) {
@@ -55,7 +66,7 @@ export const PlayerProvider = ({ children }: ProviderProps) => {
 
 	return (
 		<PlayerContext.Provider
-			value={{ trailerURL, fetchedTrailer, closeTrailer }}
+			value={{ trailerURL, setTrailerToPlay, closeTrailer }}
 		>
 			{children}
 		</PlayerContext.Provider>

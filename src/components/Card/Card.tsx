@@ -9,7 +9,7 @@ import usePlayerContext from "../../hooks/usePlayerContext";
 function Card({ id, filmImage, text, description, year }: CardProps) {
 	const [isActive, setIsActive] = useState(false);
 	const { selectedMovies, toggleFavoriteMovies } = useMovieContext();
-	const { fetchedTrailer } = usePlayerContext();
+	const { setTrailerToPlay } = usePlayerContext();
 
 	const isFavorite = selectedMovies.some(({ title }) => title === text);
 
@@ -29,7 +29,7 @@ function Card({ id, filmImage, text, description, year }: CardProps) {
 		<S.Card onClick={handleClick} $filmImage={filmImage || imageFallback}>
 			<S.Text $isActive={isActive}>
 				<S.PlayerButton>
-					{id && <S.Icon icon={faPlay} onClick={() => fetchedTrailer(id)} />}
+					{id && <S.Icon icon={faPlay} onClick={() => setTrailerToPlay(id)} />}
 				</S.PlayerButton>
 				<S.HeartButton>
 					<S.Icon
