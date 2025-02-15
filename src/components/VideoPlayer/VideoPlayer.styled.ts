@@ -12,7 +12,7 @@ export const PlayerOverlay = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	z-index: ${({ theme }) => theme.zindex.maxIndex};
+	z-index: ${({ theme }) => theme.zindex.overlay};
 `;
 
 export const PlayerContent = styled.div`
