@@ -2,12 +2,14 @@ import * as S from "./Card.styled";
 import { useState } from "react";
 import imageFallback from "/card-grey-background.jpg";
 import { CardProps } from "../../helpers/types";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faHeart, faPlay } from "@fortawesome/free-solid-svg-icons";
 import useMovieContext from "../../hooks/useFavoriteMoviesContext";
+import usePlayerContext from "../../hooks/usePlayerContext";
 
-function Card({ filmImage, text, description, year }: CardProps) {
+function Card({ id, filmImage, text, description, year }: CardProps) {
 	const [isActive, setIsActive] = useState(false);
 	const { selectedMovies, toggleFavoriteMovies } = useMovieContext();
+	const { setTrailerToPlay } = usePlayerContext();
 
 	const isFavorite = selectedMovies.some(({ title }) => title === text);
 
@@ -26,13 +28,16 @@ function Card({ filmImage, text, description, year }: CardProps) {
 	return (
 		<S.Card onClick={handleClick} $filmImage={filmImage || imageFallback}>
 			<S.Text $isActive={isActive}>
-				<S.Button>
+				<S.PlayerButton>
+					{id && <S.Icon icon={faPlay} onClick={() => setTrailerToPlay(id)} />}
+				</S.PlayerButton>
+				<S.HeartButton>
 					<S.Icon
 						icon={faHeart}
 						$changeColor={isFavorite}
 						onClick={toggleFavorite}
 					/>
-				</S.Button>
+				</S.HeartButton>
 				<S.Title>{text}</S.Title>
 				{year && <S.Year>{year}</S.Year>}
 				<S.Description>{description}</S.Description>

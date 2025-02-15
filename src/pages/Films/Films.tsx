@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
 import * as S from "./Films.styled";
-
-import { Carousel, FilmsSearch, Toast, FilmsHeroImage } from "../../components";
-
+import {
+	Carousel,
+	FilmsSearch,
+	Toast,
+	FilmsHeroImage,
+	VideoPlayer,
+} from "../../components";
 import useFormContext from "../../hooks/useFormContext";
 import useActorContext from "../../hooks/useActorContext";
 import { useTranslation } from "react-i18next";
@@ -79,6 +83,7 @@ function FilmsPage() {
 					year={formData.year}
 				/>
 			)}
+			<VideoPlayer />
 		</S.Films>
 	);
 }

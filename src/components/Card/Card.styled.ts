@@ -35,9 +35,11 @@ export const Card = styled.div<{ $filmImage?: string }>`
 	}
 `;
 
-export const Button = styled.button`
+export const HeartButton = styled.button`
 	${CardButton}
 	${Pointer}
+	top: 1rem;
+	right: 1rem;
 	transition: all 0.3s ease, box-shadow 0.3s ease;
 	z-index: ${({ theme }) => theme.zindex.positivePlus};
 
@@ -50,6 +52,19 @@ export const Icon = styled(FontAwesomeIcon)<IconProps>`
 	color: ${({ $changeColor }) => ($changeColor ? "red" : "inherit")};
 	transition: color 0.3s ease;
 	${Pointer}
+`;
+
+export const PlayerButton = styled.button`
+	${CardButton}
+	${Pointer}
+	top: 1rem;
+	right: 5rem;
+	transition: all 0.3s ease, box-shadow 0.3s ease;
+	z-index: ${({ theme }) => theme.zindex.positivePlus};
+
+	&:hover {
+		transform: scale(1.2);
+	}
 `;
 
 export const Text = styled.div<{ $isActive?: boolean }>`
