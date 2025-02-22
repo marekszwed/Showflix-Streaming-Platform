@@ -5,12 +5,17 @@ import {
 	LabelMixin,
 	Pointer,
 } from "../../styles/mixins";
+import { device } from "../../styles/breakpoints";
 
 export const TodoContainer = styled.div`
 	position: relative;
 	display: flex;
 	align-items: flex-start;
-	margin: 1.2em 2em 2em 0;
+	margin: 1.2rem 2rem 2rem 0;
+
+	@media ${device.tablet} {
+		margin: 1.2rem 0 2rem 0;
+	}
 `;
 
 export const Todo = styled.div`
@@ -18,13 +23,13 @@ export const Todo = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	max-height: 600px;
+	max-height: 60rem;
 `;
 
 export const Label = styled.label`
 	${LabelMixin}
 	font-weight: ${({ theme }) => theme.fontWeight.bold};
-	padding-bottom: 0.5em;
+	padding-bottom: 0.7rem;
 `;
 
 export const InputForActor = styled.input`

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as S from "./Form.styled.ts";
-import { Button, InputError } from "../../components";
+import { InputError } from "../../components";
 import { useTranslation } from "react-i18next";
 
 function LoginForm() {
@@ -68,12 +68,7 @@ function LoginForm() {
 					/>
 					<InputError text={error.password} error={!!error.password} />
 				</S.StyledDiv>
-				<Button
-					type="submit"
-					text={t("Global.login")}
-					width="100%"
-					margin="1.7em auto"
-				/>
+				<S.FormButton type="submit" text={t("Global.login")} />
 			</S.StyledFieldset>
 		</S.Form>
 	);

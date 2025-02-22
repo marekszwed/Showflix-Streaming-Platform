@@ -15,3 +15,6 @@ export { default as MyListGrid } from "./MyListGrid";
 export { default as FavoriteCard } from "./FavoriteCard";
 export { default as AddFilmLink } from "./AddFilmLink";
 export { default as VideoPlayer } from "./VideoPlayer";
+export { default as BurgerIcon } from "./BurgerIcon";
+export { default as MobileLogo } from "./MobileLogo";
+export { default as SectionTitle } from "./SectionTitle";

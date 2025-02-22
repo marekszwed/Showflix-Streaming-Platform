@@ -5,7 +5,7 @@ export const MyListGrid = styled.div`
 	display: flex;
 	justify-content: start;
 	flex-wrap: wrap;
-	margin: 25rem 1rem 0 2rem;
+	margin: 25rem 8.5rem 0 8.5rem;
 	width: 100%;
 	gap: 2rem;
 `;

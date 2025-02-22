@@ -60,7 +60,7 @@ export const CardTextAnimation = css`
 
 export const CardButton = css`
 	position: absolute;
-	padding: 0.5rem 0.5rem;
+	padding: 0.8rem 0.8rem;
 	font-size: ${({ theme }) => theme.fontSize.bigger};
 	background-color: transparent;
 	color: ${({ theme }) => theme.colors.white100};
@@ -76,10 +76,11 @@ export const CardTitle = css`
 
 export const CardDescription = css`
 	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 6;
 	font-size: ${({ theme }) => theme.fontSize.normal};
 	color: ${({ theme }) => theme.colors.white100};
-	line-height: 1.7;
-	-webkit-line-clamp: 2;
+	line-height: 1.6;
 	overflow: hidden;
 `;
 

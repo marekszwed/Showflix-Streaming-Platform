@@ -34,9 +34,17 @@ function Carousel({ films }: CarouselProps) {
 					clickable: true,
 				}}
 				breakpoints={{
-					640: {
+					360: {
+						slidesPerView: 1.5,
+						spaceBetween: 10,
+					},
+					425: {
 						slidesPerView: 2,
 						spaceBetween: 10,
+					},
+					640: {
+						slidesPerView: 3,
+						spaceBetween: 20,
 					},
 					768: {
 						slidesPerView: 4,
@@ -44,6 +52,18 @@ function Carousel({ films }: CarouselProps) {
 					},
 					1024: {
 						slidesPerView: 5,
+						spaceBetween: 40,
+					},
+					1440: {
+						slidesPerView: 5,
+						spaceBetween: 40,
+					},
+					1600: {
+						slidesPerView: 6,
+						spaceBetween: 40,
+					},
+					1950: {
+						slidesPerView: 7,
 						spaceBetween: 40,
 					},
 				}}

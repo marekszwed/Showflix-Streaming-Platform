@@ -18,6 +18,7 @@ export const theme = {
 		extraSmall: "1.1rem",
 		small: "1.4rem",
 		normal: "1.6rem",
+		belowBigger: "2rem",
 		bigger: "2.2rem",
 		mediumBig: "3rem",
 		big: "3.6rem",

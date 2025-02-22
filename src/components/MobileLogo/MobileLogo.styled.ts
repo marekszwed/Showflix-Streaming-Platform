@@ -3,18 +3,18 @@ import styled from "styled-components";
 import { device } from "../../styles/breakpoints";
 
 export const LogoStyled = styled.h1`
-	display: flex;
-	margin-left: 8rem;
-	font-size: ${({ theme }) => theme.fontSize.big};
+	position: absolute;
+	display: none;
+	top: 15%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: ${({ theme }) => theme.fontSize.bigger};
 	text-transform: uppercase;
 	font-weight: ${({ theme }) => theme.fontWeight.bold};
 	color: ${({ theme }) => theme.colors.white100};
 
-	@media ${device.laptop} {
-		margin-left: 3rem;
-	}
 	@media ${device.mobileXL} {
-		display: none;
+		display: flex;
 	}
 `;
 

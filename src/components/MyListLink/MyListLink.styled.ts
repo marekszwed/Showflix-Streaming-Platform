@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { device } from "../../styles/breakpoints";
 
 export const Navlink = styled(NavLink)`
 	position: relative;
@@ -14,5 +15,9 @@ export const Navlink = styled(NavLink)`
 
 	&:hover {
 		scale: 1.05;
+	}
+
+	@media ${device.mobileXL} {
+		margin-right: 0;
 	}
 `;

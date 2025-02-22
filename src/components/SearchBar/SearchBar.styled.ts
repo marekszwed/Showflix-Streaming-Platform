@@ -10,19 +10,19 @@ export const Container = styled.div`
 `;
 export const Label = styled.label`
 	display: flex;
-	margin-left: 2rem;
+	margin-left: 8.5rem;
 	width: 20%;
 `;
 
 export const Input = styled.input`
 	display: flex;
 	width: 100%;
-  padding-left: 1rem;
+	padding-left: 1rem;
 	font-size: ${({ theme }) => theme.fontSize.normal};
 	background-color: ${({ theme }) => theme.colors.opacity};
 	color: ${({ theme }) => theme.colors.white100};
 	border-radius: 10px;
-	border: 2px solid ${({theme}) => theme.colors.white200};
+	border: 2px solid ${({ theme }) => theme.colors.white200};
 	overflow: hidden;
 
 	&:focus {

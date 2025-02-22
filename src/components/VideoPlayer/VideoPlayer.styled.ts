@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { CardButton } from "../../styles/mixins";
+import { device } from "../../styles/breakpoints";
 
 export const PlayerOverlay = styled.div`
 	position: fixed;
@@ -19,8 +20,8 @@ export const PlayerContent = styled.div`
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	padding: 10px;
-	border-radius: 8px;
+	padding: 1rem;
+	border-radius: 0.8rem;
 `;
 
 export const Button = styled.button`
@@ -36,4 +37,19 @@ export const Player = styled.iframe`
 	height: 45rem;
 	border: none;
 	border-radius: 1rem;
+
+	@media ${device.laptop} {
+		width: 90vw;
+		height: 50svh;
+	}
+
+	@media ${device.tablet} {
+		width: 95vw;
+		height: 55svh;
+	}
+
+	@media ${device.mobileL} {
+		width: 100vw;
+		height: 55svh;
+	}
 `;

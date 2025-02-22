@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as S from "./CreateFilmForm.styled";
 import { FormTypes } from "../../helpers/types";
-import { Button, InputError } from "../../components";
+import { InputError } from "../../components";
 import { userSchema } from "./schema";
 import useFormContext from "../../hooks/useFormContext";
 import { useTranslation } from "react-i18next";
@@ -69,7 +69,7 @@ function CreateFilmForm({ setResetFunc }: resetProp) {
 					/>
 					<InputError text={errors.image?.message} />
 				</S.InputContainer>
-				<Button type="submit" width="100%" text={t("CreateFilmForm.save")} />
+				<S.SaveButton type="submit" text={t("CreateFilmForm.save")} />
 			</S.Fieldset>
 		</S.Form>
 	);
