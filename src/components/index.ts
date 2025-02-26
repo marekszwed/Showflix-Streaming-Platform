@@ -18,3 +18,4 @@ export { default as VideoPlayer } from "./VideoPlayer";
 export { default as BurgerIcon } from "./BurgerIcon";
 export { default as MobileLogo } from "./MobileLogo";
 export { default as SectionTitle } from "./SectionTitle";
+export { default as PreviousSiteIcon } from "./PreviousSiteIcon";

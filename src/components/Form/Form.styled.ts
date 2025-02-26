@@ -14,7 +14,7 @@ export const Form = styled.form`
 	background-color: ${({ theme }) => theme.colors.dark100};
 	overflow: hidden;
 
-	@media ${device.mobileL} {
+	@media ${device.mobile} {
 		border: none;
 		background-color: transparent;
 	}

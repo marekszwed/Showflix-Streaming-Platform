@@ -13,7 +13,7 @@ export const LogoStyled = styled.h1`
 	@media ${device.laptop} {
 		margin-left: 3rem;
 	}
-	@media ${device.mobileXL} {
+	@media ${device.tablet} {
 		display: none;
 	}
 `;

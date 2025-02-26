@@ -6,6 +6,7 @@ import {
 	LanguageSelector,
 	Logo,
 	MobileLogo,
+	PreviousSiteIcon,
 } from "../../components";
 import { useTranslation } from "react-i18next";
 import MyListLink from "../MyListLink/MyListLink";
@@ -22,6 +23,8 @@ function Header() {
 	const locationWithHeaderBackground = ["/films", "/films/mylist"];
 	const isHomePage = location.pathname === "/";
 	const [isOpen, setIsOpen] = useState(false);
+
+	const closeMenu = () => setIsOpen(false);
 
 	const showButton = ({ onClick }: showButtonProps) => {
 		if (!isHomePage && !ALLOWED_PATHS.includes(location.pathname)) {
@@ -43,14 +46,15 @@ function Header() {
 			<S.HeaderStyled
 				isFilmPage={locationWithHeaderBackground.includes(location.pathname)}
 			>
+				<PreviousSiteIcon />
 				<Logo />
 				<BurgerIcon open={isOpen} onClick={() => setIsOpen(!isOpen)} />
 				<S.Menu $open={isOpen}>
-					<MobileLogo onClick={() => setIsOpen(false)} />
-					<MyListLink onClick={() => setIsOpen(false)} />
-					<AddFilmLink onClick={() => setIsOpen(false)} />
-					<LanguageSelector onClick={() => setIsOpen(false)} />
-					{showButton({ onClick: () => setIsOpen(false) })}
+					<MobileLogo onClick={closeMenu} />
+					<MyListLink onClick={closeMenu} />
+					<AddFilmLink onClick={closeMenu} />
+					<LanguageSelector onLanguageChange={closeMenu} />
+					{showButton({ onClick: closeMenu })}
 				</S.Menu>
 			</S.HeaderStyled>
 		</>

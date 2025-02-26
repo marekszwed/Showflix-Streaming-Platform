@@ -27,7 +27,7 @@ export const PrototypeContainer = styled.div`
 	flex-direction: column;
 	align-items: center;
 
-	@media ${device.laptopCustom} {
+	@media (max-width: 1080px) {
 		margin-left: 1rem;
 	}
 
@@ -55,7 +55,7 @@ export const FilmInformationContainer = styled.div`
 	border-radius: 1rem;
 	gap: 4rem;
 
-	@media ${device.laptopCustom} {
+	@media (max-width: 1080px) {
 		margin-right: 1rem;
 	}
 

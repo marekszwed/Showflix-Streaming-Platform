@@ -49,11 +49,11 @@ export const HeroInfoContainer = styled.div`
 		left: 3rem;
 	}
 
-	@media ${device.mobileXL} {
+	@media ${device.tablet} {
 		max-width: 40rem;
 	}
 
-	@media ${device.mobileL} {
+	@media ${device.mobile} {
 		bottom: 2rem;
 		left: 1.5rem;
 		max-width: 30rem;
@@ -67,10 +67,6 @@ export const Title = styled.h1`
 	text-transform: uppercase;
 	font-weight: ${({ theme }) => theme.fontWeight.bold};
 	z-index: ${({ theme }) => theme.zindex.positiveMax};
-
-	@media ${device.mobileL} {
-		font-size: ${({ theme }) => theme.fontSize.bigger};
-	}
 `;
 
 export const Description = styled.p`

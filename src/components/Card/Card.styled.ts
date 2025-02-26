@@ -35,9 +35,9 @@ export const Card = styled.div<{ $filmImage?: string }>`
 		box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 	}
 
-	@media ${device.mobileL} {
+	@media ${device.mobile} {
 		max-width: 25rem;
-		height: 30rem;
+		height: 35rem;
 	}
 `;
 
@@ -82,7 +82,7 @@ export const Text = styled.div<{ $isActive?: boolean }>`
 export const Title = styled.h3`
 	${CardTitle}
 
-	@media ${device.mobileL} {
+	@media ${device.mobile} {
 		font-size: ${({ theme }) => theme.fontSize.belowBigger};
 	}
 `;

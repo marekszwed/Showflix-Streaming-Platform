@@ -1,27 +1,35 @@
 import styled from "styled-components";
+import { device } from "../../styles/breakpoints";
 
 export const Container = styled.div`
-	position: fixed;
+	position: relative;
 	display: flex;
-	top: 14.5rem;
+	margin-top: 20rem;
 	width: 100%;
 	height: 5rem;
 	justify-content: start;
+
+	@media ${device.laptop} {
+		margin-top: 10rem;
+	}
 `;
 export const Label = styled.label`
 	display: flex;
 	margin-left: 8.5rem;
-	width: 20%;
+
+	@media ${device.laptop} {
+		margin-left: 1rem;
+	}
 `;
 
 export const Input = styled.input`
 	display: flex;
 	width: 100%;
-	padding-left: 1rem;
+	padding: 2.5rem 1rem;
 	font-size: ${({ theme }) => theme.fontSize.normal};
 	background-color: ${({ theme }) => theme.colors.opacity};
 	color: ${({ theme }) => theme.colors.white100};
-	border-radius: 10px;
+	border-radius: 1rem;
 	border: 2px solid ${({ theme }) => theme.colors.white200};
 	overflow: hidden;
 

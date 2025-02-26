@@ -12,10 +12,7 @@ export const SectionTitleContainer = styled.div`
 		padding-left: 6rem;
 	}
 
-	@media ${device.mobileXL} {
-		padding-left: 6rem;
-	}
-	@media ${device.mobileL} {
+	@media ${device.mobile} {
 		padding-left: 3rem;
 	}
 `;
