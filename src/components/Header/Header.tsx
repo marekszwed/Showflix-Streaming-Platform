@@ -1,9 +1,20 @@
 import { useLocation } from "react-router-dom";
-// import { HeaderStyled } from "./Header.styled";
 import * as S from "./Header.styled";
-import { AddFilmLink, Button, LanguageSelector, Logo } from "../../components";
+import {
+	AddFilmLink,
+	BurgerIcon,
+	LanguageSelector,
+	Logo,
+	MobileLogo,
+	PreviousSiteIcon,
+} from "../../components";
 import { useTranslation } from "react-i18next";
 import MyListLink from "../MyListLink/MyListLink";
+import { useState } from "react";
+
+interface showButtonProps {
+	onClick: () => void;
+}
 
 function Header() {
 	const { t } = useTranslation();
@@ -11,18 +22,20 @@ function Header() {
 	const ALLOWED_PATHS = ["/films", "/films/new", "/films/mylist"];
 	const locationWithHeaderBackground = ["/films", "/films/mylist"];
 	const isHomePage = location.pathname === "/";
+	const [isOpen, setIsOpen] = useState(false);
 
-	const showButton = () => {
+	const closeMenu = () => setIsOpen(false);
+
+	const showButton = ({ onClick }: showButtonProps) => {
 		if (!isHomePage && !ALLOWED_PATHS.includes(location.pathname)) {
 			return null;
 		} else {
 			return (
-				<Button
+				<S.HeaderButton
 					type="button"
 					href={isHomePage ? "/login" : "/"}
 					text={isHomePage ? t("Global.login") : t("Global.logout")}
-					width="10em"
-					margin="1.6em 6.5em 1.6em 0"
+					onClick={onClick}
 				/>
 			);
 		}
@@ -33,13 +46,16 @@ function Header() {
 			<S.HeaderStyled
 				isFilmPage={locationWithHeaderBackground.includes(location.pathname)}
 			>
+				<PreviousSiteIcon />
 				<Logo />
-				<S.HeaderNavItems>
-					<MyListLink />
-					<AddFilmLink />
-					<LanguageSelector />
-					{showButton()}
-				</S.HeaderNavItems>
+				<BurgerIcon open={isOpen} onClick={() => setIsOpen(!isOpen)} />
+				<S.Menu $open={isOpen}>
+					<MobileLogo onClick={closeMenu} />
+					<MyListLink onClick={closeMenu} />
+					<AddFilmLink onClick={closeMenu} />
+					<LanguageSelector onLanguageChange={closeMenu} />
+					{showButton({ onClick: closeMenu })}
+				</S.Menu>
 			</S.HeaderStyled>
 		</>
 	);

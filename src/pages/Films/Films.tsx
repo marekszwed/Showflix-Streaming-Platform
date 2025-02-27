@@ -6,10 +6,12 @@ import {
 	Toast,
 	FilmsHeroImage,
 	VideoPlayer,
+	SectionTitle,
 } from "../../components";
 import useFormContext from "../../hooks/useFormContext";
 import useActorContext from "../../hooks/useActorContext";
 import { useTranslation } from "react-i18next";
+import { t } from "i18next";
 
 interface HeroImageType {
 	backdropPath: string;
@@ -53,6 +55,8 @@ function FilmsPage() {
 		}
 	}
 
+	const genreName = t(`Genres.${selectedGenre[0]}`);
+
 	useEffect(() => {}, [formData, actorsList]);
 
 	useEffect(() => {
@@ -61,27 +65,29 @@ function FilmsPage() {
 
 	return (
 		<S.Films>
-			{heroImage ? (
+			{heroImage && (
 				<FilmsHeroImage
 					heroImage={heroImage}
 					alt="Page background composed of a poster of the most recent movie"
 				/>
-			) : (
-				Toast.warning("Incorrect connection to the server")
 			)}
 
 			<FilmsSearch
 				selectedGenre={selectedGenre}
 				setSelectedGenre={setSelectedGenre}
 			/>
+			<SectionTitle title={genreName} />
 			<Carousel films={fetchedFilms} />
 			{formData && (
-				<S.MyNewFilmCard
-					filmImage={formData.imageUrl}
-					text={formData.title}
-					description={formData.description}
-					year={formData.year}
-				/>
+				<>
+					<SectionTitle title={t("Global.myFilm")} />
+					<S.MyNewFilmCard
+						filmImage={formData.imageUrl}
+						text={formData.title}
+						description={formData.description}
+						year={formData.year}
+					/>
+				</>
 			)}
 			<VideoPlayer />
 		</S.Films>

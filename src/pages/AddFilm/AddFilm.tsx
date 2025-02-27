@@ -1,5 +1,5 @@
 import * as S from "./AddFilm.styled";
-import { Button, CreateFilmForm, ActorsTodo, Card } from "../../components";
+import { CreateFilmForm, ActorsTodo, Card } from "../../components";
 import useFormContext from "../../hooks/useFormContext";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -32,7 +32,7 @@ function AddFilm() {
 					)}
 				</S.PrototypeImageContainer>
 				<S.ButtonContainer>
-					<Button href="/films" width="100%" text={t("Global.addToList")} />
+					<S.AddToListButton href="/films" text={t("Global.addToList")} />
 					<S.EraseButton onClick={handleRemovePrototype}>
 						{t("Global.clear")}
 					</S.EraseButton>
