@@ -27,7 +27,7 @@ export const CarouselBox = styled.div`
 		height: 1.2rem;
 		opacity: 0.5;
 
-		@media ${device.mobileCustomCarousel} {
+		@media ${device.mobile} {
 			width: 1rem;
 			height: 1rem;
 		}

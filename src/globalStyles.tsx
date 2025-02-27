@@ -29,6 +29,10 @@ const GlobalStyles = createGlobalStyle`
 		font-display: swap;
 }
 
+body, html {
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   padding: 0;

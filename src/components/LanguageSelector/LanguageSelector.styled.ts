@@ -9,7 +9,7 @@ export const SelectorBox = styled.div`
 	align-items: center;
 	margin-right: 3rem;
 
-	@media ${device.mobileXL} {
+	@media ${device.tablet} {
 		margin-right: 2rem;
 	}
 `;

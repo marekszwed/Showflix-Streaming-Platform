@@ -3,7 +3,7 @@ import { Pointer } from "../../styles/mixins";
 import { device } from "../../styles/breakpoints";
 
 export const SelectBox = styled.div`
-	position: fixed;
+	position: absolute;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -15,9 +15,10 @@ export const SelectBox = styled.div`
 		right: 3rem;
 	}
 
-	@media ${device.mobileL} {
+	@media ${device.mobile} {
 		top: 14rem;
 		right: 1.5rem;
+		margin-right: 1.5rem;
 	}
 `;
 

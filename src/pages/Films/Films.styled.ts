@@ -16,3 +16,11 @@ export const MyNewFilmCard = styled(Card)`
 	display: flex;
 	align-self: start;
 `;
+
+export const Wrapper = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 2rem;
+	width: 100%;
+`;

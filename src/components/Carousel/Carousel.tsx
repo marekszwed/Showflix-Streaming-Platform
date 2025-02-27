@@ -51,7 +51,7 @@ function Carousel({ films }: CarouselProps) {
 						spaceBetween: 30,
 					},
 					1024: {
-						slidesPerView: 5,
+						slidesPerView: 4,
 						spaceBetween: 40,
 					},
 					1440: {

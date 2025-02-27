@@ -7,16 +7,16 @@ const languages = [
 ];
 
 interface LanguageSelectorProps {
-	onClick: () => void;
+	onLanguageChange: () => void;
 }
-function LanguageSelector({ onClick }: LanguageSelectorProps) {
+function LanguageSelector({ onLanguageChange }: LanguageSelectorProps) {
 	const { i18n } = useTranslation();
 
 	const chooseLanguage = (e: React.ChangeEvent<HTMLSelectElement>) => {
 		const selectedLang = e.target.value;
 		i18n.changeLanguage(selectedLang);
 		console.log(i18n.language);
-		onClick();
+		onLanguageChange();
 	};
 
 	return (

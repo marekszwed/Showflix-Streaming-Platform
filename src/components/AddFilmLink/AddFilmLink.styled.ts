@@ -17,7 +17,7 @@ export const Navlink = styled(NavLink)`
 		scale: 1.05;
 	}
 
-	@media ${device.mobileXL} {
+	@media ${device.tablet} {
 		margin-right: 0;
 	}
 `;

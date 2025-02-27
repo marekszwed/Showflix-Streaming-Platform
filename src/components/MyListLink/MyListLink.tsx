@@ -1,6 +1,7 @@
 import { t } from "i18next";
 import * as S from "./MyListLink.styled";
 import { useLocation } from "react-router-dom";
+import { NOT_ALLOWED_PATHS } from "../../constants/constants";
 
 interface MyListLink {
 	onClick: () => void;
@@ -8,7 +9,6 @@ interface MyListLink {
 
 function MyListLink({ onClick }: MyListLink) {
 	const location = useLocation();
-	const NOT_ALLOWED_PATHS = ["/", "/login"];
 
 	if (NOT_ALLOWED_PATHS.includes(location.pathname)) {
 		return null;

@@ -13,7 +13,7 @@ export const LogoStyled = styled.h1`
 	font-weight: ${({ theme }) => theme.fontWeight.bold};
 	color: ${({ theme }) => theme.colors.white100};
 
-	@media ${device.mobileXL} {
+	@media ${device.tablet} {
 		display: flex;
 	}
 `;

@@ -23,7 +23,6 @@ export const Todo = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	max-height: 60rem;
 `;
 
 export const Label = styled.label`

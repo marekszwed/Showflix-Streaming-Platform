@@ -4,7 +4,7 @@ import { device } from "../../styles/breakpoints";
 export const BurgerIconContainer = styled.button<{ $open: boolean }>`
 	position: fixed;
 	top: 1.7rem;
-	left: 2rem;
+	right: 2rem;
 	display: none;
 	flex-direction: column;
 	justify-content: space-around;
@@ -20,30 +20,30 @@ export const BurgerIconContainer = styled.button<{ $open: boolean }>`
 		outline: none;
 	}
 
-	@media ${device.mobileXL} {
+	@media ${device.tablet} {
 		display: flex;
 	}
+`;
 
-	div {
-		width: 2.4rem;
-		height: 0.25rem;
-		background: ${({ theme }) => theme.colors.white100};
-		border-radius: 10px;
-		transition: all 0.3s linear;
-		position: relative;
-		transform-origin: left;
+export const Line = styled.div<{ $open: boolean }>`
+	width: 2.4rem;
+	height: 0.25rem;
+	background: ${({ theme }) => theme.colors.white100};
+	border-radius: 10px;
+	transition: all 0.3s linear;
+	position: relative;
+	transform-origin: right;
 
-		&:first-child {
-			transform: ${({ $open }) => ($open ? "rotate(45deg)" : "rotate(0)")};
-		}
+	&:first-child {
+		transform: ${({ $open }) => ($open ? "rotate(-45deg)" : "rotate(0)")};
+	}
 
-		&:nth-child(2) {
-			opacity: ${({ $open }) => ($open ? "0" : "1")};
-			transform: ${({ $open }) => ($open ? "translateX(0)" : "translateX(0)")};
-		}
+	&:nth-child(2) {
+		opacity: ${({ $open }) => ($open ? "0" : "1")};
+		transform: ${({ $open }) => ($open ? "translateX(0)" : "translateX(0)")};
+	}
 
-		&:nth-child(3) {
-			transform: ${({ $open }) => ($open ? "rotate(-45deg)" : "rotate(0)")};
-		}
+	&:nth-child(3) {
+		transform: ${({ $open }) => ($open ? "rotate(45deg)" : "rotate(0)")};
 	}
 `;

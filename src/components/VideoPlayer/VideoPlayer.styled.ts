@@ -48,7 +48,7 @@ export const Player = styled.iframe`
 		height: 55svh;
 	}
 
-	@media ${device.mobileL} {
+	@media ${device.mobile} {
 		width: 100vw;
 		height: 55svh;
 	}
