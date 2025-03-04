@@ -23,6 +23,9 @@ export const theme = {
 		mediumBig: "3rem",
 		big: "3.6rem",
 		header: "4rem",
+		pageLogoMobile: "6rem",
+		pageLogoTablet: "7rem",
+		pageLogo: "9rem",
 	},
 	fontWeight: {
 		normal: "400",

@@ -7,7 +7,8 @@
 		"addToList": "Add to list",
 		"clear": "Clear",
 		"myList": "My list",
-		"myFilm": "My Film"
+		"myFilm": "My Film",
+		"searchMovie": "Search for a movie"
 	},
 	"Genres": {
 		"Popular": "Popular",

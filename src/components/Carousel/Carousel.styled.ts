@@ -31,6 +31,10 @@ export const CarouselBox = styled.div`
 			width: 1rem;
 			height: 1rem;
 		}
+		@media (max-width: 350px) {
+			width: 0.5rem;
+			height: 0.5rem;
+		}
 	}
 	.swiper-pagination-bullet-active {
 		background-color: red;

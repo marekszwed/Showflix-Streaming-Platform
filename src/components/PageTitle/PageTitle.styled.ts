@@ -1,20 +1,23 @@
 import styled from "styled-components";
 import { device } from "../../styles/breakpoints";
 
-export const SectionTitleContainer = styled.div`
+export const PageTitleContainer = styled.div`
 	position: relative;
 	display: flex;
 	width: 100%;
-	margin-top: 1rem;
-	padding-left: 20rem;
+	margin-top: 13rem;
+	padding-left: 8rem;
 	z-index: ${({ theme }) => theme.zindex.positive};
 
 	@media ${device.laptop} {
-		padding-left: 6rem;
+		padding-left: 3rem;
+	}
+	@media ${device.tablet} {
+		margin-top: 8rem;
 	}
 
 	@media ${device.mobile} {
-		padding-left: 3rem;
+		padding-left: 2rem;
 	}
 `;
 export const Title = styled.h2`

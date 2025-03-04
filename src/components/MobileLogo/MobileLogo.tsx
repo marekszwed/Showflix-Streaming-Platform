@@ -1,20 +1,13 @@
 import { useLocation } from "react-router-dom";
 import * as S from "./MobileLogo.styled";
 
-interface MobileLogoProps {
-	onClick: () => void;
-}
-
-function MobileLogo({ onClick }: MobileLogoProps) {
+function MobileLogo() {
 	const location = useLocation();
-	const ALLOWED_PATHs = ["/", "/login"];
-	const targetPath = ALLOWED_PATHs.includes(location.pathname) ? "/" : "/films";
+	const ALLOWED_PATHS_TO_SHOW = ["/", "/films"];
 
-	return (
-		<S.StyledNavlink to={targetPath} onClick={onClick}>
-			<S.LogoStyled>Showflix</S.LogoStyled>
-		</S.StyledNavlink>
-	);
+	if (ALLOWED_PATHS_TO_SHOW.includes(location.pathname)) {
+		return <S.LogoStyled>Showflix</S.LogoStyled>;
+	}
 }
 
 export default MobileLogo;

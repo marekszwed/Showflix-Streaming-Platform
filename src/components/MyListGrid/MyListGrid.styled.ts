@@ -6,11 +6,14 @@ export const MyListGrid = styled.div`
 	display: flex;
 	justify-content: start;
 	flex-wrap: wrap;
-	margin: 5rem 8.5rem 0 8.5rem;
+	margin: 3rem 8.5rem 0 8.5rem;
 	width: 100%;
 	gap: 2rem;
 
 	@media ${device.laptop} {
-		margin: 5rem 1rem 5rem 1rem;
+		margin: 3rem 1rem 5rem 3rem;
+	}
+	@media ${device.mobile} {
+		margin: 3rem 1rem 5rem 2rem;
 	}
 `;

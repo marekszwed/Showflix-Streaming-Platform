@@ -13,6 +13,14 @@ export const AddFilm = styled.div`
 	padding: 2rem;
 	overflow: hidden;
 
+	@media ${device.laptop} and (orientation: landscape) {
+		flex-direction: column-reverse;
+		align-items: center;
+		padding: 15rem 0 0 0;
+		height: 100%;
+		gap: 1.5rem;
+	}
+
 	@media ${device.tablet} {
 		flex-direction: column-reverse;
 		gap: 2rem;
@@ -64,6 +72,8 @@ export const FilmInformationContainer = styled.div`
 		align-items: center;
 		top: 9rem;
 		gap: 1.5rem;
+		border: none;
+		background-color: transparent;
 		width: 90vw;
 	}
 `;
