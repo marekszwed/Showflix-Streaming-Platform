@@ -1,6 +1,6 @@
 import { ThemeProvider } from "styled-components";
 import { theme } from "./styles/theme";
-import { Header } from "./components";
+import { Footer, Header } from "./components";
 import { Bounce, ToastContainer } from "react-toastify";
 import Paths from "./routes/routes";
 import { FormProvider } from "./context/FormContext/FormContext";
@@ -30,6 +30,7 @@ function App() {
 								theme="dark"
 								transition={Bounce}
 							/>
+							<Footer />
 						</ThemeProvider>
 					</ActorProvider>
 				</FormProvider>

@@ -43,6 +43,7 @@ export const Input = styled.input`
 	box-sizing: border-box;
 	margin-top: 1.2em;
 	padding: 0.8rem 0 0.8rem 0.8rem;
+	background-color: ${({ theme }) => theme.colors.grey};
 
 	&[type="file"] {
 		color: transparent;

@@ -59,13 +59,12 @@ export const AddBtn = styled.button`
 	padding: 0.5em 1em;
 	width: 8em;
 	font-size: ${({ theme }) => theme.fontSize.normal};
-	font-weight: ${({ theme }) => theme.fontWeight.bold};
+	font-weight: ${({ theme }) => theme.fontWeight.semiBold};
 	border-radius: 10px;
 	border: none;
 	${Pointer}
 `;
 export const ClearBtn = styled(AddBtn)`
-	font-weight: ${({ theme }) => theme.fontWeight.semiBold};
 	color: ${({ theme }) => theme.colors.red};
 `;
 export const ActorsContainer = styled.div`

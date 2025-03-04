@@ -10,6 +10,7 @@ export const StyledButton = styled.button`
 	border: none;
 	border-radius: 1rem;
 	padding: 1.12rem;
+	font-weight: ${({ theme }) => theme.fontWeight.semiBold};
 	color: ${({ theme }) => theme.colors.white100};
 	background-color: ${({ theme }) => theme.color || theme.colors.red};
 	transition: all 0.3s ease-out;

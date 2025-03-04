@@ -9,7 +9,7 @@ export const StyledNavlink = styled(NavLink)`
 	align-items: center;
 	text-decoration: none;
 
-	@media ${device.laptop} {
+	@media ${device.tablet} {
 		display: flex;
 	}
 `;

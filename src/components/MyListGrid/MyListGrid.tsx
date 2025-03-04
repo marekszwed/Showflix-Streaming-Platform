@@ -14,7 +14,7 @@ function MyListGrid() {
 	return (
 		<S.MyListGrid>
 			{filteredMovies.map(({ image, title }) => (
-				<FavoriteCard key={title} poster={image} />
+				<FavoriteCard key={title} poster={image} title={title} />
 			))}
 		</S.MyListGrid>
 	);

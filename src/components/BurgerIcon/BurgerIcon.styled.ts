@@ -1,7 +1,11 @@
 import styled from "styled-components";
 import { device } from "../../styles/breakpoints";
 
-export const BurgerIconContainer = styled.button<{ $open: boolean }>`
+interface BurgerProps {
+	$open: boolean;
+}
+
+export const BurgerIconContainer = styled.button<BurgerProps>`
 	position: fixed;
 	top: 1.7rem;
 	right: 2rem;
@@ -23,27 +27,26 @@ export const BurgerIconContainer = styled.button<{ $open: boolean }>`
 	@media ${device.tablet} {
 		display: flex;
 	}
-`;
 
-export const Line = styled.div<{ $open: boolean }>`
-	width: 2.4rem;
-	height: 0.25rem;
-	background: ${({ theme }) => theme.colors.white100};
-	border-radius: 10px;
-	transition: all 0.3s linear;
-	position: relative;
-	transform-origin: right;
-
-	&:first-child {
+	& .line {
+		width: 2.4rem;
+		height: 0.25rem;
+		background: ${({ theme }) => theme.colors.white100};
+		border-radius: 10px;
+		transition: all 0.3s linear;
+		position: relative;
+		transform-origin: right;
+	}
+	& .line:first-child {
 		transform: ${({ $open }) => ($open ? "rotate(-45deg)" : "rotate(0)")};
 	}
 
-	&:nth-child(2) {
+	& .line:nth-child(2) {
 		opacity: ${({ $open }) => ($open ? "0" : "1")};
 		transform: ${({ $open }) => ($open ? "translateX(0)" : "translateX(0)")};
 	}
 
-	&:nth-child(3) {
+	& .line:nth-child(3) {
 		transform: ${({ $open }) => ($open ? "rotate(45deg)" : "rotate(0)")};
 	}
 `;

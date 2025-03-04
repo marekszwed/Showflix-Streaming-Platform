@@ -19,3 +19,6 @@ export { default as BurgerIcon } from "./BurgerIcon";
 export { default as MobileLogo } from "./MobileLogo";
 export { default as SectionTitle } from "./SectionTitle";
 export { default as PreviousSiteIcon } from "./PreviousSiteIcon";
+export { default as MobileLoginButton } from "./MobileLoginButton";
+export { default as Footer } from "./Footer";
+export { default as PageTitle } from "./PageTitle";

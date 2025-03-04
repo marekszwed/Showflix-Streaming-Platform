@@ -1,7 +1,9 @@
 import * as S from "./SearchBar.styled";
 import useSearchContext from "../../hooks/useSearchContext";
+import { useTranslation } from "react-i18next";
 
 function SearchBar() {
+	const { t } = useTranslation();
 	const { searchKeyword, setSearchKeyword } = useSearchContext();
 
 	return (
@@ -11,7 +13,7 @@ function SearchBar() {
 					id="search-bar"
 					value={searchKeyword}
 					onChange={(e) => setSearchKeyword(e.target.value)}
-					placeholder="Wyszukaj film"
+					placeholder={`🏸 ${t("Global.searchMovie")}`}
 				/>
 			</S.Label>
 		</S.Container>
