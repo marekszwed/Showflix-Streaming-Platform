@@ -5,14 +5,17 @@ import { useTranslation } from "react-i18next";
 function MobileLoginButton() {
 	const { t } = useTranslation();
 
-	const [isVisible, setIsVisible] = useState(window.innerWidth < 768);
+	const [isVisible, setIsVisible] = useState(
+		window.matchMedia("(max-width: 768px)").matches
+	);
 
 	useEffect(() => {
-		const handleResize = () => {
-			setIsVisible(window.innerWidth < 768);
+		const mediaQuery = window.matchMedia("(max-width: 768px)");
+		const handleResize = (event: MediaQueryListEvent) => {
+			setIsVisible(event.matches);
 		};
-		window.addEventListener("resize", handleResize);
-		return () => window.removeEventListener("resize", handleResize);
+		mediaQuery.addEventListener("change", handleResize);
+		return () => mediaQuery.removeEventListener("change", handleResize);
 	}, []);
 
 	if (!isVisible) return null;
