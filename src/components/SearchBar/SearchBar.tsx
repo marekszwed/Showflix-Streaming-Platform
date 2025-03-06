@@ -13,7 +13,7 @@ function SearchBar() {
 					id="search-bar"
 					value={searchKeyword}
 					onChange={(e) => setSearchKeyword(e.target.value)}
-					placeholder={`🏸 ${t("Global.searchMovie")}`}
+					placeholder={`🔎 ${t("Global.searchMovie")}`}
 				/>
 			</S.Label>
 		</S.Container>

@@ -22,6 +22,10 @@ export const FilmsHeroContainer = styled.div`
 		);
 		z-index: ${({ theme }) => theme.zindex.positive};
 	}
+
+	@media ${device.laptop} and (orientation: landscape) {
+		margin-top: 10rem;
+	}
 `;
 
 export const FilmsHeroImage = styled.img<{ src: string }>`
