@@ -7,21 +7,19 @@ function PreviousSiteIcon() {
 	const PATHS = ["/", "/films"];
 	const navigate = useNavigate();
 
-	if (PATHS.includes(location.pathname)) {
-		return null;
-	} else {
-		return (
-			<S.StyledNavlink
-				to="#"
-				onClick={(e) => {
-					e.preventDefault();
-					navigate(-1);
-				}}
-			>
-				<S.PreviousSiteIcon icon={faAngleLeft} />
-			</S.StyledNavlink>
-		);
-	}
+	if (PATHS.includes(location.pathname)) return null;
+
+	return (
+		<S.StyledNavlink
+			to="#"
+			onClick={(e) => {
+				e.preventDefault();
+				navigate(-1);
+			}}
+		>
+			<S.PreviousSiteIcon icon={faAngleLeft} />
+		</S.StyledNavlink>
+	);
 }
 
 export default PreviousSiteIcon;

@@ -5,6 +5,7 @@ import {
 	BurgerIcon,
 	LanguageSelector,
 	Logo,
+	MobileLoginButton,
 	MobileLogo,
 	PreviousSiteIcon,
 } from "../../components";
@@ -47,10 +48,11 @@ function Header() {
 				isFilmPage={locationWithHeaderBackground.includes(location.pathname)}
 			>
 				<PreviousSiteIcon />
+				<MobileLogo />
+				{isHomePage && <MobileLoginButton />}
 				<Logo />
 				<BurgerIcon open={isOpen} onClick={() => setIsOpen(!isOpen)} />
 				<S.Menu $open={isOpen}>
-					<MobileLogo onClick={closeMenu} />
 					<MyListLink onClick={closeMenu} />
 					<AddFilmLink onClick={closeMenu} />
 					<LanguageSelector onLanguageChange={closeMenu} />

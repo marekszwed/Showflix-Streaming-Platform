@@ -5,6 +5,7 @@ import { device } from "../../styles/breakpoints";
 export const FilmsHeroContainer = styled.div`
 	${PageBackground}
 	flex-direction: column;
+	justify-content: flex-end;
 	height: 100svh;
 	width: 100vw;
 	overflow: hidden;
@@ -21,6 +22,10 @@ export const FilmsHeroContainer = styled.div`
 		);
 		z-index: ${({ theme }) => theme.zindex.positive};
 	}
+
+	@media ${device.laptop} and (orientation: landscape) {
+		margin-top: 10rem;
+	}
 `;
 
 export const FilmsHeroImage = styled.img<{ src: string }>`
@@ -35,18 +40,17 @@ export const FilmsHeroImage = styled.img<{ src: string }>`
 `;
 
 export const HeroInfoContainer = styled.div`
-	position: absolute;
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	align-self: flex-start;
 	max-width: 55rem;
 	width: 100%;
-	bottom: 15rem;
-	left: 10rem;
+	margin: 0 0rem 10rem 10rem;
 	z-index: ${({ theme }) => theme.zindex.positivePlus};
 
 	@media ${device.laptop} {
-		left: 3rem;
+		margin-left: 3rem;
 	}
 
 	@media ${device.tablet} {
@@ -54,8 +58,7 @@ export const HeroInfoContainer = styled.div`
 	}
 
 	@media ${device.mobile} {
-		bottom: 2rem;
-		left: 1.5rem;
+		margin: 0 2rem 2rem 2rem;
 		max-width: 30rem;
 	}
 `;

@@ -4,10 +4,11 @@
 		"logout": "Wyloguj",
 		"films": "Filmy",
 		"addFilm": "Dodaj film",
-		"addToList": "Dodaj do lisy",
+		"addToList": "Dodaj do listy",
 		"clear": "Wyczyść",
 		"myList": "Moja lista",
-		"myFilm": "Mój film"
+		"myFilm": "Mój film",
+		"searchMovie": "Wyszukaj film"
 	},
 	"Genres": {
 		"Popular": "Popularne",
